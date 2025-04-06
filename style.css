@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0D1114;
+}
+
+header {
+    margin-bottom: 5vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: bold;
+    color: #fff;
+
+    text-align: center;
+}
+
+header p,
+footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+
+    text-align: center;
+}
+
+header img {
+    width: 20%;
+}
+
+
+.modpack-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*Varje kolumn är minst 200px; repeterar så många gånger som de får plats*/
+    gap: 60px;
+    max-width: 1000px;
+    /*Ser till att griden är max 1200 pixlar bred oavsett*/
+    margin: auto;
+    /*Centrerar alla produkter till mitten av skärmen*/
+
+    text-align: center;
+}
+
+.modpack {
+    display: flex;
+    flex-direction: column;
+    background-color: #00000050;
+
+    border-radius: 20px;
+    padding: 5%;
+
+    transition: ease-in-out 0.15s;
+}
+
+.modpack:hover {
+    transition: ease-in-out 0.15s;
+    background-color: #70707050;
+}
+
+.modpack-inforuta {
+    border-top: solid 2px #fff;
+
+}
+
+.modpack img {
+    width: 100%;
+    margin-bottom: 1vh;
+}
+
+.modpack a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modpack h2 {
+    margin-top: 1vh;
+    color: #fff;
+    margin-bottom: 1vh;
+}
+
+.modpack p {
+    color: #fff;
+}
+
+.modpack-mimic {
+    display: flex;
+    flex-direction: column;
+    background-color: #00000050;
+
+    border-radius: 20px;
+    padding: 5%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.sektioner {
+    margin-top: 10vh;
+    text-align: center;
+
+    background-color: #00000050;
+    padding: 2vh 0;
+
+    transition: ease-in-out 0.15s;
+}
+
+.sektioner:hover {
+    transition: ease-in-out 0.15s;
+    background-color: #70707050;
+}
+
+.sektioner a {
+    text-decoration: none;
+}
+
+.sektioner img {
+    width: 20%;
+}
+
+.sektioner-flex {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.sektioner h1 {
+    font-size: 100px;
+}
+
+footer {
+    margin-top: 5vh;
+    padding: 2vh 0;
+    background-color: #00000050;
+}
+
+.footer-detail {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 1vh;
+}
+
+.footer-detail img {
+    width: 10vh;
+}
+
+/************************************************************************************************************/
+
+#modpack-namn {
+    margin-bottom: 1vh;
+}
+
+.listor {
+    display: flex;
+    gap: 20px;
+}
+
+ul {
+    margin-top: 5vh;
+}
+
+ul h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+
+    margin-bottom: 1vh;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+li a {
+    text-decoration: none;
+}
+
+li #spelare:hover {
+    color: #00ffff;
+}
+
+li p {
+    margin-left: 0.5vw;
+}
+
+.detaljer-lista {
+    background-color: #00000050;
+    padding: 1vw;
+
+    border-radius: 20px;
+}
+
+.detaljer-lista img {
+    width: 30px;
+}
+
+.portfolio h1 {
+    font-size: 36px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 80%;
+    /*Ser till att griden är max 1200 pixlar bred oavsett*/
+    margin: auto;
+    /*Centrerar alla produkter till mitten av skärmen*/
+}
+
+.portfolio-grid img {
+    height: 256px;
+}
+
+.downloads {
+    width: 15%;
+}
+
+/************************************************************************************************************/
+
+.portfolio-section, .downloads-section {
+    margin: 5vh auto;
+    text-align: center;
+    color: white;
+    max-width: 1000px;
+    padding: 0 2rem;
+}
+
+.portfolio-section h2,
+.downloads-section h2 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2vh;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    transition: transform 0.2s ease;
+}
+
+.portfolio-grid img:hover {
+    transform: scale(1.03);
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.btn {
+    background-color: #ffffff10;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    border: 2px solid white;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #ffffff30;
+    transform: scale(1.05);
+}
