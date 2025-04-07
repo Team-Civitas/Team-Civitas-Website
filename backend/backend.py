@@ -21,6 +21,7 @@ WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
 def webhook():
     # Get the key from the request headers
     request_key = request.headers.get("Key")
+    print("key: " + request_key)
 
     # Validate the key
     if request_key != WEBHOOK_KEY:
