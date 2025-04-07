@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let i = 1; i <= imageCount; i++) {
       const img = document.createElement("img");
-      img.src = `img/portfolio/synergy/${i}.png`;
+      img.src = `../static/img/portfolio/synergy/${i}.png`;
       img.alt = `Bild - ${i}`;
       img.style.cursor = "pointer";
 
