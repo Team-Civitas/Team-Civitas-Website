@@ -4,6 +4,8 @@ import subprocess
 import os
 from dotenv import load_dotenv
 
+load_dotenv(os.path.abspath("") + "/.env")
+
 app = flask.Flask(__name__, static_folder=os.path.abspath("") + "/static", template_folder=os.path.abspath("") + "/template")
 
 production = True if os.getenv("ENV") == "production" else False
