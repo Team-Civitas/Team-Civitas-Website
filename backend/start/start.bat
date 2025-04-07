@@ -6,5 +6,3 @@ cd "..\.."
 call ".venv/Scripts/activate.bat"
 
 flask --app backend/backend run --port %FLASK_PORT% --debug
-
-pause
