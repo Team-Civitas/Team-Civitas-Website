@@ -39,6 +39,13 @@ header img {
     width: 20%;
 }
 
+#tillbaka {
+    position: fixed;
+    top: 1vh;
+    left: 1vw;
+    width: 50px;
+}
+
 
 .modpack-cards {
     display: grid;
@@ -56,7 +63,7 @@ header img {
 .modpack {
     display: flex;
     flex-direction: column;
-    background-color: #00000050;
+    background-color: #00000090;
 
     border-radius: 20px;
     padding: 5%;
@@ -97,7 +104,7 @@ header img {
 .modpack-mimic {
     display: flex;
     flex-direction: column;
-    background-color: #00000050;
+    background-color: #00000090;
 
     border-radius: 20px;
     padding: 5%;
@@ -110,7 +117,7 @@ header img {
     margin-top: 10vh;
     text-align: center;
 
-    background-color: #00000050;
+    background-color: #00000090;
     padding: 2vh 0;
 
     transition: ease-in-out 0.15s;
@@ -144,7 +151,7 @@ header img {
 footer {
     margin-top: 5vh;
     padding: 2vh 0;
-    background-color: #00000050;
+    background-color: #00000090;
 }
 
 .footer-detail {
@@ -203,7 +210,7 @@ li p {
 }
 
 .detaljer-lista {
-    background-color: #00000050;
+    background-color: #00000090;
     padding: 1vw;
 
     border-radius: 20px;
@@ -219,7 +226,7 @@ li p {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 60px;
     max-width: 80%;
     /*Ser till att griden är max 1200 pixlar bred oavsett*/
@@ -228,61 +235,34 @@ li p {
 }
 
 .portfolio-grid img {
-    height: 256px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #00000090;
+}
+
+.portfolio-grid img:hover {
+    border: 2px solid #fff;
 }
 
 .downloads {
     width: 15%;
 }
 
-/************************************************************************************************************/
+/*******************************************
+*              MEDIA QUERIES               *
+*******************************************/
 
-.portfolio-section, .downloads-section {
-    margin: 5vh auto;
-    text-align: center;
-    color: white;
-    max-width: 1000px;
-    padding: 0 2rem;
+/*TABLET*/
+@media (min-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.portfolio-section h2,
-.downloads-section h2 {
-    font-family: "Archivo Black", sans-serif;
-    font-size: 2rem;
-    margin-bottom: 2vh;
-}
-
-.portfolio-grid img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #fff;
-    transition: transform 0.2s ease;
-}
-
-.portfolio-grid img:hover {
-    transform: scale(1.03);
-}
-
-.download-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2vh;
-}
-
-.btn {
-    background-color: #ffffff10;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-decoration: none;
-    border: 2px solid white;
-    transition: 0.2s ease-in-out;
-}
-
-.btn:hover {
-    background-color: #ffffff30;
-    transform: scale(1.05);
+/*DESKTOP*/
+@media (min-width: 1025px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
