@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 app = flask.Flask(__name__, static_folder=os.path.abspath("") + "/static", template_folder=os.path.abspath("") + "/template")
 
-production = True if os.getenv("ENV").lower() == "production" else False
+production = True if os.getenv("ENV") == "production" else False
 
 @app.route("/")
 def start():
