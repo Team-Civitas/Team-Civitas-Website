@@ -9,17 +9,13 @@ from dotenv import load_dotenv
 load_dotenv(os.path.abspath("") + "/.env")
 
 app = flask.Flask(__name__, static_folder=os.path.abspath("") + "/static", template_folder=os.path.abspath("") + "/template")
-
 production = True if os.getenv("ENV") == "production" else False
-
-
+script_path = os.path.abspath("") + "/backend/update.sh"
+WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
 
 @app.route("/")
 def start():
     return send_file(os.path.abspath("") + "/index.html")
-
-script_path = os.path.abspath("") + "/backend/update.sh"
-WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
 
 def verify_signature(payload, signature):
     """
