@@ -1,1 +1,1 @@
-hello
+Jello, this is the github repo for Team Civitas website
