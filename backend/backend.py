@@ -27,10 +27,10 @@ def webhook():
     try:
         if production:
             subprocess.run([script_path], check=True, shell=True)
+            return {"status": "success", "message": "Shell script executed successfully."}
         else:
             print("Whoh!, I executed the github pull script")
-        
-        return {"status": "success", "message": "Shell script executed successfully."}
+            return {"status": "Failed", "message": "Server is not in production mode."}
     
     except subprocess.CalledProcessError as e:
         return {"status": "error", "message": f"Error executing script: {e}"}
