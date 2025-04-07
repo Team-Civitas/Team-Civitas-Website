@@ -36,6 +36,7 @@ footer p {
     color: #fff;
 
     text-align: center;
+    max-width: 80%;
 }
 
 header img {
@@ -170,6 +171,7 @@ footer {
 
 .listor {
     display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -201,8 +203,8 @@ li p {
 
 .detaljer-lista {
     background-color: #00000090;
-    padding: 1vw;
-    width: 15vw;
+    padding: 5vw;
+    width: 70vw;
 
     border-radius: 20px;
 }
@@ -253,11 +255,29 @@ li p {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .listor {
+        flex-direction: row;
+    }
+
+    .detaljer-lista {
+        padding: 2vw;
+        width: 25vw;
+    }
 }
 
 /*DESKTOP*/
 @media (min-width: 1025px) {
     .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .listor {
+        flex-direction: row;
+    }
+
+    .detaljer-lista {
+        padding: 1vw;
+        width: 15vw;
     }
 }
