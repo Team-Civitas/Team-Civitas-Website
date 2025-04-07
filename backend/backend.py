@@ -28,7 +28,7 @@ def webhook():
 
     try:
         if production:
-            subprocess.run([script_path], check=True, shell=True)
+            subprocess.run("sh " + [script_path], check=True, shell=True)
             return {"status": "success", "message": "Shell script executed successfully."}
         else:
             print("Whoh!, I executed the github pull script")
