@@ -44,8 +44,11 @@ footer p {
 }
 
 header img {
-    margin: 2vh 0;
     width: 20%;
+}
+
+#modpack-logotyp-i-header {
+    margin: 2vh 0;
 }
 
 #tillbaka {
