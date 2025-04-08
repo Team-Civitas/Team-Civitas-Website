@@ -1,44 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
 
+:root {
+    --text-color: #fff;
+    --background-color: #0D1114;
+    --card-bg: #00000090;
+    --card-bg-hover: #70707050;
+    --highlight-color: #00ffff;
+    --border-color: #fff;
+    --border-muted: #00000090;
+}
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    color: var(--text-color);
 }
 
 body {
-    background-color: #0D1114;
+    background-color: var(--background-color);
 }
 
 header {
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-    
     max-width: 80%;
-    
     margin: auto;
     margin-bottom: 5vh;
 }
 
-h1 {
+h1,
+.modpack h2,
+.modpack p,
+.modpack-inforuta,
+header p,
+footer p,
+ul h2,
+li p {
+    color: var(--text-color);
+}
+
+h1,
+.sektioner h1 {
     font-family: "Archivo Black", sans-serif;
     font-weight: bold;
-    color: #fff;
-
     text-align: center;
 }
 
 header p,
 footer p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-
     text-align: center;
     max-width: 100%;
 }
@@ -56,42 +69,37 @@ header img {
     top: 1vh;
     left: 1vw;
     width: 50px;
-    
     transition: ease-in-out 0.1s;
 }
-
 
 .modpack-cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    /*Varje kolumn är minst 200px; repeterar så många gånger som de får plats*/
     gap: 60px;
     max-width: 1000px;
-    /*Ser till att griden är max 1200 pixlar bred oavsett*/
-
     text-align: center;
     margin: 0 8vw;
 }
 
-.modpack {
+.modpack,
+.modpack-mimic {
     display: flex;
     flex-direction: column;
-    background-color: #00000090;
-
+    background-color: var(--card-bg);
     border-radius: 20px;
     padding: 5%;
+}
 
+.modpack {
     transition: ease-in-out 0.15s;
 }
 
 .modpack:hover {
-    transition: ease-in-out 0.15s;
-    background-color: #70707050;
+    background-color: var(--card-bg-hover);
 }
 
 .modpack-inforuta {
-    border-top: solid 2px #fff;
-
+    border-top: solid 2px var(--border-color);
 }
 
 .modpack img {
@@ -100,23 +108,10 @@ header img {
 }
 
 .modpack h2 {
-    margin-top: 1vh;
-    color: #fff;
-    margin-bottom: 1vh;
-}
-
-.modpack p {
-    color: #fff;
+    margin: 1vh 0;
 }
 
 .modpack-mimic {
-    display: flex;
-    flex-direction: column;
-    background-color: #00000090;
-
-    border-radius: 20px;
-    padding: 5%;
-
     justify-content: center;
     align-items: center;
 }
@@ -124,16 +119,13 @@ header img {
 .sektioner {
     margin-top: 10vh;
     text-align: center;
-
-    background-color: #00000090;
+    background-color: var(--card-bg);
     padding: 2vh 0;
-
     transition: ease-in-out 0.15s;
 }
 
 .sektioner:hover {
-    transition: ease-in-out 0.15s;
-    background-color: #70707050;
+    background-color: var(--card-bg-hover);
 }
 
 .sektioner img {
@@ -143,28 +135,21 @@ header img {
 .sektioner-flex {
     display: flex;
     flex-direction: row;
-
     align-items: center;
     justify-content: center;
-}
-
-.sektioner h1 {
-    font-size: 100px;
 }
 
 footer {
     margin-top: 5vh;
     padding: 2vh 0;
-    background-color: #00000090;
+    background-color: var(--card-bg);
 }
 
 .footer-detail {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
-
     margin-bottom: 1vh;
 }
 
@@ -173,12 +158,10 @@ footer {
     transition: ease-in-out 0.1s;
 }
 
-.footer-detail img:hover, #tillbaka:hover {
+.footer-detail img:hover,
+#tillbaka:hover {
     scale: 110%;
-    transition: ease-in-out 0.1s;
 }
-
-/************************************************************************************************************/
 
 #modpack-namn {
     margin-bottom: 1vh;
@@ -195,9 +178,6 @@ ul {
 }
 
 ul h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-
     margin-bottom: 0.5vh;
 }
 
@@ -208,8 +188,9 @@ li {
     margin-bottom: 0.5vh;
 }
 
-li #spelare:hover, #file-download:hover {
-    color: #00ffff;
+li #spelare:hover,
+#file-download:hover {
+    color: var(--highlight-color);
 }
 
 li p {
@@ -217,10 +198,9 @@ li p {
 }
 
 .detaljer-lista {
-    background-color: #00000090;
+    background-color: var(--card-bg);
     padding: 5vw;
     width: 70vw;
-
     border-radius: 20px;
 }
 
@@ -241,20 +221,18 @@ li p {
     grid-template-columns: repeat(1, 1fr);
     gap: 60px;
     max-width: 80%;
-    /*Ser till att griden är max 1200 pixlar bred oavsett*/
     margin: auto;
-    /*Centrerar alla produkter till mitten av skärmen*/
 }
 
 .portfolio-grid img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    border: 2px solid #00000090;
+    border: 2px solid var(--border-muted);
 }
 
 .portfolio-grid img:hover {
-    border: 2px solid #fff;
+    border: 2px solid var(--text-color);
 }
 
 .downloads {
@@ -265,7 +243,6 @@ li p {
 *              MEDIA QUERIES               *
 *******************************************/
 
-/*TABLET*/
 @media (min-width: 768px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -282,16 +259,14 @@ li p {
 
     .modpack-cards {
         grid-template-columns: repeat(2, 1fr);
-        margin: 0 8vw;
     }
 }
 
-/*DESKTOP*/
 @media (min-width: 1025px) {
     .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .listor {
         flex-direction: row;
     }
