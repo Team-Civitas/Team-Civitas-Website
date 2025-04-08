@@ -53,7 +53,7 @@ header img {
 
 .modpack-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     /*Varje kolumn är minst 200px; repeterar så många gånger som de får plats*/
     gap: 60px;
     max-width: 1000px;
@@ -264,6 +264,10 @@ li p {
         padding: 2vw;
         width: 25vw;
     }
+
+    .modpack-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /*DESKTOP*/
@@ -279,5 +283,9 @@ li p {
     .detaljer-lista {
         padding: 1vw;
         width: 15vw;
+    }
+
+    .modpack-cards {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
