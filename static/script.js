@@ -3,6 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("portfolio-bilder");
+  const modpackName = this.location.href.split("/").slice(-1)[0].split(".")[0];
   let index = 1;
 
   function createImageElement(src, alt) {
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function countImages() {
     while (true) {
-      const url = `../static/img/portfolio/synergy/${index}.webp`;
+      const url = `../static/img/portfolio/${modpackName}/${index}.webp`;
       try {
         const response = await fetch(url);
         if (!response.ok) break;
