@@ -1,6 +1,5 @@
-// För Synergy-bilderna
+// För Portfolio-bilder
 // Kör en funktion när hela html-filen är färdigladdad
-
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("portfolio-bilder");
   const modpackName = this.location.href.split("/").slice(-1)[0].split(".")[0];
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function countImages() {
     while (true) {
-      const url = `../static/img/portfolio/${modpackName}/${index}.webp`;
+      const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
       try {
         const response = await fetch(url);
         if (!response.ok) break;
@@ -35,6 +34,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
-
   countImages();
 });

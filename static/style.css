@@ -52,6 +52,8 @@ header img {
     top: 1vh;
     left: 1vw;
     width: 50px;
+    
+    transition: ease-in-out 0.1s;
 }
 
 
@@ -167,7 +169,7 @@ footer {
     transition: ease-in-out 0.1s;
 }
 
-.footer-detail img:hover {
+.footer-detail img:hover, #tillbaka:hover {
     scale: 110%;
     transition: ease-in-out 0.1s;
 }
