@@ -53,10 +53,11 @@ def webhook():
     except subprocess.CalledProcessError as e:
         return {"status": "error", "message": f"Error executing script: {e}"}
 
-@app.route("/<path:filename>")
+@app.route("/<filename>")
 def serve_template(filename):
-    template_path = os.path.abspath("") + "/template/" + filename
+    template_path = os.path.abspath("") + "/template/" + filename + ".html"
     if os.path.exists(template_path):
         return send_file(template_path)
     else:
         abort(404, description="File not found")
+
