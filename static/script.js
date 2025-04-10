@@ -60,10 +60,19 @@ document.addEventListener("DOMContentLoaded", function () {
         img.src = src;
         img.alt = alt;
         img.style.cursor = "pointer";
-
+        img.loading = "lazy"; // Enable native lazy loading
+        img.classList.add("image-placeholder"); // Add placeholder class
+        img.style.opacity = "0"; // Hide the image initially
+    
         const thisIndex = imageSources.length;
         imageSources.push(src);
-
+    
+        img.addEventListener("load", () => {
+            img.classList.remove("image-placeholder"); // Remove placeholder class when loaded
+            img.style.opacity = "1"; // Make the image visible
+            img.style.transition = "opacity 0.3s ease-in-out"; // Smooth fade-in effect
+        });
+    
         img.addEventListener("click", () => {
             showImage(thisIndex);
             popup.style.display = "flex";
