@@ -63,7 +63,7 @@ def serve_template(filename):
 
 @app.errorhandler(404)
 def handle_file_not_found(e):
-    return render_template("file_not_found.html", error=e)
+    return render_template("file_not_found.html", error=e), 404
 
 @app.errorhandler(Exception)
 def handle_error(e):
