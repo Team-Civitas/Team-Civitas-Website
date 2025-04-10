@@ -1,14 +1,14 @@
 import hmac
 import hashlib
 import flask
-from flask import send_file, abort, request
+from flask import send_file, abort, request, render_template
 import subprocess
 import os
 from dotenv import load_dotenv
 
 load_dotenv(os.path.abspath("") + "/.env")
 
-app = flask.Flask(__name__, static_folder=os.path.abspath("") + "/static", template_folder=os.path.abspath("") + "/template")
+app = flask.Flask(__name__, static_folder=os.path.abspath("") + "/static", template_folder=os.path.abspath("") + "/templates")
 production = True if os.getenv("ENV") == "production" else False
 script_path = os.path.abspath("") + "/backend/update.sh"
 WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
@@ -55,9 +55,20 @@ def webhook():
 
 @app.route("/<filename>")
 def serve_template(filename):
-    template_path = os.path.abspath("") + "/template/" + filename + ".html"
+    template_path = os.path.abspath("") + "/pages/" + filename + ".html"
     if os.path.exists(template_path):
         return send_file(template_path)
     else:
         abort(404, description="File not found")
 
+@app.errorhandler(404)
+def handle_file_not_found(e):
+    return render_template("file_not_found.html", error=e), 404
+
+@app.errorhandler(Exception)
+def handle_error(e):
+    if isinstance(e, flask.HTTPException):
+        return render_template("error.html", error=e), e.code
+    else:
+        return render_template("error.html"), 500
+    
