@@ -55,7 +55,7 @@ def webhook():
 
 @app.route("/<filename>")
 def serve_template(filename):
-    template_path = os.path.abspath("") + "/template/" + filename + ".html"
+    template_path = os.path.abspath("") + "/pages/" + filename + ".html"
     if os.path.exists(template_path):
         return send_file(template_path)
     else:
