@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
 
 .image-placeholder {
-    background-color: #161616;
+    background-color: #000000;
+    display: block;
+    color: transparent;
+    text-indent: -9999px;
+    object-fit: cover;
     aspect-ratio: 16 / 9;
     width: 100%;
     height: auto;
