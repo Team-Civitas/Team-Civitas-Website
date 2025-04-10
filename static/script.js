@@ -74,28 +74,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Laddar alla bilder automatiskt
     async function loadImages() {
-        const maxAttempts = 30; // Limit the number of attempts to prevent infinite loops
-        let attempts = 0;
-
-        while (attempts < maxAttempts) {
+        while (true) {
             const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
             try {
-                const response = await fetch(url, { method: "HEAD" });
-                if (!response.ok) {
-                    console.warn(`Image not found: ${url}`);
-                    break;
-                }
+                const response = await fetch(url, {cache: "no-store"});
+                if (!response.ok) break;
                 createImageElement(url, `Bild - ${index}`);
                 index++;
             } catch (error) {
-                console.error(`Error loading image: ${url}`, error);
                 break;
             }
-            attempts++;
-        }
-
-        if (attempts >= maxAttempts) {
-            console.warn("Reached maximum image load attempts.");
         }
     }
 
