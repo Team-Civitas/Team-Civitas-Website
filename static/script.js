@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Laddar alla bilder automatiskt
     async function loadImages() {
         while (true) {
-            const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
+            const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp?nocache=${Date.now()}`;
             try {
                 const response = await fetch(url, {cache: "no-store"});
                 if (!response.ok) break;
