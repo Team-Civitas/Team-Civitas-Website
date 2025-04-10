@@ -256,7 +256,7 @@ li p {
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
-    z-index: 999;
+    z-index: 998;
   }
   
   .popup-arrow {
