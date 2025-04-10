@@ -73,11 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Laddar alla bilder automatiskt
-    async function countImages() {
+    async function loadImages() {
         while (true) {
             const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
             try {
-                const response = await fetch(url);
+                const response = await fetch(url, { method: "HEAD" });
                 if (!response.ok) break;
                 createImageElement(url, `Bild - ${index}`);
                 index++;
@@ -87,5 +87,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    countImages();
+    loadImages();
 });
