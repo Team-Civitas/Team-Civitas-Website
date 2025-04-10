@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const popupImage = document.createElement("img");
     popupImage.classList.add("popup-image");
 
-
     // Skapar pilar för att man ska kunna bläddra bland bilderna i portfolion
     const leftArrow = document.createElement("div");
     const rightArrow = document.createElement("div");
@@ -57,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Funktion som lägger till bilder i portfolion
     function createImageElement(src, alt) {
         const img = document.createElement("img");
-        img.src = src;
+        img.dataset.src = src; // Use data-src for lazy loading
         img.alt = alt;
         img.style.cursor = "pointer";
         img.loading = "lazy"; // Enable native lazy loading
@@ -77,16 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
             showImage(thisIndex);
             popup.style.display = "flex";
         });
-
+    
         grid.appendChild(img);
     }
 
     // Laddar alla bilder automatiskt
-    async function countImages() {
+    async function loadImages() {
         while (true) {
-            const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
+            const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp?nocache=${Date.now()}`;
             try {
-                const response = await fetch(url);
+                const response = await fetch(url, { cache: "no-store" });
                 if (!response.ok) break;
                 createImageElement(url, `Bild - ${index}`);
                 index++;
@@ -94,7 +93,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             }
         }
+        observeImages(); // Start observing images for lazy loading
     }
 
-    countImages();
+    // Observer for lazy loading
+    function observeImages() {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src; // Set the actual src
+                    obs.unobserve(img); // Stop observing once loaded
+                }
+            });
+        });
+
+        const images = grid.querySelectorAll("img[data-src]");
+        images.forEach((img) => observer.observe(img));
+    }
+
+    loadImages();
 });
