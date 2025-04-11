@@ -74,15 +74,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Laddar alla bilder automatiskt
     async function countImages() {
+        const maxParallelLoads = 9; // Number of images to load in parallel
+
         while (true) {
-            const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
-            try {
-                const response = await fetch(url);
-                if (!response.ok) break;
-                createImageElement(url, `Bild - ${index}`);
+            const urls = [];
+            for (let i = 0; i < maxParallelLoads; i++) {
+                const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
+                urls.push(url);
                 index++;
+            }
+
+            try {
+                const responses = await Promise.all(
+                    urls.map(async (url) => {
+                        const response = await fetch(url);
+                        if (!response.ok) throw new Error("Image not found");
+                        return url;
+                    })
+                );
+
+                responses.forEach((url, i) => {
+                    createImageElement(url, `Bild - ${index - maxParallelLoads + i}`);
+                });
             } catch (error) {
-                break;
+                break; // Stop loading if any image is not found
             }
         }
     }
