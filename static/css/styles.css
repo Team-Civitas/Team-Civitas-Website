@@ -290,6 +290,62 @@ li p {
   }  
 
 /*******************************************
+*                   404                    *
+*******************************************/
+
+.error-404 {
+    max-width: 100%;
+}
+
+.four-o-four-flex,
+.four-o-four-karaktärer-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.four-o-four-flex {
+    justify-content: center;
+}
+
+.four-o-four-karaktärer-flex {
+    justify-content: space-evenly;
+}
+
+.four-o-four-flex img {
+    width: 35%;
+}
+
+.four-o-four-flex p {
+    font-size: 8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#four-o-four-beskrivning {
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.four-o-four a {
+    text-decoration: underline;
+}
+
+.four-o-four a:hover {
+    color: var(--highlight-color);
+}
+
+.four-o-four-karaktärer-flex img {
+    margin-top: 5vh;
+    display: flex;
+    height: 30vh;
+}
+
+#error-title {
+    margin-top: 20vh;
+}
+
+/*******************************************
 *              MEDIA QUERIES               *
 *******************************************/
 
@@ -314,6 +370,27 @@ li p {
     .civitas-other {
         grid-column: span 1;
     }
+
+    /*404*/
+    .four-o-four-flex p {
+        font-size: 20rem;
+    }
+
+    .four-o-four h1 {
+        font-size: 36px;
+    }
+
+    #four-o-four-beskrivning {
+        margin: 2vh auto;
+        max-width: 80%;
+        font-size: 24px;
+    }
+
+    .four-o-four-karaktärer-flex img {
+        margin-top: 5vh;
+        display: flex;
+        height: 30vh;
+    } 
 }
 
 @media (min-width: 1025px) {
@@ -341,5 +418,14 @@ li p {
 
     .civitas-other {
         grid-column: 2 / span 1;
+    }
+
+    /*404*/
+    .four-o-four-flex img {
+        width: 15%;
+    }
+
+    #four-o-four-beskrivning {
+        font-size: 16px;
     }
 }
