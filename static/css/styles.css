@@ -96,6 +96,10 @@ header img {
     padding: 5%;
 }
 
+.modpack-mimic h1 {
+    user-select: none;
+}
+
 #mimic-1, #mimic-2 {
     display: none;
 }
