@@ -87,8 +87,19 @@ header img {
     margin: 0 8vw;
 }
 
+.ovrigt-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 8vw;
+}
+
 .modpack,
-.modpack-mimic {
+.modpack-mimic,
+.kort,
+.kort-rött {
     display: flex;
     flex-direction: column;
     background-color: var(--card-bg);
@@ -96,23 +107,37 @@ header img {
     padding: 5%;
 }
 
+.modpack-mimic h1 {
+    user-select: none;
+}
+
 #mimic-1, #mimic-2 {
     display: none;
 }
 
-.modpack {
+.modpack,
+.kort,
+.kort-rött {
     transition: ease-in-out 0.15s;
 }
 
-.modpack:hover {
+.modpack:hover,
+.kort:hover {
     background-color: var(--card-bg-hover);
+}
+
+.kort-rött:hover {
+    background-color: #2c0000;
+    cursor: not-allowed;
 }
 
 .modpack-inforuta {
     border-top: solid 2px var(--white);
 }
 
-.modpack img {
+.modpack img,
+.kort img,
+.kort-rött img {
     width: 100%;
     margin-bottom: 1vh;
 }
@@ -363,8 +388,17 @@ li p {
         width: 25vw;
     }
 
-    .modpack-cards {
+    #download-header-civitascraft {
+        text-align: center;
+    }
+
+    .modpack-cards,
+    .ovrigt-cards {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ovrigt-cards {
+        margin: 0 60px;
     }
 
     .civitas-other {
