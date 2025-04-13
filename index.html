@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hem | Team Civitas</title>
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
-    <link rel="shortcut icon" href="static/img/favicon.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="static/img/modpacks/civitas_main.webp" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <img src="static/img/modpacks/civitas_other.webp" alt="Team Civitas-logotyp">
+        <img draggable="false" src="static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp">
         <h1>TEAM CIVITAS</h1>
         <p>Här finns modpacks, bilder, världar, och mycket mer från hela Civitashistorien!</p>
     </header>
@@ -20,7 +20,7 @@
         <!--Modpack 1-->
         <div class="modpack">
             <a href="/synergy">
-                <img src="static/img/modpacks/civitas_synergy.webp" alt="Civitas: Synergy">
+                <img draggable="false" src="static/img/modpacks/civitas_synergy.webp" alt="Civitas: Synergy">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Synergy</h2>
                     <p>2025-03 – Pågående</p>
@@ -31,7 +31,7 @@
         <!--Modpack 2-->
         <div class="modpack">
             <a href="/createhorizons">
-                <img src="static/img/modpacks/civitas_create_horizons.webp" alt="Civitas: Create Horizons">
+                <img draggable="false" src="static/img/modpacks/civitas_create_horizons.webp" alt="Civitas: Create Horizons">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create Horizons</h2>
                     <p>2024-11 – 2025-01</p>
@@ -42,10 +42,10 @@
         <!--Modpack 3-->
         <div class="modpack">
             <a href="/endurance">
-                <img src="static/img/modpacks/civitas_endurance.webp" alt="Civitas: Endurance">
+                <img draggable="false" src="static/img/modpacks/civitas_endurance.webp" alt="Civitas: Endurance">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Endurance</h2>
-                    <p>2023-07</p>
+                    <p>2024-07</p>
                 </div>
             </a>
         </div>
@@ -53,7 +53,7 @@
         <!--Modpack 4-->
         <div class="modpack">
             <a href="/recreated">
-                <img src="static/img/modpacks/civitas_re-created.webp" alt="Civitas: Re-Created">
+                <img draggable="false" src="static/img/modpacks/civitas_re-created.webp" alt="Civitas: Re-Created">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Re-Created</h2>
                     <p>2023-12 – 2024-07</p>
@@ -64,7 +64,7 @@
         <!--Modpack 5-->
         <div class="modpack">
             <a href="/createrevolution">
-                <img src="static/img/modpacks/civitas_create_revolution.webp" alt="Civitas: Create Revolution">
+                <img draggable="false" src="static/img/modpacks/civitas_create_revolution.webp" alt="Civitas: Create Revolution">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create Revolution</h2>
                     <p>2023-07 – 2023-08</p>
@@ -75,7 +75,7 @@
         <!--Modpack 6-->
         <div class="modpack">
             <a href="/arcanum">
-                <img src="static/img/modpacks/civitas_arcanum.webp" alt="Civitas: Arcanum">
+                <img draggable="false" src="static/img/modpacks/civitas_arcanum.webp" alt="Civitas: Arcanum">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Arcanum</h2>
                     <p>2023-05 – 2023-06</p>
@@ -86,7 +86,7 @@
         <!--Modpack 7-->
         <div class="modpack">
             <a href="/create">
-                <img src="static/img/modpacks/civitas_create.webp" alt="Civitas: Create">
+                <img draggable="false" src="static/img/modpacks/civitas_create.webp" alt="Civitas: Create">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create</h2>
                     <p>2023-01 – 2023-04</p>
@@ -95,12 +95,23 @@
         </div>
 
         <!--Locked-->
-        <div class="modpack-mimic">
-                <h1>Kommande Modpack</h1>
+        <div class="modpack-mimic" id="mimic-1">
+            <h1>Kommande<br>Modpack</h1>
         </div>
-        
-        <div class="modpack-mimic">
-                <h1>Kommande Modpack</h1>
+
+        <div class="modpack-mimic" id="mimic-2">
+            <h1>Kommande<br>Modpack</h1>
+        </div>
+
+        <!--Övrigt-->
+        <div class="civitas-other-wrapper">
+            <div class="civitas-other">
+                <div class="modpack">
+                    <a href="/ovrigt"><img draggable="false" src="static/img/modpacks/civitas_other.webp" alt="Team Civitas-logotyp"></a>
+                    <h1>ÖVRIGT</h1>
+                    <p>Läs mer om andra delar av <br>Team Civitas</p>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -108,7 +119,7 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="/"><img src="static/img/modpacks/civitas_other.webp" alt="Team Civitas-logotyp"></a>
+            <a href="/"><img draggable="false" src="static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
     </footer>
