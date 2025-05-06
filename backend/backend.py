@@ -55,7 +55,7 @@ def webhook():
         return {"status": "error", "message": f"Error executing script: {e}"}
 
 @app.route("/<filename>")
-def serve_template(filename):
+def serve_home(filename):
     template_path = os.path.abspath("") + "/pages/" + filename + ".html"
     if os.path.exists(template_path):
         return send_file(template_path)
@@ -63,8 +63,8 @@ def serve_template(filename):
         abort(404, description="File not found")
 
 @app.route("/logotyper/<filename>")
-def serve_template(filename):
-    template_path = os.path.abspath("") + "/logotyper/" + "l_" + filename + ".html"
+def server_logotyper(filename):
+    template_path = os.path.abspath("") + "/pages/logotyper/" + filename + ".html"
     if os.path.exists(template_path):
         return send_file(template_path)
     else:
