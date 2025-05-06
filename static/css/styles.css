@@ -45,6 +45,10 @@ header p, footer p {
   max-width: 100%;
 }
 
+#logotyper-header {
+  margin-top: 5vh;
+}
+
 header img {
   width: 20%;
 }

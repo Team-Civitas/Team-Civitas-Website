@@ -62,6 +62,14 @@ def serve_template(filename):
     else:
         abort(404, description="File not found")
 
+@app.route("/logotyper/<filename>")
+def serve_template(filename):
+    template_path = os.path.abspath("") + "/logotyper/" + "l_" + filename + ".html"
+    if os.path.exists(template_path):
+        return send_file(template_path)
+    else:
+        abort(404, description="File not found")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
