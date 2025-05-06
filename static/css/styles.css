@@ -69,6 +69,25 @@ header img {
   font-size: 80px;
 }
 
+#ladda-ner-logotyp {
+  position: relative;
+}
+
+.download-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: drop-shadow(0 0 0.75rem var(--card-bg));
+}
+
+#ladda-ner-logotyp:hover .download-icon {
+  opacity: 1;
+}
+
+
 .modpack-cards, .ovrigt-cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
