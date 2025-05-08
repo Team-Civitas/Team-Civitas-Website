@@ -16,7 +16,7 @@
         <a href="../" id="tillbaka">‹</a>
 
         <!--Titel-->
-        <img id="modpack-logotyp-i-header" src="../static/img/modpacks/civitas_arcanum.webp"
+        <img id="modpack-logotyp-i-header" src="{{ url_for('static', filename='img/modpacks/civitas_arcanum.webp') }}"
             alt="Civitas: Create Horizons-logotyp">
         <h1 id="modpack-namn">CIVITAS: ARCANUM</h1>
         <p>Civitas: Arcanum var det första modpacket i Civitastrilogin som inte var centrerat runt Create-modden.
@@ -70,7 +70,7 @@
             <!--Information-->
             <ul class="detaljer-lista">
                 <h2>Info:</h2>
-                <li><img src="../static/img/details/forge.webp" alt="Forge-logotyp">
+                <li><img src="{{ url_for('static', filename='img/details/forge.webp') }}" alt="Forge-logotyp">
                     <p>Forge</p>
                 </li>
                 <li><img src="https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
@@ -80,8 +80,8 @@
             </ul>
             <ul class="detaljer-lista">
                 <h2 id="download-header">Modpack</h2>
-                <li><img id="download-symbol" src="../static/img/download.webp" alt="Ladda ner">
-                    <a id="file-download" href="../static/files/The Civitas Stories- Arcanum-0.0.1-1.19.2.zip"
+                <li><img id="download-symbol" src="{{ url_for('static', filename='img/download.webp') }}" alt="Ladda ner">
+                    <a id="file-download" href="{{ url_for('static', filename='files/The Civitas Stories- Arcanum-0.0.1-1.19.2.zip') }}"
                         download>Arcanum 0.0.1</a>
                 </li>
 
@@ -102,7 +102,7 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="../"><img src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp"></a>
+            <a href="../"><img src="{{ url_for('static', filename='img/modpacks/civitas_main.') }}'" alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
     </footer>
