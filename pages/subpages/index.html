@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hem | Team Civitas</title>
-    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
-    <link rel="shortcut icon" href="static/img/modpacks/civitas_main.webp" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <img draggable="false" src="static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp">
+        <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Team Civitas-logotyp">
         <h1>TEAM CIVITAS</h1>
         <p>Landing page</p>
     </header>
@@ -26,7 +26,7 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="/"><img draggable="false" src="static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp"></a>
+            <a href="/"><img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
     </footer>

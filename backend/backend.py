@@ -1,7 +1,7 @@
 import hmac
 import hashlib
 import flask
-from flask import send_file, abort, request, render_template
+from flask import abort, request, render_template
 from werkzeug.exceptions import HTTPException
 import subprocess
 import os
@@ -9,14 +9,14 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.abspath("") + "/.env")
 
-app = flask.Flask(__name__, static_folder=os.path.abspath("") + "/static", template_folder=os.path.abspath("") + "/templates")
+app = flask.Flask(__name__, static_folder=os.path.abspath("") + "/static", template_folder=os.path.abspath("") + "/pages")
 production = True if os.getenv("ENV") == "production" else False
 script_path = os.path.abspath("") + "/backend/update.sh"
 WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
 
-@app.route("/")
-def start():
-    return send_file(os.path.abspath("") + "/index.html")
+##########################################
+########## Webhook Handler ###############
+##########################################
 
 def verify_signature(payload, signature):
     """
@@ -54,26 +54,47 @@ def webhook():
     except subprocess.CalledProcessError as e:
         return {"status": "error", "message": f"Error executing script: {e}"}
 
-@app.route("/<filename>")
-def serve_home(filename):
-    template_path = os.path.abspath("") + "/pages/" + filename + ".html"
-    if os.path.exists(template_path):
-        return send_file(template_path)
-    else:
+##########################################
+############## Website ###################
+##########################################
+
+@app.route("/")
+def home():
+    return render_template("subpages/index.html")
+
+@app.route("/<page>")
+def page(page):
+    try:
+        return render_template(f'subpages/{page}.html')
+    except:
         abort(404, description="File not found")
 
-@app.route("/logotyper/<filename>")
-def server_logotyper(filename):
-    template_path = os.path.abspath("") + "/pages/logotyper/" + filename + ".html"
-    if os.path.exists(template_path):
-        return send_file(template_path)
-    else:
+@app.route("/modpacks/<modpack>")
+def modpack(modpack):
+    try:
+        return render_template(f'modpacks/{modpack}.html')
+    except:
         abort(404, description="File not found")
+
+@app.route("/samlingar/logotyper/<logo>")
+def logos(logo):
+    try:
+        return render_template(f'samlingar/logotyper/{logo}.html')
+    except:
+        abort(404, description="File not found")
+
+##########################################
+########### Error Handling ###############
+##########################################
+
+@app.route("/<error>")
+def error(error):
+    abort(error)
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("404.html"), 404
+    return render_template("templates/404.html"), 404
 
 @app.errorhandler(HTTPException)
 def handle_http_exception(e):
-    return render_template("error.html", error=e), e.code
+    return render_template("templates/error.html", error=e), e.code
