@@ -10,6 +10,40 @@
 </head>
 
 <body>
+
+    <!--NAVBAR-->
+    <nav class="navbar">
+
+            <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Logotyp"></a>
+
+        <!--Länkar-->
+        <div class="navbar-links">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/samlingar/logotyper">Logotyper</a>
+        </div>
+
+        <!--Dropdown-->
+        <div class="navbar-ikoner">
+            <button id="dropdown-button" onclick="showDropdown()"><img src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
+        </div>
+
+    </nav>
+
+    <!--DROPDOWN-->
+        <div id="dropdown">
+            <a href="index.html">Hem</a>
+            <a href="https://www.inet.se/">Produkter</a>
+            <a href="https://nvidia.com">Sponsorer</a>
+            <a href="https://www.svt.se/">Om oss</a>
+        </div>
+
+    <!--HEADER-->
+
+    <!--Tillbaka-knapp-->
+        <a href="/" id="tillbaka">‹</a>
+
     <header>
         <img draggable="false" src="{{ url_for('static', filename='/img/modpacks/civitas_main.webp') }}" alt="Team Civitas-logotyp">
         <h1>TEAM CIVITAS</h1>

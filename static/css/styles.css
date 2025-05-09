@@ -62,9 +62,9 @@ header img {
 }
 
 #tillbaka {
-  position: fixed;
-  top: 2.5vh;
-  left: 2.5vw;
+  position: absolute;
+  top: 5vh;
+  left: 0.75vw;
   text-align: left;
   font-size: 80px;
 }
