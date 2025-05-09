@@ -354,6 +354,85 @@ li p {
   margin-top: 20vh;
 }
 
+/*******************************************
+*                  NAVBAR                  *
+*******************************************/
+
+.navbar {
+    background-color: var(--card-bg);
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logotyp-i-navbar {
+  position: absolute;
+  transform: translate(0, -50%);
+
+  height: 50px;
+}
+
+.navbar-links a {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+    color: var(--highlight-color);
+}
+
+/*Cart & Dropdown Button properties*/
+.navbar-ikoner img {
+    width: 25px;
+}
+
+/*Dropdown Button*/
+.navbar-ikoner button {
+    background-color: #00000000;
+    cursor: pointer;
+    border: none;
+    transition: ease-in-out 0.1s;
+}
+
+.navbar-ikoner button:hover {
+    transition: ease-in-out 0.1s;
+    transform: scale(1.15);
+}
+
+/*Dropdown menu (overlapping main)*/
+#dropdown {
+
+    background-color: var(--card-bg);
+
+    width: 100%;
+    padding: 2vh 0;
+    /*2 vh padding top & bottom for every a-element in the dropdown menu*/
+    display: none;
+    flex-direction: column;
+    justify-self: flex-end;
+
+}
+
+#dropdown.active,
+.varukorg-container {
+    display: flex;
+    /*Makes sure the dropdown shows when clicked*/
+}
+
+#dropdown a {
+    text-align: center;
+
+    color: var(--white);
+
+    padding-top: 0.5vh;
+}
+
+#dropdown a:hover {
+    color: var(--highlight-color);
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
   .portfolio-grid {
@@ -406,6 +485,19 @@ li p {
 }
 
 @media (min-width: 1025px) {
+
+  /*HIDE AND SEEK*/
+    #dropdown-button,
+    .dropdown {
+        display: none;
+    }
+
+    .navbar-links {
+        display: flex;
+    }
+
+  /*Övrigt*/
+
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
   }
