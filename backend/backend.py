@@ -91,9 +91,12 @@ def logos(logo):
 ########### Error Handling ###############
 ##########################################
 
-@app.route("/<error>")
-def error(error):
-    abort(error)
+@app.route("/error/<int:code>")
+def error(code):
+    if code in {400, 403, 404, 500}:
+        abort(code)
+    else:
+        abort(404)
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -109,7 +112,7 @@ def handle_http_exception(e):
 ##########################################
 
 if __name__ == "__main__":
-    app.debug = True
+    app.debug = not production
     server = Server(app.wsgi_app)
     
     server.watch(f"{templateFolder}/**/*")
