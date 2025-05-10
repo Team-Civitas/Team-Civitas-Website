@@ -5,18 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Revolution | Team Civitas</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="shortcut icon" href="../static/img/modpacks/civitas_create_revolution.webp" type="image/x-icon">
-    <script type="module" src="../static/script.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/modpacks/civitas_create_revolution.webp') }}" type="image/x-icon">
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 
 <body>
+    
+    <!--NAVBAR-->
+    <nav class="navbar">
+
+            <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Logotyp"></a>
+
+        <!--Länkar-->
+        <div class="navbar-links">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/samlingar/logotyper">Logotyper</a>
+        </div>
+
+        <!--Dropdown-->
+        <div class="navbar-ikoner">
+            <button id="dropdown-button" onclick="showDropdown()"><img src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
+        </div>
+
+    </nav>
+
+    <!--DROPDOWN-->
+        <div id="dropdown">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/samlingar/logotyper">Logotyper</a>
+        </div>
+
+    <!--HEADER-->
     <header>
         <!--Tillbaka-knapp-->
-        <a href="../" id="tillbaka">‹</a>
+        <a href="/modpacks" id="tillbaka">‹</a>
 
         <!--Titel-->
-        <img id="modpack-logotyp-i-header" src="../static/img/modpacks/civitas_create_revolution.webp" alt="Civitas: Endurance-logotyp">
+        <img id="modpack-logotyp-i-header" src="{{ url_for('static', filename='img/modpacks/civitas_create_revolution.webp') }}" alt="Civitas: Create Revolution-logotyp">
         <h1 id="modpack-namn">CIVITAS: CREATE REVOLUTION</h1>
         <p>Civitas: Create Revolution var det andra Create-baserade modpacket i Civitastrilogin. Med nya funktioner som monorails, rymdraketer (från Ad Astra) och flertalet nya spelare hoppades det på ett långvarigt modpack, men så blev tyvärr inte fallet.</p>
 
@@ -66,7 +96,7 @@
             <!--Information-->
             <ul class="detaljer-lista">
                 <h2>Info:</h2>
-                <li><img src="../static/img/details/forge.webp" alt="Forge-logotyp">
+                <li><img src="{{ url_for('static', filename='img/details/forge.webp') }}" alt="Forge-logotyp">
                     <p>Forge</p>
                 </li>
                 <li><img src="https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
@@ -76,8 +106,8 @@
             </ul>
             <ul class="detaljer-lista">
                 <h2 id="download-header">Modpack</h2>
-                <li><img id="download-symbol" src="../static/img/download.webp" alt="Ladda ner">
-                    <a id="file-download" href="../static/files/The Civitas Stories Create Revolution-1.4.4.zip" download>Create Revolution 1.4.4</a>
+                <li><img id="download-symbol" src="{{ url_for('static', filename='img/download.webp') }}" alt="Ladda ner">
+                    <a id="file-download" href="{{ url_for('static', filename='files/The Civitas Stories Create Revolution-1.4.4.zip') }}" download>Create Revolution 1.4.4</a>
                 </li>
 
                 <h2 id="download-header">Världar</h2>
@@ -97,7 +127,7 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="../"><img src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp"></a>
+            <a href="/"><img src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
     </footer>
