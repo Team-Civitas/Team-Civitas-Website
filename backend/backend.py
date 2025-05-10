@@ -98,3 +98,11 @@ def page_not_found(e):
 @app.errorhandler(HTTPException)
 def handle_http_exception(e):
     return render_template("templates/error.html", error=e), e.code
+
+
+##########################################
+############### RUN APP ##################
+##########################################
+
+if __name__ == "__main__":
+    app.run(use_reloader=True, debug=True, port=1515)
