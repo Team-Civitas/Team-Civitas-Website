@@ -10,6 +10,35 @@
 </head>
 
 <body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+
+            <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Logotyp"></a>
+
+        <!--Länkar-->
+        <div class="navbar-links">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/logotyper">Logotyper</a>
+        </div>
+
+        <!--Dropdown-->
+        <div class="navbar-ikoner">
+            <button id="dropdown-button" onclick="showDropdown()"><img src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
+        </div>
+
+    </nav>
+
+    <!--DROPDOWN-->
+        <div id="dropdown">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/logotyper">Logotyper</a>
+        </div>
+
+    <!--HEADER-->
     <header>
         <!--Tillbaka-knapp-->
         <a href="/" id="tillbaka">‹</a>
@@ -49,7 +78,6 @@
             </a>
         </div>
 
-        <!--Kommentera ur när Overdrive släppts
         <div class="modpack">
             <a href="/synergy">
                 <img draggable="false" src="../static/img/modpacks/civitas_overdrive.webp" alt="Civitas: Overdrive">
@@ -57,7 +85,7 @@
                     <h2>Civitas: Overdrive</h2>
                 </div>
             </a>
-        </div>-->
+        </div>
 
         <div class="modpack">
             <a href="/synergy">
@@ -143,14 +171,14 @@
         </div>
 
         <!--Locked-->
-        <!-- Kommentera ur när Overdrive släpps
+        
         <div class="modpack-mimic" id="mimic-1">
-            <h1>Kommande<br>Modpack</h1>
+            <h1>Kommande<br>kategori</h1>
         </div>
 
         <div class="modpack-mimic" id="mimic-1">
-            <h1>Kommande<br>Modpack</h1>
-        </div>-->
+            <h1>Kommande<br>kategori</h1>
+        </div>
 
     </section>
 

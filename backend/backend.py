@@ -80,10 +80,10 @@ def modpack(modpack):
     except:
         abort(404, description="File not found")
 
-@app.route("/samlingar/logotyper/<logo>")
+@app.route("/logotyper/<logo>")
 def logos(logo):
     try:
-        return render_template(f'samlingar/logotyper/{logo}.html')
+        return render_template(f'logotyper/{logo}.html')
     except:
         abort(404, description="File not found")
 
