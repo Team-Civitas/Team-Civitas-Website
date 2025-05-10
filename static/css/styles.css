@@ -1,7 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
 
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 html {
   overflow-y: scroll;
+}
+
+body {
+  background-color: var(--background-color);
+  flex: 1;
 }
 
 :root {
@@ -19,10 +32,6 @@ html {
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--white);
-}
-
-body {
-  background-color: var(--background-color);
 }
 
 header {
@@ -366,6 +375,12 @@ li p {
 /*******************************************
 *                  NAVBAR                  *
 *******************************************/
+
+main {
+  flex: 1; /* Allow main to grow and fill the space */
+  padding: 20px;
+  overflow: auto;
+}
 
 .navbar {
     background-color: var(--card-bg);

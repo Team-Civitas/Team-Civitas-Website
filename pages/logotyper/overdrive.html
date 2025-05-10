@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hem | Team Civitas</title>
+    <title>Logotyper | Team Civitas</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
         type="image/x-icon">
-    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
-
 </head>
 
 <body>
-
     <!--NAVBAR-->
     <nav class="navbar">
 
@@ -44,17 +41,31 @@
         <a href="/logotyper">Logotyper</a>
     </div>
 
-    <!--MAIN-->
+    <!--HEADER-->
     <main>
         <header>
-            <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
-                alt="Team Civitas-logotyp">
-            <h1>TEAM CIVITAS</h1>
-            <p>Landing page</p>
+            <!--Tillbaka-knapp-->
+            <a href="/logotyper" id="tillbaka">‹</a>
+
+            <h1 id="logotyper-header">CIVITAS: OVERDRIVE-LOGOTYPER</h1>
         </header>
 
-    </main>
+        <section class="modpack-cards">
 
+            <div class="modpack" id="ladda-ner-logotyp">
+                <a href="{{ url_for('static', filename='img/logotypes/overdrive/overdrive_logotype.png') }}" download><img draggable="false"
+                        src="{{ url_for('static', filename='img/logotypes/overdrive/overdrive_logotype.png') }}">
+                    <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span></a>
+            </div>
+            <div class="modpack" id="ladda-ner-logotyp">
+                <a href="{{ url_for('static', filename='img/logotypes/overdrive/overdrive_logotype_cut.png') }}" download><img draggable="false"
+                        src="{{ url_for('static', filename='img/logotypes/overdrive/overdrive_logotype_cut.png') }}">
+                    <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span></a>
+            </div>
+
+
+        </section>
+    </main>
 
     <!--FOOTER-->
     <footer>

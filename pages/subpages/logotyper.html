@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logotyper | Team Civitas</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
-    <link rel="shortcut icon" href="../static/img/modpacks/civitas_main.webp" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" type="image/x-icon">
 </head>
 
 <body>
@@ -53,8 +53,8 @@
     <section class="modpack-cards">
 
         <div class="modpack">
-            <a href="/">
-                <img draggable="false" src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas">
+            <a href="/logotyper/team-civitas">
+                <img draggable="false" src="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek.png') }}" alt="Team Civitas">
                 <div class="modpack-inforuta">
                     <h2>Team Civitas</h2>
                 </div>
@@ -62,8 +62,8 @@
         </div>
 
         <div class="modpack">
-            <a href="/">
-                <img draggable="false" src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas Classic">
+            <a href="/logotyper/team-civitas-classic">
+                <img draggable="false" src="{{ url_for('static', filename='img/logotypes/team-civitas-classic/Team Civitas 2023-2025.png') }}" alt="Team Civitas Classic">
                 <div class="modpack-inforuta">
                     <h2>Team Civitas Classic</h2>
                 </div>
@@ -71,8 +71,8 @@
         </div>
 
         <div class="modpack">
-            <a href="/">
-                <img draggable="false" src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas Legacy">
+            <a href="/logotyper/team-civitas-legacy">
+                <img draggable="false" src="{{ url_for('static', filename='img/logotypes/team-civitas-legacy/logo_crystal.png') }}" alt="Team Civitas Legacy">
                 <div class="modpack-inforuta">
                     <h2>Team Civitas Legacy</h2>
                 </div>
@@ -80,8 +80,8 @@
         </div>
 
         <div class="modpack">
-            <a href="/synergy">
-                <img draggable="false" src="../static/img/modpacks/civitas_overdrive.webp" alt="Civitas: Overdrive">
+            <a href="/logotyper/overdrive">
+                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_overdrive.webp') }}" alt="Civitas: Overdrive">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Overdrive</h2>
                 </div>
@@ -89,55 +89,56 @@
         </div>
 
         <div class="modpack">
-            <a href="/synergy">
-                <img draggable="false" src="../static/img/modpacks/civitas_synergy.webp" alt="Civitas: Synergy">
+            <a href="/logotyper/synergy">
+                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_synergy.webp') }}" alt="Civitas: Synergy">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Synergy</h2>
                 </div>
             </a>
         </div>
 
-        <div class="modpack">
-            <a href="/createhorizons">
-                <img draggable="false" src="../static/img/modpacks/civitas_create_horizons.webp"
-                    alt="Civitas: Create Horizons">
+        <div class="modpack" id="ladda-ner-logotyp">
+            <a href="{{ url_for('static', filename='img/logotypes/create-horizons/create_horizons_logotype.png') }}" download>
+                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_create_horizons.webp') }}" alt="Civitas: Create Horizons">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create Horizons</h2>
                 </div>
+                <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span>
             </a>
         </div>
 
-        <div class="modpack">
-            <a href="/endurance">
-                <img draggable="false" src="../static/img/modpacks/civitas_endurance.webp" alt="Civitas: Endurance">
+        <div class="modpack" id="ladda-ner-logotyp">
+            <a href="{{ url_for('static', filename='img/logotypes/endurance/civitas_endurance.png') }}" download>
+                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_endurance.webp') }}" alt="Civitas: Endurance">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Endurance</h2>
                 </div>
+                <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span>
             </a>
         </div>
 
         <div class="modpack">
-            <a href="/recreated">
-                <img draggable="false" src="../static/img/modpacks/civitas_re-created.webp" alt="Civitas: Re-Created">
+            <a href="/logotyper/re-created">
+                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_re-created.webp') }}" alt="Civitas: Re-Created">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Re-Created</h2>
                 </div>
             </a>
         </div>
 
-        <div class="modpack">
-            <a href="/createrevolution">
-                <img draggable="false" src="../static/img/modpacks/civitas_create_revolution.webp"
-                    alt="Civitas: Create Revolution">
+        <div class="modpack" id="ladda-ner-logotyp">
+            <a href="{{ url_for('static', filename='img/logotypes/create-revolution/civitas_create_reloaded.png') }}" download>
+                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_create_revolution.webp') }}" alt="Civitas: Create Revolution">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create Revolution</h2>
                 </div>
+                <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span>
             </a>
         </div>
 
         <div class="modpack">
-            <a href="/arcanum">
-                <img draggable="false" src="../static/img/modpacks/civitas_arcanum.webp" alt="Civitas: Arcanum">
+            <a href="/logotyper/arcanum">
+                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_arcanum.webp') }}" alt="Civitas: Arcanum">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Arcanum</h2>
                 </div>
@@ -145,28 +146,28 @@
         </div>
 
         <div class="modpack" id="ladda-ner-logotyp">
-            <a href="../static/img/logotypes/create/civitas_create.png" download>
-                <img draggable="false" src="../static/img/logotypes/create/civitas_create.png" alt="Civitas: Create">
+            <a href="{{ url_for('static', filename='img/logotypes/create/civitas_create.png') }}" download>
+                <img draggable="false" src="{{ url_for('static', filename='img/logotypes/create/civitas_create.png') }}" alt="Civitas: Create">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create</h2>
                 </div>
-                <span class="download-icon"><img src="../static/img/download.webp" alt="Nedladdningsikon"></span>
+                <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span>
             </a>
         </div>
 
         <div class="modpack" id="ladda-ner-logotyp">
-            <a href="../static/img/logotypes/smp/civitas_smp.png" download>
-                <img draggable="false" src="../static/img/logotypes/smp/civitas_smp.png" alt="Civitas: SMP">
+            <a href="{{ url_for('static', filename='img/logotypes/smp/civitas_smp.png') }}" download>
+                <img draggable="false" src="{{ url_for('static', filename='img/logotypes/smp/civitas_smp.png') }}" alt="Civitas: SMP">
                 <div class="modpack-inforuta">
                     <h2>Civitas: SMP</h2>
                 </div>
-                <span class="download-icon"><img src="../static/img/download.webp" alt="Nedladdningsikon"></span>
+                <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span>
             </a>
         </div>
 
         <div class="modpack">
             <a href="/logotyper/övrigt">
-                <img draggable="false" src="../static/img/logotypes/övrigt/3.0_transparent.png" alt="Övrigt">
+                <img draggable="false" src="{{ url_for('static', filename='img/logotypes/övrigt/3.0_transparent.png') }}" alt="Övrigt">
                 <div class="modpack-inforuta">
                     <h2>Övrigt</h2>
                 </div>
@@ -188,7 +189,7 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="/"><img draggable="false" src="static/img/modpacks/civitas_main.webp"
+            <a href="/"><img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
                     alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
