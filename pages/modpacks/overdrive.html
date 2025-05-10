@@ -5,19 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overdrive | Team Civitas</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="shortcut icon" href="../static/img/modpacks/civitas_overdrive.webp" type="image/x-icon">
-    <script type="module" src="../static/script.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/modpacks/civitas_overdrive.webp') }}" type="image/x-icon">
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 
 <body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+
+            <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Logotyp"></a>
+
+        <!--Länkar-->
+        <div class="navbar-links">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/samlingar/logotyper">Logotyper</a>
+        </div>
+
+        <!--Dropdown-->
+        <div class="navbar-ikoner">
+            <button id="dropdown-button" onclick="showDropdown()"><img src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
+        </div>
+
+    </nav>
+
+    <!--DROPDOWN-->
+        <div id="dropdown">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/samlingar/logotyper">Logotyper</a>
+        </div>
+
+    <!--HEADER-->
     <header>
         <!--Tillbaka-knapp-->
-        <a href="../" id="tillbaka">‹</a>
+        <a href="/modpacks" id="tillbaka">‹</a>
 
         <!--Titel-->
-        <img id="modpack-logotyp-i-header" src="../static/img/modpacks/civitas_overdrive.webp" alt="Civitas: Overdrive-logotyp">
+        <img id="modpack-logotyp-i-header" src="{{ url_for('static', filename='img/modpacks/civitas_overdrive.webp') }}" alt="Civitas: Overdrive-logotyp">
         <h1 id="modpack-namn">CIVITAS: OVERDRIVE</h1>
+        <p id="overdrive-warning">Obs! Detta modpacket har ännu inte släppts och information på denna sidan kan komma att ändras</p>
         <p>Civitas: Overdrive är det första Civitas-modpacket med Create-version 6.0.X. Modpacket är en påbyggd version av Civitas: Synergy, där vissa moddar lagts till och visa tagits bort. Dessutom använder Civitas: Overdrive modden Axiom som klienthjälpmedel istället för WorldEdit, vilket utökar spelares chanser till att vara kreativa.</p>
 
         <!--Spelare-->
@@ -41,7 +71,7 @@
             <!--Information-->
             <ul class="detaljer-lista">
                 <h2>Info:</h2>
-                <li><img src="../static/img/details/forge.webp" alt="Forge-logotyp">
+                <li><img src="{{ url_for('static', filename='img/details/forge.webp') }}" alt="Forge-logotyp">
                     <p>Forge</p>
                 </li>
                 <li><img src="https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
@@ -54,8 +84,8 @@
             </ul>
             <ul class="detaljer-lista">
                 <h2 id="download-header">Modpack</h2>
-                <li><img id="download-symbol" src="../static/img/download.webp" alt="Ladda ner">
-                    <a id="file-download" href="../static/files/Civitas Overdrive indev3.mrpack" download>Overdrive indev3</a>
+                <li><img id="download-symbol" src="{{ url_for('static', filename='img/download.webp') }}" alt="Ladda ner">
+                    <a id="file-download" href="{{ url_for('static', filename='files/Civitas Overdrive indev3.mrpack') }}" download>Overdrive indev3</a>
                 </li>
 
                 <h2 id="download-header">Världar</h2>
@@ -75,7 +105,7 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="../"><img src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp"></a>
+            <a href="/"><img src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
     </footer>

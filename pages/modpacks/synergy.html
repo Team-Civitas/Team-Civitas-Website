@@ -5,18 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synergy | Team Civitas</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="shortcut icon" href="../static/img/modpacks/civitas_synergy.webp" type="image/x-icon">
-    <script type="module" src="../static/script.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/modpacks/civitas_synergy.webp') }}" type="image/x-icon">
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 
 <body>
+    
+    <!--NAVBAR-->
+    <nav class="navbar">
+
+            <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Logotyp"></a>
+
+        <!--Länkar-->
+        <div class="navbar-links">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/samlingar/logotyper">Logotyper</a>
+        </div>
+
+        <!--Dropdown-->
+        <div class="navbar-ikoner">
+            <button id="dropdown-button" onclick="showDropdown()"><img src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
+        </div>
+
+    </nav>
+
+    <!--DROPDOWN-->
+        <div id="dropdown">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/samlingar/logotyper">Logotyper</a>
+        </div>
+
+    <!--HEADER-->
     <header>
         <!--Tillbaka-knapp-->
-        <a href="../" id="tillbaka">‹</a>
+        <a href="/modpacks" id="tillbaka">‹</a>
 
         <!--Titel-->
-        <img id="modpack-logotyp-i-header" src="../static/img/modpacks/civitas_synergy.webp" alt="Civitas: Synergy-logotyp">
+        <img id="modpack-logotyp-i-header" src="{{ url_for('static', filename='img/modpacks/civitas_synergy.webp') }}" alt="Civitas: Synergy-logotyp">
         <h1 id="modpack-namn">CIVITAS: SYNERGY</h1>
         <p>Civitas: Synergy är en testbänk inför ett kommande, mer seriöst, Create-modpack med Create-version 6.0.0</p>
 
@@ -74,8 +104,8 @@
             </ul>
             <ul class="detaljer-lista">
                 <h2 id="download-header">Modpack</h2>
-                <li><img id="download-symbol" src="../static/img/download.webp" alt="Ladda ner">
-                    <a id="file-download" href="../static/files/civitas_synergy_1.2.0.mrpack" download>Synergy 1.2.0</a>
+                <li><img id="download-symbol" src="{{ url_for('static', filename='img/download.webp') }}" alt="Ladda ner">
+                    <a id="file-download" href="{{ url_for('static', filename='files/civitas_synergy_1.2.0.mrpack') }}" download>Synergy 1.2.0</a>
                 </li>
 
                 <h2 id="download-header">Världar</h2>
@@ -95,7 +125,7 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="../"><img src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp"></a>
+            <a href="../"><img src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
     </footer>
