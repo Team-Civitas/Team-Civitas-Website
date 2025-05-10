@@ -34,6 +34,14 @@ body {
   color: var(--white);
 }
 
+.background-image {
+  background-image: url("/static/img/placeholder.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  aspect-ratio: 16/9;
+}
+
 header {
   display: flex;
   flex-direction: column;
