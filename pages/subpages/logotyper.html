@@ -13,7 +13,8 @@
     <!--NAVBAR-->
     <nav class="navbar">
 
-            <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" alt="Logotyp"></a>
+        <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
+                alt="Logotyp"></a>
 
         <!--Länkar-->
         <div class="navbar-links">
@@ -25,26 +26,26 @@
 
         <!--Dropdown-->
         <div class="navbar-ikoner">
-            <button id="dropdown-button" onclick="showDropdown()"><img src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
+            <button id="dropdown-button" onclick="showDropdown()"><img
+                    src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
         </div>
 
     </nav>
 
     <!--DROPDOWN-->
-        <div id="dropdown">
-            <a href="/">Hem</a>
-            <a href="/modpacks">Modpacks</a>
-            <a href="/servrar">Servrar</a>
-            <a href="/logotyper">Logotyper</a>
-        </div>
+    <div id="dropdown">
+        <a href="/">Hem</a>
+        <a href="/modpacks">Modpacks</a>
+        <a href="/servrar">Servrar</a>
+        <a href="/logotyper">Logotyper</a>
+    </div>
 
     <!--HEADER-->
     <header>
         <!--Tillbaka-knapp-->
         <a href="/" id="tillbaka">‹</a>
-        
-        <img draggable="false" src="../static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp">
-        <h1>TEAM CIVITAS</h1>
+
+        <h1 id="logotyper-header">LOGOTYPER</h1>
         <p>Här finns alla logotyper från hela Civitashistorien samlade, till och WIP-logotyper samt skrotade logotyper!
         </p>
     </header>
@@ -98,7 +99,8 @@
 
         <div class="modpack">
             <a href="/createhorizons">
-                <img draggable="false" src="../static/img/modpacks/civitas_create_horizons.webp" alt="Civitas: Create Horizons">
+                <img draggable="false" src="../static/img/modpacks/civitas_create_horizons.webp"
+                    alt="Civitas: Create Horizons">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create Horizons</h2>
                 </div>
@@ -125,7 +127,8 @@
 
         <div class="modpack">
             <a href="/createrevolution">
-                <img draggable="false" src="../static/img/modpacks/civitas_create_revolution.webp" alt="Civitas: Create Revolution">
+                <img draggable="false" src="../static/img/modpacks/civitas_create_revolution.webp"
+                    alt="Civitas: Create Revolution">
                 <div class="modpack-inforuta">
                     <h2>Civitas: Create Revolution</h2>
                 </div>
@@ -171,7 +174,7 @@
         </div>
 
         <!--Locked-->
-        
+
         <div class="modpack-mimic" id="mimic-1">
             <h1>Kommande<br>kategori</h1>
         </div>
@@ -185,7 +188,8 @@
     <!--FOOTER-->
     <footer>
         <div class="footer-detail">
-            <a href="/"><img draggable="false" src="static/img/modpacks/civitas_main.webp" alt="Team Civitas-logotyp"></a>
+            <a href="/"><img draggable="false" src="static/img/modpacks/civitas_main.webp"
+                    alt="Team Civitas-logotyp"></a>
         </div>
         <p>&copy; Team Civitas</p>
     </footer>
