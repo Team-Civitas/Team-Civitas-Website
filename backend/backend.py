@@ -113,9 +113,12 @@ def handle_http_exception(e):
 
 if __name__ == "__main__":
     app.debug = not production
-    server = Server(app.wsgi_app)
-    
-    server.watch(f"{templateFolder}/**/*")
-    server.watch(f"{staticFolder}/**/*")
-    
-    server.serve(port=1515)
+    if production:
+        app.run(port=1515)
+    else: 
+        server = Server(app.wsgi_app)
+
+        server.watch(f"{templateFolder}/**/*")
+        server.watch(f"{staticFolder}/**/*")
+
+        server.serve(port=1515)
