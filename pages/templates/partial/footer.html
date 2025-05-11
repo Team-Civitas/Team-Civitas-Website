@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <body>
+        {% block footer %}
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-brand">
+                <a href="/" aria-label="Tillbaka till startsidan">
+                    <img
+                        src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
+                        alt="Team Civitas logotyp" draggable="false" />
+                </a>
+                <p>&copy; Team Civitas</p>
+            </div>
+        </footer>
+        {% endblock %}
+    </body>
+</html>

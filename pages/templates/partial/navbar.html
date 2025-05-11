@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <body>
+        {% block nav %}
+        <!-- NAVIGATION -->
+        <nav class="navbar" role="navigation" aria-label="Huvudmeny">
+            <a href="/" class="navbar-logo" aria-label="Team Civitas startsida">
+                <img id="navbar-logo-img"
+                    src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
+                    alt="Team Civitas logotyp" draggable="false" />
+            </a>
+
+            <ul class="navbar-links">
+                <li><a href="/">Hem</a></li>
+                <li><a href="/modpacks">Modpacks</a></li>
+                <li><a href="/servrar">Servrar</a></li>
+                <li><a href="/logotyper">Logotyper</a></li>
+            </ul>
+
+            <button class="navbar-dropdown-toggle" id="dropdown-button"
+                aria-label="Visa meny" onclick="toggleDropdown()">
+                <img src="{{ url_for('static', filename='img/dropdown.webp') }}"
+                    alt="Meny ikon" />
+            </button>
+        </nav>
+
+        <!-- MOBILE DROPDOWN -->
+        <div id="dropdown" class="dropdown-menu" hidden>
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/logotyper">Logotyper</a>
+        </div>
+        {% endblock %}
+    </body>
+</html>

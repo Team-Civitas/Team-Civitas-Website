@@ -1,11 +1,10 @@
-import hmac
-import hashlib
+import hmac, hashlib, subprocess, os
+
+from dotenv import load_dotenv
+
 import flask
 from flask import abort, request, render_template
 from werkzeug.exceptions import HTTPException
-import subprocess
-import os
-from dotenv import load_dotenv
 from livereload import Server
 
 load_dotenv(os.path.abspath("") + "/.env")
@@ -100,11 +99,11 @@ def error(code):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("templates/404.html"), 404
+    return render_template("templates/errors/404.html"), 404
 
 @app.errorhandler(HTTPException)
 def handle_http_exception(e):
-    return render_template("templates/error.html", error=e), e.code
+    return render_template("templates/errors/error.html", error=e), e.code
 
 
 ##########################################
