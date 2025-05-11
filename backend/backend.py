@@ -3,9 +3,11 @@ import hmac, hashlib, subprocess, os
 from dotenv import load_dotenv
 
 import flask
-from flask import abort, request, render_template
+from flask import abort, request, render_template, jsonify
 from werkzeug.exceptions import HTTPException
 from livereload import Server
+
+from typing import Dict
 
 load_dotenv(os.path.abspath("") + "/.env")
 
@@ -105,6 +107,54 @@ def page_not_found(e):
 def handle_http_exception(e):
     return render_template("templates/errors/error.html", error=e), e.code
 
+
+##########################################
+############## JSON DATA #################
+##########################################
+
+IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".svg")
+
+def is_image_file(filename):
+    return filename.lower().endswith(IMAGE_EXTENSIONS)
+
+def count_images_in_folder(folder_path):
+    files = os.listdir(folder_path)
+    image_files = [
+        file for file in files
+        if os.path.isfile(os.path.join(folder_path, file)) and is_image_file(file)
+    ]
+    return len(image_files)
+
+
+def count_images_in_all_subfolders(root_folder: str) -> Dict:
+    """
+    Recursively counts images in subfolders, building a nested dictionary to represent
+    the folder structure and image counts.
+    """
+    results = {}
+
+    if not os.path.isdir(root_folder):
+        return results
+
+    for entry in os.listdir(root_folder):
+        subfolder_path = os.path.join(root_folder, entry)
+        if os.path.isdir(subfolder_path):
+            # Count images in this subfolder
+            images_count = count_images_in_folder(subfolder_path)
+            if images_count > 0:
+                results[entry] = images_count  # Add this subfolder's image count
+                
+            # Recursively check subfolders and update the structure
+            subfolder_counts = count_images_in_all_subfolders(subfolder_path)
+            if subfolder_counts:
+                results[entry] = subfolder_counts
+
+    return results
+
+
+@app.route("/json-info")
+def json_info():
+    return jsonify(count_images_in_all_subfolders(staticFolder + "/img"))
 
 ##########################################
 ############### RUN APP ##################
