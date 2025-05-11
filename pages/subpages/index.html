@@ -1,71 +1,45 @@
 <!DOCTYPE html>
 <html lang="sv">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hem | Team Civitas</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
-        type="image/x-icon">
-    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hem | Team Civitas</title>
 
-</head>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles2.css') }}" />
+        <script defer
+            src="{{ url_for('static', filename='background-rotator.js') }}"></script>
+        <link rel="icon"
+            href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
+            type="image/webp" />
+    </head>
 
-<body>
+    <body>
 
-    <!--NAVBAR-->
-    <nav class="navbar">
+        <!-- NAVIGATION -->
+        {% include 'templates/partial/navbar.html' %}
 
-        <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
-                alt="Logotyp"></a>
+        <!-- MAIN CONTENT -->
+        <main>
+            <section class="background-image">
+                <header class="header-content" id="background-image">
+                    <div class="dark-overlay">
+                        <div class="above-overlay">
+                            <img
+                                src="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek Cut.png') }}"
+                                alt="Team Civitas logotyp" draggable="false" />
+                            <h1>Team Civitas</h1>
+                            <p>Välkommen till Team Civitas hemsida</p>
+                        </div>
+                    </div>
+                </header>
+            </section>
+        </main>
 
-        <!--Länkar-->
-        <div class="navbar-links">
-            <a href="/">Hem</a>
-            <a href="/modpacks">Modpacks</a>
-            <a href="/servrar">Servrar</a>
-            <a href="/logotyper">Logotyper</a>
-        </div>
+        <!-- FOOTER -->
+        {% include 'templates/partial/footer.html' %}
 
-        <!--Dropdown-->
-        <div class="navbar-ikoner">
-            <button id="dropdown-button" onclick="showDropdown()"><img
-                    src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
-        </div>
-
-    </nav>
-
-    <!--DROPDOWN-->
-    <div id="dropdown">
-        <a href="/">Hem</a>
-        <a href="/modpacks">Modpacks</a>
-        <a href="/servrar">Servrar</a>
-        <a href="/logotyper">Logotyper</a>
-    </div>
-
-    <!--MAIN-->
-    <main>
-        <section class="background-image">
-            <header>
-                <img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
-                    alt="Team Civitas-logotyp">
-                <h1>TEAM CIVITAS</h1>
-                <p>Landing page</p>
-            </header>
-        </section>
-
-    </main>
-
-
-    <!--FOOTER-->
-    <footer>
-        <div class="footer-detail">
-            <a href="/"><img draggable="false" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
-                    alt="Team Civitas-logotyp"></a>
-        </div>
-        <p>&copy; Team Civitas</p>
-    </footer>
-</body>
+    </body>
 
 </html>

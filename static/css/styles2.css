@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    flex: 1;
+
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+/*================VARIABLES================*/
+
+:root {
+    --white: #fff;
+    --background-color: #0D1114;
+    --card-bg: #00000090;
+    --card-bg-hover: #70707050;
+    --highlight-color: #00ffff;
+}
+
+/*================GLOBAL================*/
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+/*================NAVBAR================*/
+
+.navbar {
+    background-color: var(--card-bg);
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar-logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+
+    list-style: none;
+}
+
+.navbar-dropdown-toggle {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    margin-right: 1vw;
+}
+
+.navbar-dropdown-toggle img {
+    width: 35px;
+    height: 35px;
+}
+
+/*Dropdown menu (overlapping main)*/
+
+/*================HEADER================*/
+.header-content {
+    background-image: url('/static/img/portfolio/synergy/synergy (17).webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 75vh;
+}
+
+.header-content img {
+    width: 250px;
+    height: 250px;
+}
+
+.dark-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.above-overlay {
+
+    color: var(--white);
+}
+
+/*================FOOTER================*/
+
+.footer-brand {
+    background-color: var(--card-bg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-brand img {
+    width: 80px;
+    height: 80px;
+
+    padding-top: 2vh;
+}
