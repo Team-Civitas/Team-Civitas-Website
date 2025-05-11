@@ -23,17 +23,47 @@
         <!-- MAIN CONTENT -->
         <main>
             <section class="background-image">
-                <header class="header-content">
+                <header class="header-content" id="background-image">
                     <div class="dark-overlay">
                         <div class="above-overlay">
                             <img
                                 src="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek Cut.png') }}"
                                 alt="Team Civitas logotyp" draggable="false" />
                             <h1>Team Civitas</h1>
-                            <p>Välkommen till Team Civitas hemsida</p>
+                            <p>Välkommen hit</p>
                         </div>
                     </div>
                 </header>
+            </section>
+            <section class="featured-content">
+                <div class="featured-modpacks">
+                    <h2>Utvalda Modpacks</h2>
+                    <div class="modpack-list">
+                        <div class="modpack-card">
+                            <a href="/modpacks/overdrive">
+                                <img
+                                    src="{{ url_for('static', filename='img/modpacks/civitas_overdrive.webp') }}"
+                                    alt="Civitas: Overdrive" />
+                                <div class="border-top">
+                                    <h3>Civitas: Overdrive</h3>
+                                    <p>Startdatum: Sommaren 2025</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="modpack-card">
+                            <a href="/modpacks/recreated">
+                                <img
+                                    src="{{ url_for('static', filename='img/modpacks/civitas_re-created.webp') }}"
+                                    alt="Civitas: Re-Created" />
+                                <div class="border-top">
+                                    <h3>Civitas: Re-Created</h3>
+                                    <p>2023-12 – 2024-07</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </main>
 
