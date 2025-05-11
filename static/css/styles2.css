@@ -185,3 +185,14 @@ h1, h2 {
     margin-top: 1vh;
     border-top: #fff solid 2px;
 }
+
+/*================MEDIA QUERIES================*/
+
+/*Tablet*/
+@media (min-width: 768px) {
+}
+
+/*Desktop*/
+@media (min-width: 1025px) {
+
+}
