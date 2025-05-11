@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
 
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--background-color);
+  flex: 1;
+}
+
 :root {
   --white: #fff;
   --background-color: #0D1114;
@@ -17,8 +34,12 @@
   color: var(--white);
 }
 
-body {
-  background-color: var(--background-color);
+.background-image {
+  background-image: url("/static/img/portfolio/synergy/synergy (17).webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  aspect-ratio: 16/9;
 }
 
 header {
@@ -62,9 +83,9 @@ header img {
 }
 
 #tillbaka {
-  position: fixed;
-  top: 2.5vh;
-  left: 2.5vw;
+  position: absolute;
+  top: 5vh;
+  left: 0.75vw;
   text-align: left;
   font-size: 80px;
 }
@@ -262,6 +283,11 @@ li p {
   width: 15%;
 }
 
+#overdrive-warning {
+  font-style: italic;
+  margin-bottom: 1vh;
+}
+
 /*PORTFOLIO-POPUP*/
 #imagepopup {
   display: none;
@@ -354,8 +380,113 @@ li p {
   margin-top: 20vh;
 }
 
+#grayscale-img {
+  filter: grayscale(100%);
+}
+
+/*******************************************
+*                  NAVBAR                  *
+*******************************************/
+
+main {
+  flex: 1; /* Allow main to grow and fill the space */
+  padding: 20px;
+  overflow: auto;
+}
+
+.navbar {
+    background-color: var(--card-bg);
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logotyp-i-navbar {
+  position: absolute;
+  transform: translate(0, -50%);
+
+  height: 50px;
+}
+
+.navbar-links {
+    display: none;
+}
+
+.navbar-links a {
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+.navbar a:hover {
+    color: var(--highlight-color);
+}
+
+/*Cart & Dropdown Button properties*/
+.navbar-ikoner img {
+    width: 25px;
+}
+
+/*Dropdown Button*/
+.navbar-ikoner button {
+    background-color: #00000000;
+    cursor: pointer;
+    border: none;
+    transition: ease-in-out 0.1s;
+    margin-right: 1vw;
+}
+
+.navbar-ikoner button:hover {
+    transition: ease-in-out 0.1s;
+    transform: scale(1.15);
+}
+
+/*Dropdown menu (overlapping main)*/
+#dropdown {
+
+    background-color: var(--card-bg);
+
+    width: 100%;
+    padding: 2vh 0;
+    /*2 vh padding top & bottom for every a-element in the dropdown menu*/
+    display: none;
+    flex-direction: column;
+    justify-self: flex-end;
+
+}
+
+#dropdown.active,
+.varukorg-container {
+    display: flex;
+    /*Makes sure the dropdown shows when clicked*/
+}
+
+#dropdown a {
+    text-align: center;
+
+    color: var(--white);
+
+    padding-top: 0.5vh;
+}
+
+#dropdown a:hover {
+    color: var(--highlight-color);
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
+
+/*HIDE AND SEEK*/
+    #dropdown-button,
+    .dropdown {
+        display: none;
+    }
+
+    .navbar-links {
+        display: flex;
+    }
+
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -406,6 +537,9 @@ li p {
 }
 
 @media (min-width: 1025px) {
+
+  /*Övrigt*/
+
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
   }

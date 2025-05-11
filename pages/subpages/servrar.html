@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servrar | Team Civitas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/img/modpacks/civitas_main.webp') }}"
+        type="image/x-icon">
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <nav class="navbar">
+
+        <a href="/"><img id="logotyp-i-navbar" src="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
+                alt="Logotyp"></a>
+
+        <!--Länkar-->
+        <div class="navbar-links">
+            <a href="/">Hem</a>
+            <a href="/modpacks">Modpacks</a>
+            <a href="/servrar">Servrar</a>
+            <a href="/logotyper">Logotyper</a>
+        </div>
+
+        <!--Dropdown-->
+        <div class="navbar-ikoner">
+            <button id="dropdown-button" onclick="showDropdown()"><img
+                    src="{{ url_for('static', filename='img/dropdown.webp') }}" alt="Meny"></button>
+        </div>
+
+    </nav>
+
+    <!--DROPDOWN-->
+    <div id="dropdown">
+        <a href="/">Hem</a>
+        <a href="/modpacks">Modpacks</a>
+        <a href="/servrar">Servrar</a>
+        <a href="/logotyper">Logotyper</a>
+    </div>
+
+    <!--HEADER-->
+
+    <!--Tillbaka-knapp-->
+    <a href="/" id="tillbaka">‹</a>
+
+    <main>
+        <header>
+            <h1 id="logotyper-header">SERVRAR</h1>
+            <p>Här finns flera olika Civitas-servrar listade!</p>
+        </header>
+
+        <section class="modpack-cards">
+
+            <!--Server 1-->
+            <div class="modpack">
+                <a href="/servrar/civitas-smp">
+                    <img draggable="false" src="{{ url_for('static', filename='img/logotypes/smp/civitas_smp.png') }}"
+                        alt="Civitas: SMP">
+                    <div class="modpack-inforuta">
+                        <h2>Civitas: SMP</h2>
+                    </div>
+                </a>
+            </div>
+
+            <!--Server 2-->
+            <div class="modpack">
+                <a href="/servrar/civitascraft">
+                    <img draggable="false"
+                        src="{{ url_for('static', filename='/img/logotypes/team-civitas-classic/Team Civitas 2023-2025.png') }}"
+                        alt="Civitascraft">
+                    <div class="modpack-inforuta">
+                        <h2>Civitascraft</h2>
+                    </div>
+                </a>
+            </div>
+
+            <!--Server 3-->
+            <div class="modpack">
+                <a href="/servrar/pre-civitas">
+                    <img draggable="false" id="grayscale-img"
+                        src="{{ url_for('static', filename='/img/logotypes/team-civitas-classic/Team Civitas 2023-2025.png') }}"
+                        alt="Pre-Civitas">
+                    <div class="modpack-inforuta">
+                        <h2>Pre-Civitas</h2>
+                    </div>
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-detail">
+            <a href="/"><img draggable="false" src="{{ url_for('static', filename='/img/modpacks/civitas_main.webp') }}"
+                    alt="Team Civitas-logotyp"></a>
+        </div>
+        <p>&copy; Team Civitas</p>
+    </footer>
+</body>
+
+</html>
