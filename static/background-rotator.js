@@ -31,14 +31,11 @@ function searchInJson(data, keyToSearch) {
 }
 
 function getRandomIntInclusive(min, max) {
-  const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(`Generated random integer: ${randomValue} (within range ${min}-${max})`);
-  return randomValue;
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
   const el = document.getElementById("background-image");
-  console.log("DOMContentLoaded event triggered.");
 
   const imageData = await getJsonInfo();
   const imageCount = searchInJson(imageData, "featured_imgs");
