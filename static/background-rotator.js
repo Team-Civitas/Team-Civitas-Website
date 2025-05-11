@@ -1,36 +1,56 @@
-async function countImages(url, prefix) {
-    let index = 1;
-    let count = 0;
-
-    while (true) {
-        const current_url = `${url}/${prefix} (${index}).webp`;
-        try {
-            const response = await fetch(current_url);
-            if (!response.ok) throw new Error("Image not found");
-
-            count++;
-            index++;
-        } catch (error) {
-            break;
-        }
+async function getJsonInfo() {
+  try {
+    console.log("Fetching image count data...");
+    const response = await fetch(this.location.href + "json-info");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
+    const data = await response.json();
+    console.log("Data fetched successfully:", data);
+    return data;
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    return null;
+  }
+}
 
-    console.log(`Found ${count} images.`);
-    return count;
+function searchInJson(data, keyToSearch) {
+  if (data && data.hasOwnProperty(keyToSearch)) {
+    return data[keyToSearch];
+  }
+
+  for (const [key, value] of Object.entries(data)) {
+    if (typeof value === 'object' && value !== null) {
+      const result = searchInJson(value, keyToSearch);
+      if (result !== "Not Found") {
+        return result;
+      }
+    }
+  }
+  return "Not Found";
 }
 
 function getRandomIntInclusive(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(`Generated random integer: ${randomValue} (within range ${min}-${max})`);
+  return randomValue;
 }
 
-window.addEventListener('DOMContentLoaded', async () => {
-    const el = document.getElementById("background-image");
-    const imageCount = await countImages("../static/img/featured_imgs", "featured_imgs");
+window.addEventListener("DOMContentLoaded", async () => {
+  const el = document.getElementById("background-image");
+  console.log("DOMContentLoaded event triggered.");
 
+  const imageData = await getJsonInfo();
+  const imageCount = searchInJson(imageData, "featured_imgs");
+
+  if (imageCount && imageCount > 0) {
     function changeBackground() {
-        const index = getRandomIntInclusive(1, imageCount);
-        el.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
+      const index = getRandomIntInclusive(1, imageCount);
+      console.log(`Changing background image to index: ${index}`);
+      el.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
     }
-
     changeBackground();
+  } else {
+    console.error("No images available to display.");
+  }
 });

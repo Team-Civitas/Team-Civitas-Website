@@ -125,7 +125,6 @@ def count_images_in_folder(folder_path):
     ]
     return len(image_files)
 
-
 def count_images_in_all_subfolders(root_folder: str) -> Dict:
     """
     Recursively counts images in subfolders, building a nested dictionary to represent
@@ -143,11 +142,12 @@ def count_images_in_all_subfolders(root_folder: str) -> Dict:
             images_count = count_images_in_folder(subfolder_path)
             if images_count > 0:
                 results[entry] = images_count  # Add this subfolder's image count
-                
+
             # Recursively check subfolders and update the structure
             subfolder_counts = count_images_in_all_subfolders(subfolder_path)
             if subfolder_counts:
-                results[entry] = subfolder_counts
+                # Merge the subfolder counts into the current entry
+                results[entry] = results.get(entry, {}) | subfolder_counts
 
     return results
 
@@ -155,6 +155,7 @@ def count_images_in_all_subfolders(root_folder: str) -> Dict:
 @app.route("/json-info")
 def json_info():
     return jsonify(count_images_in_all_subfolders(staticFolder + "/img"))
+
 
 ##########################################
 ############### RUN APP ##################
