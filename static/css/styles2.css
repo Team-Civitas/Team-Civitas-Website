@@ -1,4 +1,7 @@
+/*=================IMPORTS=================*/
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
+
+/*=========================================*/
 
 html {
     overflow-y: scroll;
@@ -23,6 +26,7 @@ body {
     --card-bg: #00000090;
     --card-bg-hover: #70707050;
     --highlight-color: #00ffff;
+    --border-radius: 15px;
 }
 
 /*================GLOBAL================*/
@@ -37,10 +41,17 @@ a:hover {
 }
 
 h1 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h1, h2 {
     font-family: "Archivo Black", sans-serif;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 36px;
 }
 
 /*================NAVBAR================*/
@@ -79,9 +90,37 @@ h1 {
 }
 
 /*Dropdown menu (overlapping main)*/
+/**/
+/**/
+/**/
+/**/
+/**/
+
+/*================FOOTER================*/
+
+.footer-brand {
+    background-color: var(--card-bg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-brand img {
+    width: 80px;
+    height: 80px;
+
+    padding-top: 2vh;
+}
+
+/*==========================================================*/
+/*                       LANDING PAGE                       */
+/*==========================================================*/
 
 /*================HEADER================*/
-.header-content {
+
+#background-image {
     background-image: url('/static/img/portfolio/synergy/synergy (17).webp');
     background-size: cover;
     background-position: center;
@@ -112,20 +151,48 @@ h1 {
     color: var(--white);
 }
 
-/*================FOOTER================*/
+/*================FEATURED CONTENT================*/
 
-.footer-brand {
-    background-color: var(--card-bg);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.featured-modpacks {
+    text-align: center;
+    margin: 5vh 0;
 }
 
-.footer-brand img {
-    width: 80px;
-    height: 80px;
+.modpack-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
 
-    padding-top: 2vh;
+.modpack-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    width: 400px;
+}
+
+.modpack-card:hover {
+    background-color: var(--card-bg-hover);
+}
+
+.modpack-card img {
+    margin-top: 2vh;
+    width: 350px;
+}
+
+.border-top {
+    margin-top: 1vh;
+    border-top: #fff solid 2px;
+}
+
+/*================MEDIA QUERIES================*/
+
+/*Tablet*/
+@media (min-width: 768px) {
+}
+
+/*Desktop*/
+@media (min-width: 1025px) {
+
 }
