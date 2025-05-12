@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import flask
 from flask import abort, request, render_template, jsonify
 from werkzeug.exceptions import HTTPException
+from markupsafe import escape
 from livereload import Server
 
 from typing import Dict
@@ -70,21 +71,21 @@ def home():
 @app.route("/<page>")
 def page(page):
     try:
-        return render_template(f'subpages/{page}.html')
+        return render_template(f'subpages/{escape(page)}.html')
     except:
         abort(404, description="File not found")
 
 @app.route("/modpacks/<modpack>")
 def modpack(modpack):
     try:
-        return render_template(f'modpacks/{modpack}.html')
+        return render_template(f'modpacks/{escape(modpack)}.html')
     except:
         abort(404, description="File not found")
 
 @app.route("/logotyper/<logo>")
 def logos(logo):
     try:
-        return render_template(f'logotyper/{logo}.html')
+        return render_template(f'logotyper/{escape(logo)}.html')
     except:
         abort(404, description="File not found")
 
