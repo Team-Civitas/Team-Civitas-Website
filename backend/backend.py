@@ -113,9 +113,8 @@ def handle_http_exception(e):
 ############## JSON DATA #################
 ##########################################
 
-IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".svg")
-
 def is_image_file(filename):
+    IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".svg")
     return filename.lower().endswith(IMAGE_EXTENSIONS)
 
 def count_images_in_folder(folder_path):
@@ -126,10 +125,9 @@ def count_images_in_folder(folder_path):
     ]
     return len(image_files)
 
-def count_images_in_all_subfolders(root_folder: str) -> Dict:
+def count_images_with_paths(root_folder: str, base_path: str = "") -> Dict[str, int]:
     """
-    Recursively counts images in subfolders, building a nested dictionary to represent
-    the folder structure and image counts.
+    Counts images recursively and maps results to a flattened path like 'logotypes/recreated'.
     """
     results = {}
 
@@ -139,23 +137,23 @@ def count_images_in_all_subfolders(root_folder: str) -> Dict:
     for entry in os.listdir(root_folder):
         subfolder_path = os.path.join(root_folder, entry)
         if os.path.isdir(subfolder_path):
-            # Count images in this subfolder
-            images_count = count_images_in_folder(subfolder_path)
-            if images_count > 0:
-                results[entry] = images_count  # Add this subfolder's image count
+            relative_path = f"{base_path}/{entry}" if base_path else entry
 
-            # Recursively check subfolders and update the structure
-            subfolder_counts = count_images_in_all_subfolders(subfolder_path)
-            if subfolder_counts:
-                # Merge the subfolder counts into the current entry
-                results[entry] = results.get(entry, {}) | subfolder_counts
+            # Count images in this subfolder
+            image_count = count_images_in_folder(subfolder_path)
+            if image_count > 0:
+                results[relative_path] = image_count
+
+            # Recursively collect subfolder results
+            nested_results = count_images_with_paths(subfolder_path, relative_path)
+            results.update(nested_results)
 
     return results
 
 
 @app.route("/json-info")
 def json_info():
-    return jsonify(count_images_in_all_subfolders(staticFolder + "/img"))
+    return jsonify(count_images_with_paths(staticFolder + "/img"))
 
 
 ##########################################

@@ -1,7 +1,7 @@
-async function getJsonInfo() {
+async function getJsonInfo(path) {
   try {
     console.log("Fetching image count data...");
-    const response = await fetch(this.location.href + "json-info");
+    const response = await fetch(path);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -37,7 +37,7 @@ function getRandomIntInclusive(min, max) {
 window.addEventListener("DOMContentLoaded", async () => {
   const el = document.getElementById("background-image");
 
-  const imageData = await getJsonInfo();
+  const imageData = await getJsonInfo(`${this.location.href}json-info`);
   const imageCount = searchInJson(imageData, "featured_imgs");
 
   if (imageCount && imageCount > 0) {
