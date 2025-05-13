@@ -19,6 +19,7 @@ app = flask.Flask(__name__, static_folder=staticFolder, template_folder=template
 production = True if os.getenv("ENV") == "production" else False
 script_path = os.path.abspath("") + "/backend/update.sh"
 WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
+json_data = None
 
 ##########################################
 ########## Webhook Handler ###############
@@ -153,10 +154,11 @@ def count_images_with_paths(root_folder: str, base_path: str = "") -> Dict[str, 
 
 @app.route("/json-info")
 def json_info():
-    
-    if production and json_data is None:
+    global json_data
+
+    if not production:
         json_data = count_images_with_paths(staticFolder + "/img")
-    elif not production:
+    elif json_data is None:
         json_data = count_images_with_paths(staticFolder + "/img")
     
     return jsonify(json_data)
