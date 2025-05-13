@@ -109,7 +109,7 @@ h3 {
 }
 
 .navbar-links {
-    display: flex;
+    display: none;
     gap: 20px;
 
     list-style: none;
@@ -202,7 +202,7 @@ h3 {
 
 .modpack-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
@@ -211,11 +211,12 @@ h3 {
 .modpack-card {
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
-    width: 400px;
+    width: 300px;
 }
 
 .modpack-card img {
-    width: 350px;
+    width: 90%;
+    padding: 5%;
 }
 
 .border-top {
@@ -281,11 +282,23 @@ h3 {
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .modpack-card {
+        width: 400px;
+    }
 }
 
 /*Desktop*/
 @media (min-width: 1025px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .navbar-links {
+        display: flex;
+    }
+
+    .modpack-list {
+        flex-direction: row;
     }
 }
