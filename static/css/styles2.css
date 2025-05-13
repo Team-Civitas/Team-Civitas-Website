@@ -80,6 +80,7 @@ h3 {
 .modpack-card:hover,
 .modpack:hover {
     background-color: var(--card-bg-hover);
+    transition: ease-in-out 0.15s;
 }
 
 .modpack-card a:hover,
@@ -258,7 +259,6 @@ h3 {
     background-color: var(--card-bg);
     border-radius: 20px;
     padding: 5%;
-    transition: ease-in-out 0.15s;
 }
 
 /*Card mimics => Modpack Page*/
