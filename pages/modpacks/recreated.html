@@ -23,9 +23,11 @@
     <header class="header-content">
         <img src="{{ url_for('static', filename='img/modpacks/civitas_synergy.webp') }}" alt="Civitas: Synergy-logotyp">
         <h1 class="margin-above-title">CIVITAS: SYNERGY</h1>
-        <p class="margin-beneath-description">Civitas: Synergy är en
-            testbänk inför ett kommande, mer seriöst, Create-modpack med
-            Create-version 6.0.0</p>
+        <p class="margin-beneath-description">Civitas: Re-Created var det mest populära och längst spelade modpacket i
+            Civitashistorien. Med en tidsperiod som pågick mellan december 2023 till juli 2024 så utforskades det hur
+            man effektivt kunde bygga upp en stor infrastruktur för passargerartrafik samt olika samhällen. Civitas:
+            Re-Created är också det modpack med flest spelare någonsin, med ett rekord på över 10 spelare i whitelistan.
+        </p>
     </header>
 
     <section>
@@ -35,49 +37,66 @@
                 <div class="card">
                     <h3 class="text-align-left">Spelare:</h3>
                     <ul class="card-lista">
-                        <li>
-                            <img src="https://starlightskins.lunareclipse.studio/render/default/DanteMinecraft/bust"
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/DanteMinecraft/face"
                                 alt="Spelare">
                             <a href="https://namemc.com/profile/DanteMinecraft">
                                 <p id="spelare">DanteMinecraft 💎</p>
                             </a>
                         </li>
-                        <li>
-                            <img src="https://starlightskins.lunareclipse.studio/render/default/Elf_Oliver/bust"
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/SkogisAB/face"
+                                alt="Spelare">
+                            <a href="https://namemc.com/profile/SkogisAB">
+                                <p id="spelare">SkogisAB 💎</p>
+                            </a>
+                        </li>
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/Beequid/face"
+                                alt="Spelare">
+                            <a href="https://namemc.com/profile/Beequid">
+                                <p id="spelare">Beequid</p>
+                            </a>
+                        </li>
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/Elf_Oliver/face"
                                 alt="Spelare">
                             <a href="https://namemc.com/profile/Elf_Oliver">
-                                <p id="spelare">Elf_Oliver 💎</p>
+                                <p id="spelare">Elf_Oliver</p>
                             </a>
                         </li>
-                        <li>
-                            <img src="https://starlightskins.lunareclipse.studio/render/default/Lulle2345/bust"
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/Lulle2345/face"
                                 alt="Spelare">
                             <a href="https://namemc.com/profile/Lulle2345">
-                                <p id="spelare">Lulle2345 💎</p>
+                                <p id="spelare">Lulle2345</p>
                             </a>
                         </li>
-                        <li>
-                            <img src="https://starlightskins.lunareclipse.studio/render/default/JoarBjorn/bust"
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/RealFemboySlayer/face"
                                 alt="Spelare">
-                            <a href="https://namemc.com/profile/JoarBjorn">
-                                <p id="spelare">JoarBjorn</p>
+                            <a href="https://namemc.com/profile/RealFemboySlayer">
+                                <p id="spelare">RealFemboySlayer</p>
                             </a>
                         </li>
-                        <li>
-                            <img src="https://starlightskins.lunareclipse.studio/render/default/MelvinMinecraft1/bust"
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/robban10/face"
                                 alt="Spelare">
-                            <a href="https://namemc.com/profile/MelvinMinecraft1">
-                                <p id="spelare">MelvinMinecraft1</p>
+                            <a href="https://namemc.com/profile/robban10">
+                                <p id="spelare">robban10</p>
                             </a>
                         </li>
-                        <li>
-                            <img src="https://starlightskins.lunareclipse.studio/render/default/Minesotis/bust"
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/Sky_Rice/face"
                                 alt="Spelare">
-                            <a href="https://namemc.com/profile/Minesotis">
-                                <p id="spelare">Minesotis</p>
+                            <a href="https://namemc.com/profile/Sky_Rice">
+                                <p id="spelare">Sky_Rice</p>
                             </a>
                         </li>
-                        <li><br>💎-Symbolen visar vem/vilka som har skapat och satt ihop modpacket.</li>
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/Timcraft242/face"
+                                alt="Spelare">
+                            <a href="https://namemc.com/profile/Timcraft242">
+                                <p id="spelare">Timcraft242</p>
+                            </a>
+                        </li>
+                        <li><img src="https://starlightskins.lunareclipse.studio/render/default/Zcloak/face"
+                                alt="Spelare">
+                            <a href="https://namemc.com/profile/Zcloak">
+                                <p id="spelare">Zcloak</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
@@ -85,15 +104,18 @@
                 <div class="card">
                     <h3 class="text-align-left">Info:</h3>
                     <ul class="card-lista">
-                        <li><img src="https://neoforged.net/img/authors/neoforged.png" alt="NeoForge-logotyp">
-                            <p>NeoForge</p>
+                        <li><img src="{{ url_for('static', filename='img/details/forge.webp') }}" alt="Forge-logotyp">
+                            <p>Forge</p>
+                        </li>
+                        <li><img src="https://fabricmc.net/assets/logo.png" alt="Fabric-logotyp">
+                            <p>Fabric</p>
                         </li>
                         <li><img src="https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
                                 alt="Minecraft-logotyp">
-                            <p>Minecraft 1.21.1</p>
+                            <p>Minecraft 1.20.1</p>
                         </li>
                         <li><img src="https://wiki.createmod.net/create-icon-large.webp" alt="Create-logotyp">
-                            <p>Create 6.0.0+</p>
+                            <p>Create 0.5.1+</p>
                         </li>
                     </ul>
                 </div>
@@ -106,8 +128,8 @@
                             <img id="download-symbol" src="{{ url_for('static', filename='img/download.webp') }}"
                                 alt="Ladda ner">
                             <p><a id="file-download"
-                                    href="{{ url_for('static', filename='files/civitas_synergy_1.2.0.mrpack') }}"
-                                    download>Synergy 1.2.0</a></p>
+                                    href="{{ url_for('static', filename='files/The_Civitas_Stories_Re-created-1.4.1.zip') }}"
+                                    download>Re-Created 1.4.1</a></p>
                         </div>
                         <h3>Världar:</h3>
                         <div class="display-flex-row">
