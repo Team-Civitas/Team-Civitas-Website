@@ -6,7 +6,7 @@ import flask
 from flask import abort, request, render_template, jsonify
 from werkzeug.exceptions import HTTPException
 from markupsafe import escape
-from livereload import Server
+from livereload import Server # type: ignore
 
 from typing import Dict
 
@@ -153,7 +153,14 @@ def count_images_with_paths(root_folder: str, base_path: str = "") -> Dict[str, 
 
 @app.route("/json-info")
 def json_info():
-    return jsonify(count_images_with_paths(staticFolder + "/img"))
+    
+    json_data = {}
+    if production and json_data is None:
+        json_data = count_images_with_paths(staticFolder + "/img")
+    else:
+        json_data = count_images_with_paths(staticFolder + "/img")
+    
+    return jsonify(json_data)
 
 
 ##########################################
