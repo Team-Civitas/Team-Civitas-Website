@@ -156,8 +156,9 @@ function loadImgs(imageData) {
     if (!grid) return;
 
     const modpackName = location.pathname.split("/").pop().split(".")[0];
-  
-    for (let i = 1; i <= searchInJson(imageData, `portfolio/${modpackName}`); i++) {
+
+    const imageCount = searchInJson(imageData, `portfolio/${modpackName}`);
+    for (let i = 1; i <= imageCount; i++) {
         const imgPath = `../static/img/portfolio/${modpackName}/${modpackName} (${i}).webp`;
         createImageElement(imgPath, `${modpackName} image ${i}`);
     }
