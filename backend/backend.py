@@ -154,10 +154,9 @@ def count_images_with_paths(root_folder: str, base_path: str = "") -> Dict[str, 
 @app.route("/json-info")
 def json_info():
     
-    json_data = {}
     if production and json_data is None:
         json_data = count_images_with_paths(staticFolder + "/img")
-    else:
+    elif not production:
         json_data = count_images_with_paths(staticFolder + "/img")
     
     return jsonify(json_data)
