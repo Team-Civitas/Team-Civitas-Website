@@ -87,13 +87,13 @@ h4 {
 
 /*Default hover features*/
 .modpack-card:hover,
-.modpack:hover {
+.card:hover {
     background-color: var(--card-bg-hover);
     transition: ease-in-out 0.15s;
 }
 
 .modpack-card a:hover,
-.modpack a:hover {
+.card a:hover {
     color: var(--white);
 }
 
