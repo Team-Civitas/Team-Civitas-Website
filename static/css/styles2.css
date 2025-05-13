@@ -51,8 +51,30 @@ h2 {
     font-weight: bold;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 1vh;
+}
+
+
 h3 {
     font-size: 24px;
+}
+
+/*Default margin below the description*/
+.margin-from-description {
+    margin-bottom: 2vh;
+}
+
+/*Default hover feature*/
+.modpack-card:hover,
+.modpack:hover {
+    background-color: var(--card-bg-hover);
 }
 
 /*================NAVBAR================*/
@@ -168,10 +190,6 @@ h3 {
     width: 400px;
 }
 
-.modpack-card:hover {
-    background-color: var(--card-bg-hover);
-}
-
 .modpack-card img {
     width: 350px;
 }
@@ -203,8 +221,14 @@ h3 {
     max-width: 1000px;
     text-align: center;
     margin: 0 60px;
+    margin-bottom: 60px;
 }
 
+.modpack img {
+    width: 100%;
+}
+
+/*Cards => Modpack Page*/
 .modpack {
     display: flex;
     flex-direction: column;
@@ -214,62 +238,21 @@ h3 {
     transition: ease-in-out 0.15s;
 }
 
-.modpack img {
-  width: 100%;
+/*Card mimics => Modpack Page*/
+#modpack-mimic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/*.modpack-cards, .ovrigt-cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 60px;
-  max-width: 1000px;
-  text-align: center;
-  margin: 0 8vw;
+#modpack-mimic h1 {
+    user-select: none;
 }
 
-.modpack, .modpack-mimic, .kort, .kort-rött {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--card-bg);
-  border-radius: 20px;
-  padding: 5%;
-  transition: ease-in-out 0.15s;
+#modpack-mimic:hover{
+    background-color: var(--card-bg) !important;
 }
-
-.modpack-mimic h1 {
-  user-select: none;
-}
-
-#mimic-1, #mimic-2 {
-  display: none;
-}
-
-.modpack:hover, .kort:hover {
-  background-color: var(--card-bg-hover);
-}
-
-.kort-rött:hover {
-  background-color: #2c0000;
-  cursor: not-allowed;
-}
-
-.modpack-inforuta {
-  border-top: solid 2px var(--white);
-}
-
-.modpack img, .kort img, .kort-rött img {
-  width: 100%;
-  margin-bottom: 1vh;
-}
-
-.modpack h2 {
-  margin: 1vh 0;
-}
-
-.modpack-mimic {
-  justify-content: center;
-  align-items: center;
-}*/
 
 /*================MEDIA QUERIES================*/
 
@@ -283,6 +266,6 @@ h3 {
 /*Desktop*/
 @media (min-width: 1025px) {
     .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
