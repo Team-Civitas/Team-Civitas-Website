@@ -264,7 +264,7 @@ h3 {
 
 /*Card mimics => Modpack Page*/
 #modpack-mimic {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -300,5 +300,9 @@ h3 {
 
     .modpack-list {
         flex-direction: row;
+    }
+
+    #modpack-mimic {
+        display: flex;
     }
 }
