@@ -1,39 +1,115 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const grid = document.getElementById("portfolio-bilder");
-    const modpackName = this.location.href.split("/").slice(-1)[0].split(".")[0];
-    let index = 1;
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-    const imageSources = [];
-    let currentImageIndex = 0;
+//################################################//
+//################ JSON FUNCTIONS ################//
+//################################################//
 
-    // Skapar popup-en och lägger till den i body-elementet
-    const popup = document.createElement("div");
+async function getJsonInfo(path) {
+  try {
+    console.log("Fetching image count data...");
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    console.log("Data fetched successfully:", data);
+    return data;
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    return null;
+  }
+}
+
+function searchInJson(data, keyToSearch) {
+  if (data && data.hasOwnProperty(keyToSearch)) {
+    return data[keyToSearch];
+  }
+
+  for (const [key, value] of Object.entries(data)) {
+    if (typeof value === 'object' && value !== null) {
+      const result = searchInJson(value, keyToSearch);
+      if (result !== "Not Found") {
+        return result;
+      }
+    }
+  }
+  return "Not Found";
+}
+
+//################################################//
+//################### CHANGE BG ##################//
+//################################################//
+
+function changeBackground(imageData) {
+  const count = searchInJson(imageData, "featured_imgs");
+  const backgroundImageElement = document.getElementById("background-image");
+  if (count && count > 0) {
+    const index = getRandomInt(1, count);
+    backgroundImageElement.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
+  } else {
+    console.error("No images available to display.");
+  }
+}
+
+//################################################//
+//################### DROPDOWN ###################//
+//################################################//
+
+function showDropdown() {
+
+  var dropdown = document.getElementById("dropdown");
+
+  dropdown.classList.toggle("active");
+  console.log("Dropdown togglades");
+
+  dropdown.style.transition = 'opacity 0.5s ease';
+}
+
+window.addEventListener("resize", () => {
+  const dropdown = document.getElementById("dropdown");
+  if (dropdown) dropdown.classList.remove("active");
+});
+
+//################################################//
+//############# LOAD IMGS AND POPUP ##############//
+//################################################//
+
+const imageSources = [];
+let currentImageIndex = 0;
+let popup;
+let popupImage;
+
+// Show image in popup by index
+function showImage(index) {
+    if (index < 0) index = imageSources.length - 1;
+    if (index >= imageSources.length) index = 0;
+    currentImageIndex = index;
+    popupImage.src = imageSources[currentImageIndex];
+}
+
+// Create the popup element and append to body
+function createPopup() {
+    popup = document.createElement("div");
     popup.id = "imagepopup";
 
-    const popupImage = document.createElement("img");
+    popupImage = document.createElement("img");
     popupImage.classList.add("popup-image");
 
-
-    // Skapar pilar för att man ska kunna bläddra bland bilderna i portfolion
     const leftArrow = document.createElement("div");
     const rightArrow = document.createElement("div");
 
     leftArrow.textContent = "‹";
-    leftArrow.classList.add("popup-arrow", "popup-arrow-left");
-
     rightArrow.textContent = "›";
+
+    leftArrow.classList.add("popup-arrow", "popup-arrow-left");
     rightArrow.classList.add("popup-arrow", "popup-arrow-right");
 
-    // Funktioner för att byta bild med pilarna
-    function showImage(index) {
-        if (index < 0) index = imageSources.length - 1;
-        if (index >= imageSources.length) index = 0;
-        currentImageIndex = index;
-        popupImage.src = imageSources[currentImageIndex];
-    }
-
     leftArrow.addEventListener("click", (e) => {
-        e.stopPropagation(); // så att popup inte stängs
+        e.stopPropagation();
         showImage(currentImageIndex - 1);
     });
 
@@ -42,84 +118,56 @@ document.addEventListener("DOMContentLoaded", function () {
         showImage(currentImageIndex + 1);
     });
 
-    popup.appendChild(leftArrow);
-    popup.appendChild(popupImage);
-    popup.appendChild(rightArrow);
-    document.body.appendChild(popup);
-
-    // Stänger popup-en när man klickar utanför bilden
     popup.addEventListener("click", (event) => {
         if (event.target === popup) {
             popup.style.display = "none";
         }
     });
 
-    // Funktion som lägger till bilder i portfolion
-    function createImageElement(src, alt) {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = alt;
-        img.style.cursor = "pointer";
-
-        const thisIndex = imageSources.length;
-        imageSources.push(src);
-
-        img.addEventListener("click", () => {
-            showImage(thisIndex);
-            popup.style.display = "flex";
-        });
-
-        grid.appendChild(img);
-    }
-
-    // Laddar alla bilder automatiskt
-    async function countImages() {
-        const maxParallelLoads = 9; // Number of images to load in parallel
-
-        while (true) {
-            const urls = [];
-            for (let i = 0; i < maxParallelLoads; i++) {
-                const url = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
-                urls.push(url);
-                index++;
-            }
-
-            try {
-                const responses = await Promise.all(
-                    urls.map(async (url) => {
-                        const response = await fetch(url);
-                        if (!response.ok) throw new Error("Image not found");
-                        return url;
-                    })
-                );
-
-                responses.forEach((url, i) => {
-                    createImageElement(url, `Bild - ${index - maxParallelLoads + i}`);
-                });
-            } catch (error) {
-                break; // Stop loading if any image is not found
-            }
-        }
-    }
-
-    countImages();
-});
-
-// Funktion för att toggla menyn när man klickar på knappen (i navbar)
-function showDropdown() {
-
-    var dropdown = document.getElementById("dropdown"); // Skapar en variabel för alla element med id:t dropdown
-
-    dropdown.classList.toggle("active"); // Togglar klassen "active" på alla element med id:t dropdown
-    console.log("Dropdown togglades");
-
-    dropdown.style.transition = 'opacity 0.5s ease'; // Lite fina detaljer :)
+    popup.appendChild(leftArrow);
+    popup.appendChild(popupImage);
+    popup.appendChild(rightArrow);
+    document.body.appendChild(popup);
 }
 
-// Stänger ner menyn ifall fönstrets storlek förändras
-// Kollar efter när fönstrets storlek förändras
-window.addEventListener("resize", () => {
-    const dropdown = document.getElementById("dropdown"); // Skapar en konstant för alla element med id:t dropdown
+// Create and append an image to the grid
+function createImageElement(src, alt) {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = alt;
+    img.classList.add("grid-item");
+    img.style.cursor = "pointer";
 
-    if (dropdown) dropdown.classList.remove("active"); // Om alla element med det id:t har klassen "active" tas den klassen bort -> detta för att dölja menyn ifall fönstrets storlek förändras
+    const thisIndex = imageSources.length;
+    imageSources.push(src);
+
+    img.addEventListener("click", () => {
+        showImage(thisIndex);
+        popup.style.display = "flex";
+    });
+
+    const grid = document.getElementById("portfolio-bilder");
+    grid.appendChild(img);
+}
+
+// Load a set of images based on current URL
+function loadImgs() {
+    const grid = document.getElementById("portfolio-bilder");
+    const modpackName = location.href.split("/").slice(-1)[0].split(".")[0];
+
+    for (let i = 1; i <= 5; i++) {
+        const imgPath = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
+        createImageElement(imgPath, `${modpackName} image ${i}`);
+    }
+}
+
+//################################################//
+//#################### EVENTS ####################//
+//################################################//
+
+window.addEventListener("DOMContentLoaded", async () => {
+  const imageData = await getJsonInfo(`${this.location.href}json-info`);
+  changeBackground(imageData);
+  createPopup();
+  loadImgs();
 });
