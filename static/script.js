@@ -131,7 +131,7 @@ function createPopup() {
 }
 
 // Create and append an image to the grid
-function createImageElement(src, alt) {
+async function createImageElement(src, alt) {
     const img = document.createElement("img");
     img.src = src;
     img.alt = alt;
