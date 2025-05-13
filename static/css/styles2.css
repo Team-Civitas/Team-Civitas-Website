@@ -66,8 +66,13 @@ h3 {
     font-size: 24px;
 }
 
-/*Default margin below the description*/
-.margin-from-description {
+/*Default margins*/
+
+.margin-above-title {
+    margin-top: 2vh;
+}
+
+.margin-beneath-description {
     margin-bottom: 2vh;
 }
 
@@ -118,6 +123,15 @@ h3 {
 /**/
 /**/
 /**/
+
+/*Tillbakaknapp*/
+#tillbaka {
+  position: absolute;
+  top: 5vh;
+  left: 0.75vw;
+  text-align: left;
+  font-size: 80px;
+}
 
 /*================FOOTER================*/
 
@@ -244,10 +258,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#modpack-mimic h1 {
-    user-select: none;
+    user-select: none
 }
 
 #modpack-mimic:hover{
