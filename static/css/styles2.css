@@ -76,10 +76,15 @@ h3 {
     margin-bottom: 2vh;
 }
 
-/*Default hover feature*/
+/*Default hover features*/
 .modpack-card:hover,
 .modpack:hover {
     background-color: var(--card-bg-hover);
+}
+
+.modpack-card a:hover,
+.modpack a:hover {
+    color: var(--white);
 }
 
 /*================NAVBAR================*/
@@ -130,11 +135,11 @@ h3 {
 
 /*Tillbakaknapp*/
 #tillbaka {
-  position: absolute;
-  top: 5vh;
-  left: 0.75vw;
-  text-align: left;
-  font-size: 80px;
+    position: absolute;
+    top: 5vh;
+    left: 0.75vw;
+    text-align: left;
+    font-size: 80px;
 }
 
 /*================FOOTER================*/
@@ -265,7 +270,7 @@ h3 {
     user-select: none
 }
 
-#modpack-mimic:hover{
+#modpack-mimic:hover {
     background-color: var(--card-bg) !important;
 }
 
