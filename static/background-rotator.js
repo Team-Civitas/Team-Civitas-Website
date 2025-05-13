@@ -34,20 +34,18 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-window.addEventListener("DOMContentLoaded", async () => {
-  const el = document.getElementById("background-image");
-
-  const imageData = await getJsonInfo(`${this.location.href}json-info`);
-  const imageCount = searchInJson(imageData, "featured_imgs");
-
-  if (imageCount && imageCount > 0) {
-    function changeBackground() {
-      const index = getRandomIntInclusive(1, imageCount);
-      console.log(`Changing background image to index: ${index}`);
-      el.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
-    }
-    changeBackground();
+function changeBackground(imageData) {
+  const count = searchInJson(imageData, "featured_imgs");
+  const backgroundImageElement = document.getElementById("background-image");
+  if (count && count > 0) {
+    const index = getRandomIntInclusive(1, count);
+    backgroundImageElement.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
   } else {
     console.error("No images available to display.");
   }
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+  const imageData = await getJsonInfo(`${this.location.href}json-info`);
+  changeBackground(imageData);
 });
