@@ -1,3 +1,13 @@
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//################################################//
+//################ JSON FUNCTIONS ################//
+//################################################//
+
 async function getJsonInfo(path) {
   try {
     console.log("Fetching image count data...");
@@ -30,15 +40,15 @@ function searchInJson(data, keyToSearch) {
   return "Not Found";
 }
 
-function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+//################################################//
+//################### CHANGE BG ##################//
+//################################################//
 
 function changeBackground(imageData) {
   const count = searchInJson(imageData, "featured_imgs");
   const backgroundImageElement = document.getElementById("background-image");
   if (count && count > 0) {
-    const index = getRandomIntInclusive(1, count);
+    const index = getRandomInt(1, count);
     backgroundImageElement.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
   } else {
     console.error("No images available to display.");
