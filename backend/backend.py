@@ -156,9 +156,7 @@ def count_images_with_paths(root_folder: str, base_path: str = "") -> Dict[str, 
 def json_info():
     global json_data
 
-    if not production:
-        json_data = count_images_with_paths(staticFolder + "/img")
-    elif json_data is None:
+    if not production or json_data is None:
         json_data = count_images_with_paths(staticFolder + "/img")
     
     return jsonify(json_data)
