@@ -6,7 +6,6 @@ import flask
 from flask import abort, request, render_template, jsonify
 from werkzeug.exceptions import HTTPException
 from markupsafe import escape
-from livereload import Server # type: ignore
 
 from typing import Dict
 
@@ -19,6 +18,9 @@ app = flask.Flask(__name__, static_folder=staticFolder, template_folder=template
 production = True if os.getenv("ENV") == "production" else False
 script_path = os.path.abspath("") + "/backend/update.sh"
 WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
+
+if not production:
+    from livereload import Server # type: ignore
 
 ##########################################
 ########## Webhook Handler ###############

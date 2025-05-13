@@ -45,13 +45,13 @@ function searchInJson(data, keyToSearch) {
 //################################################//
 
 function changeBackground(imageData) {
-  const count = searchInJson(imageData, "featured_imgs");
   const backgroundImageElement = document.getElementById("background-image");
+  if (!backgroundImageElement) return;
+
+  const count = searchInJson(imageData, "featured_imgs");
   if (count && count > 0) {
     const index = getRandomInt(1, count);
     backgroundImageElement.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
-  } else {
-    console.error("No images available to display.");
   }
 }
 
@@ -151,23 +151,26 @@ function createImageElement(src, alt) {
 }
 
 // Load a set of images based on current URL
-function loadImgs() {
+function loadImgs(imageData) {
     const grid = document.getElementById("portfolio-bilder");
-    const modpackName = location.href.split("/").slice(-1)[0].split(".")[0];
+    if (!grid) return;
 
-    for (let i = 1; i <= 5; i++) {
-        const imgPath = `../static/img/portfolio/${modpackName}/${modpackName} (${index}).webp`;
+    const modpackName = location.pathname.split("/").pop().split(".")[0];
+  
+    for (let i = 1; i <= searchInJson(imageData, `portfolio/${modpackName}`); i++) {
+        const imgPath = `../static/img/portfolio/${modpackName}/${modpackName} (${i}).webp`;
         createImageElement(imgPath, `${modpackName} image ${i}`);
     }
 }
+
 
 //################################################//
 //#################### EVENTS ####################//
 //################################################//
 
 window.addEventListener("DOMContentLoaded", async () => {
-  const imageData = await getJsonInfo(`${this.location.href}json-info`);
+  const imageData = await getJsonInfo(`${location.origin}/json-info`);
   changeBackground(imageData);
   createPopup();
-  loadImgs();
+  loadImgs(imageData);
 });
