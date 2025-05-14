@@ -40,6 +40,7 @@ main {
     --card-bg: #00000095; /*Ny*/
     --card-bg-hover: #70707050;
     --highlight-color: #41BFFF;
+    --red: #ff4141;
     --border-radius: 15px;
 
     /*Tilfälligt borttagna:*/
@@ -114,6 +115,15 @@ h4 {
 .display-flex-row {
     display: flex;
     flex-direction: row;
+}
+
+/*Not yet available-class*/
+.not-yet-available {
+    color: var(--red);
+}
+/*Grayscale filter*/
+.grayscale-img {
+    filter: grayscale(100%);
 }
 
 /*================NAVBAR================*/
