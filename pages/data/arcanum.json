@@ -8,13 +8,11 @@
     "download": {
 
         "modpack": {
-            "_comment": "MODPACK DOWNLOAD INFO",
             "filename": "The Civitas Stories- Arcanum-0.0.1-1.19.2.zip",
             "filename_version": "0.0.1"
         },
 
         "world": {
-            "_comment": "WORLD DOWNLOAD INFO",
             "filename": "Saknar världsnerladdning",
             "filename_version": ""
         }
@@ -22,11 +20,11 @@
     "players": [
         { "username": "DanteMinecraft", "creator": true },
         { "username": "Zcloak", "creator": true },
-        { "username": "Farligtt", "creator": false },
-        { "username": "fraggeYT", "creator": false },
-        { "username": "ixy404", "creator": false },
-        { "username": "NoobElis", "creator": false },
-        { "username": "TwitchErik71", "creator": false }
+        { "username": "Farligtt"},
+        { "username": "fraggeYT"},
+        { "username": "ixy404"},
+        { "username": "NoobElis"},
+        { "username": "TwitchErik71"}
     ],
     "info": [
         {

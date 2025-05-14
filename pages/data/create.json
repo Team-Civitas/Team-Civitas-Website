@@ -1,0 +1,41 @@
+{
+    "modpack": {
+        "id": "create",
+        "name": "Civitas: Create",
+        "description": "Efter att Vaults & Space (Pre-Civitas Modpack) var färdigspelat och teamet övergick från Uncrusted till Team Civitas så startades Civitas: Create - Det första Team Civitas-modpacket någonsin. Modpacket hade Create-modden i fokus och innehöll till en början Valkyrien Skies, men efter endast någon dag togs Valkyrien Skies bort på grund av kompatibilitetsproblem och prestandabuggar vilket gjorde modpacket till ett vanligt Create-modpack.",
+        "logotype": "civitas_create.png"
+    },
+    "download": {
+
+        "modpack": {
+            "filename": "The Civitas Stories- Create-1.2.zip",
+            "filename_version": "1.2"
+        },
+
+        "world": {
+            "filename": "Saknar världsnerladdning",
+            "filename_version": ""
+        }
+    },
+    "players": [
+        { "username": "DanteMinecraft", "creator": true },
+        { "username": "Zcloak", "creator": true },
+        { "username": "Farligtt"},
+        { "username": "JukkasMan", "image_override": "https://starlightskins.lunareclipse.studio/render/default/zh0ooou/bust"},
+        { "username": "NoobElis"},
+        { "username": "TwitchErik71" }
+    ],
+    "info": [
+        {
+            "label": "Forge"
+        },
+        {
+            "label": "Minecraft",
+            "version": "1.18.2"
+        },
+        {
+            "label": "Create",
+            "version": "0.5.0+"
+        }
+    ]
+}
