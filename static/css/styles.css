@@ -15,12 +15,21 @@ html {
 body {
     margin: 0;
     padding: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
     background-color: var(--background-color);
-    flex: 1;
 
     color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+}
+
+main {
+    flex: 1;
 }
 
 /*================VARIABLES================*/
@@ -32,7 +41,7 @@ body {
     --card-bg-hover: #70707050;
     --highlight-color: #41BFFF;
     --border-radius: 15px;
-    
+
     /*Tilfälligt borttagna:*/
     /*--background-color: #0D1114;*/
     /*--card-bg: #00000090;*/
