@@ -36,16 +36,12 @@ main {
 
 :root {
     --white: #fff;
-    --background-color: #12171a; /*Ny*/
-    --card-bg: #00000095; /*Ny*/
+    --background-color: #0D1114;
+    --card-bg: #00000090;
     --card-bg-hover: #70707050;
     --highlight-color: #41BFFF;
     --red: #ff4141;
     --border-radius: 15px;
-
-    /*Tilfälligt borttagna:*/
-    /*--background-color: #0D1114;*/
-    /*--card-bg: #00000090;*/
 }
 
 /*================GLOBAL================*/
@@ -125,6 +121,7 @@ h4 {
 .not-yet-available {
     color: var(--red);
 }
+
 /*Grayscale filter*/
 .grayscale-img {
     filter: grayscale(100%);
@@ -221,7 +218,7 @@ h4 {
 .not-found-karaktärer img {
     margin-top: 5vh;
     height: 30vh;
-  }
+}
 
 /*==========================================================*/
 /*                       LANDING PAGE                       */
@@ -356,8 +353,9 @@ h4 {
     background-color: var(--card-bg) !important;
 }
 
-.ind-modpack-listor .card ul li a:hover, .highlight-override:hover {
-    color : var(--highlight-color) !important;
+.ind-modpack-listor .card ul li a:hover,
+.highlight-override:hover {
+    color: var(--highlight-color) !important;
 }
 
 .text-align-left {
