@@ -155,11 +155,13 @@ def page(page):
         abort(404, description="File not found")
 
 existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
+existingModpacks.remove("template")
 @app.route("/modpacks/<modpack>")
 def modpack_route(modpack):
     
     if not production:
         existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
+        existingModpacks.remove("template")
         
     if modpack not in existingModpacks:
         abort(404, description="File not found")
