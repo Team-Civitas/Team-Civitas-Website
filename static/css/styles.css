@@ -252,7 +252,7 @@ h4 {
 }
 
 /*==========================================================*/
-/*                     BROSWE MODPACKS                      */
+/*                     BROWSE MODPACKS                      */
 /*==========================================================*/
 
 .header-content {
@@ -318,8 +318,12 @@ h4 {
     margin-bottom: 60px;
 }
 
-.ind-modpack-listor .card:hover {
+.ind-modpack-listor .card {
     background-color: var(--card-bg) !important;
+}
+
+.ind-modpack-listor .card ul li a:hover, .highlight-override:hover {
+    color : var(--highlight-color) !important;
 }
 
 .text-align-left {
