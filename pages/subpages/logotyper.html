@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logotyper | Team Civitas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" type="image/webp" />
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    {% include 'templates/partial/navbar.html' %}
+
+    <!--Tillbaka-knapp-->
+    <a href="/" id="tillbaka">‹</a>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <header class="header-content">
+            <h1 class="margin-above-title">LOGOTYPER</h1>
+            <p class="margin-beneath-description">Här finns alla logotyper från hela Civitashistorien samlade, till och
+                WIP-logotyper samt skrotade logotyper!</p>
+        </header>
+
+        <section>
+            <div class="center-cards">
+                <div class="cards">
+                    <div class="card">
+                        <a href="/logotyper/team-civitas">
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='/img/modpacks/civitas_main.webp') }}"
+                                alt="Team Civitas">
+                            <div class="border-top">
+                                <h3>Team Civitas</h3>
+                                <p>Samling</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <a href="/logotyper/team-civitas-classic">
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='/img/logotypes/team-civitas-classic/Team Civitas 2023-2025.png') }}"
+                                alt="Team Civitas Classic">
+                            <div class="border-top">
+                                <h3>Team Civitas Classic</h3>
+                                <p>Samling</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <a href="/logotyper/team-civitas-legacy">
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='/img/logotypes/team-civitas-legacy/logo_crystal.png') }}"
+                                alt="Team Civitas Legacy">
+                            <div class="border-top">
+                                <h3>Team Civitas Legacy</h3>
+                                <p>Samling</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="card">
+                        <a href="{{ url_for('static', filename='img/logotypes/overdrive/overdrive_logotype.png') }}" download>
+                            <img draggable="false" src="{{ url_for('static', filename='img/logotypes/overdrive/overdrive_logotype.png') }}" alt="Civitas: Create Horizons">
+                            <div class="modpack-inforuta">
+                                <h3>Civitas: Create Horizons</h3>
+                                <p>Direktnedladdning</p>
+                            </div>
+                            <!--<span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}" alt="Nedladdningsikon"></span>-->
+                        </a>
+                    </div>
+
+                    <!--Mimic-->
+                    <div class="card" id="modpack-mimic">
+                        <h2>Kommande<br>Samling</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'templates/partial/footer.html' %}
+
+</body>
+
+</html>
