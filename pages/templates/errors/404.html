@@ -2,38 +2,51 @@
 <html lang="sv">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Civitas</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
-    <link rel="shortcut icon" href="../static/img/modpacks/civitas_main.webp" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Team Civitas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" type="image/webp" />
 </head>
 
-<body id="error-404">
-    <section class="container-404">
-        <div class="four-o-four">
+<body>
 
-            <!--404-->
-            <div class="four-o-four-flex">
-                <p>404</p>
+    <!-- NAVIGATION -->
+    {% include 'templates/partial/navbar.html' %}
+
+    <!--Tillbaka-knapp-->
+    <a href="/" id="tillbaka">‹</a>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <header class="header-content">
+            <p class="not-found-header">404</p>
+        </header>
+
+        <section>
+            <div class="header-content">
+                <h1>Woopsies!</h1>
+                <p>Det verkar som att den här sidan inte finns ännu. Klicka <a class="underlined" href="/">här</a> för att gå tillbaka till
+                    en mer säker plats!</p>
             </div>
 
-            <!--Titel-->
-            <h1>Woopsies!</h1>
-
-            <!--Beskrivning-->
-            <p id="four-o-four-beskrivning">Det verkar som att den här sidan inte finns ännu. Klicka <a href="/">här</a> för att gå tillbaka till en mer säker plats!</p>
-            
-            <!--Skin-->
-            <div class="four-o-four-karaktärer-flex">
-                <img id="elf_oliver" src="https://starlightskins.lunareclipse.studio/render/cheering/Elf_Oliver/full" draggable="false"
-                    alt="Elf_Oliver-karaktär">
+            <div class="not-found-karaktärer">
+                <img id="elf_oliver"
+                    src="https://starlightskins.lunareclipse.studio/render/cheering/Elf_Oliver/full"
+                    draggable="false" alt="Elf_Oliver-karaktär">
                 <img id="danteminecraft"
-                    src="https://starlightskins.lunareclipse.studio/render/relaxing/DanteMinecraft/full" draggable="false"
-                    alt="DanteMinecraft-karaktär">
+                    src="https://starlightskins.lunareclipse.studio/render/relaxing/DanteMinecraft/full"
+                    draggable="false" alt="DanteMinecraft-karaktär">
             </div>
-        </div>
-    </section>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'templates/partial/footer.html' %}
+
 </body>
 
 </html>
