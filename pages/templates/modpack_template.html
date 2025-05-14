@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ modpack.name }} | Team Civitas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ modpack.image_url }}" type="image/x-icon">
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    {% include 'templates/partial/navbar.html' %}
+
+    <!--Tillbaka-knapp-->
+    <a href="/modpacks" id="tillbaka">‹</a>
+
+    <!-- MAIN CONTENT -->
+    <header class="header-content">
+        <img src="{{ modpack.image_url }}" alt="{{ modpack.name }}-logotyp">
+        <h1 class="margin-above-title">{{ modpack.name }}</h1>
+        <p class="margin-beneath-description">{{ modpack.description }}</p>
+    </header>
+
+    <section>
+        <div class="center-cards">
+            <div class="ind-modpack-listor">
+                <!--Card 1-->
+                <div class="card">
+                    <h3 class="text-align-left">Spelare:</h3>
+                    <ul class="card-lista">
+                        {% for player in players %}
+                        <li>
+                            <img src="https://starlightskins.lunareclipse.studio/render/default/{{ player.username }}/bust"
+                                alt="Spelare">
+                            <a href="https://namemc.com/profile/{{ player.username }}">
+                                <p id="spelare">{{ player.username }}{% if player.creator %} 💎{% endif %}</p>
+                            </a>
+                        </li>
+                        {% endfor %}
+                        <li><br>💎-Symbolen visar vem/vilka som har skapat och satt ihop modpacket.</li>
+                    </ul>
+                </div>
+
+                <!--Card 2-->
+                <div class="card">
+                    <h3 class="text-align-left">Info:</h3>
+                    <ul class="card-lista">
+                        {% for item in info %}
+                        <li>
+                            <img src="{{ item.image }}" alt="{{ item.label }}">
+                            <p>{{ item.label }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!--Card 3-->
+                <div class="card">
+                    <div class="text-align-left">
+                        <h3>Modpack:</h3>
+                    <div class="display-flex-row">
+                        <img id="download-symbol" src="{{ url_for('static', filename='img/download.webp') }}" alt="Ladda ner">
+                            {% if 'Saknar' in download.modpack.filename %}
+                                <p>{{ download.modpack.filename }}</p>
+                            {% else %}
+                                <p><a id="file-download" href="{{ download.modpack.modpack_download_url }}" download>{{ download.modpack.filename }}</a></p>
+                            {% endif %}
+                    </div>
+                        <h3>Världar:</h3>
+                        <div class="display-flex-row">
+                            <img id="download-symbol" src="{{ url_for('static', filename='img/download.webp') }}" alt="Ladda ner">
+                            {% if 'Saknar' in download.world.filename %}
+                                <p>{{ download.world.filename }}</p>
+                            {% else %}
+                                <p><a id="file-download" href="{{ download.world.world_download_url }}" download>{{ download.world.filename }}</a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h1 class="header-content">Portfolio</h1>
+        <div class="portfolio-grid" id="portfolio-bilder">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    {% include 'templates/partial/footer.html' %}
+
+</body>
+
+</html>

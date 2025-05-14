@@ -3,9 +3,11 @@ import hmac, hashlib, subprocess, os
 from dotenv import load_dotenv
 
 import flask
-from flask import abort, request, render_template, jsonify
+from flask import abort, request, render_template, jsonify, url_for, send_file
 from werkzeug.exceptions import HTTPException
 from markupsafe import escape
+
+import json
 
 from typing import Dict
 
@@ -63,55 +65,6 @@ def webhook():
         return {"status": "error", "message": f"Error executing script: {e}"}
 
 ##########################################
-############## Website ###################
-##########################################
-
-@app.route("/")
-def home():
-    return render_template("subpages/index.html")
-
-@app.route("/<page>")
-def page(page):
-    try:
-        return render_template(f'subpages/{escape(page)}.html')
-    except:
-        abort(404, description="File not found")
-
-@app.route("/modpacks/<modpack>")
-def modpack(modpack):
-    try:
-        return render_template(f'modpacks/{escape(modpack)}.html')
-    except:
-        abort(404, description="File not found")
-
-@app.route("/logotyper/<logo>")
-def logos(logo):
-    try:
-        return render_template(f'logotyper/{escape(logo)}.html')
-    except:
-        abort(404, description="File not found")
-
-##########################################
-########### Error Handling ###############
-##########################################
-
-@app.route("/error/<int:code>")
-def error(code):
-    if code in {400, 403, 404, 500}:
-        abort(code)
-    else:
-        abort(404)
-
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template("templates/errors/404.html"), 404
-
-@app.errorhandler(HTTPException)
-def handle_http_exception(e):
-    return render_template("templates/errors/error.html", error=e), e.code
-
-
-##########################################
 ############## JSON DATA #################
 ##########################################
 
@@ -162,6 +115,78 @@ def json_info():
     
     return jsonify(json_data)
 
+##########################################
+############## Website ###################
+##########################################
+
+@app.route("/")
+def home():
+    return render_template("subpages/index.html")
+
+@app.route("/<page>")
+def page(page):
+    try:
+        return render_template(f'subpages/{escape(page)}.html')
+    except:
+        abort(404, description="File not found")
+
+@app.route("/modpacks/<modpack>")
+def modpack_route(modpack):
+    try:
+        with open(f"{templateFolder}/data/{escape(modpack)}.json", encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        abort(404, description="File not found")
+
+    # Build URLs for downloads and logotype
+    data["download"]["modpack"]["modpack_download_url"] = url_for("static", filename=f"files/{data['download']['modpack']['filename']}")
+    data["download"]["world"]["world_download_url"] = url_for("static", filename=f"files/{data['download']['world']['filename']}")
+    data["modpack"]["image_url"] = url_for("static", filename=f"img/logotypes/{data['modpack']['id']}/{data['modpack']['logotype']}")
+
+    print(data)
+    
+    try:
+        return render_template(
+            "templates/modpack_template.html",
+            modpack=data["modpack"],
+            download=data["download"],
+            players=data["players"],
+            info=data["info"]
+        )
+    except FileNotFoundError:
+        abort(404, description="Template not found")
+
+@app.route("/logotyper/<logo>")
+def logos(logo):
+    try:
+        return render_template(f'logotyper/{escape(logo)}.html')
+    except:
+        abort(404, description="File not found")
+
+##########################################
+########### Error Handling ###############
+##########################################
+
+@app.route("/error/<int:code>")
+def error(code):
+    if code in {400, 403, 404, 500}:
+        abort(code)
+    else:
+        abort(404)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("templates/errors/404.html"), 404
+
+@app.errorhandler(HTTPException)
+def handle_http_exception(e):
+    return render_template("templates/errors/error.html", error=e), e.code
+
+##########################################
+
+@app.route("/forge-icon")
+def forge_icon():
+    return send_file(f"{staticFolder}/img/details/forge.webp", mimetype="image/webp")
 
 ##########################################
 ############### RUN APP ##################
