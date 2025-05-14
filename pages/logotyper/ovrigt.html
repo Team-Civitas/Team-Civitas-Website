@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logotyper | Team Civitas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" type="image/webp" />
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    {% include 'templates/partial/navbar.html' %}
+
+    <!--Tillbaka-knapp-->
+    <a href="/" id="tillbaka">‹</a>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <header class="header-content">
+            <h1 class="margin-above-title" class="margin-beneath-description">ÖVRIGA LOGOTYPER</h1>
+        </header>
+
+        <section>
+            <div class="center-cards">
+                <div class="cards">
+
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/2.0-beta_2.png') }}" download><img
+                                draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/2.0-beta_2.png') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/2.0-beta.png') }}" download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/2.0-beta.png') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/3.0_hd.png') }}" download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/3.0_hd.png') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/3.0_transparent.png') }}" download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/3.0_transparent.png') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/3.0.png') }}" download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/3.0.png') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/Civitas 404 O.webp') }}" download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/Civitas 404 O.webp') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/civitas_grayscale_april.png') }}"
+                            download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/civitas_grayscale_april.png') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/civitas_peace_and_war.png') }}"
+                            download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/civitas_peace_and_war.png') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                    <div class="card" id="direktnedladdning">
+                        <a href="{{ url_for('static', filename='img/logotypes/övrigt/Team Civitas Other.webp') }}"
+                            download>
+                            <img draggable="false"
+                                src="{{ url_for('static', filename='img/logotypes/övrigt/Team Civitas Other.webp') }}">
+                            <span class="download-icon"><img src="{{ url_for('static', filename='img/download.webp') }}"
+                                    alt="Nedladdningsikon"></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'templates/partial/footer.html' %}
+
+</body>
+
+</html>
