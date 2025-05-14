@@ -184,16 +184,21 @@ def modpack_route(modpack):
         if "image" not in item: 
             label = item.get("label").lower()
             match label:
+                # Mod loaders
                 case "forge":
                     item["image"] = url_for("static", filename="img/details/forge.webp")
                 case "fabric":
                     item["image"] = "https://fabricmc.net/assets/logo.png"
                 case "neoforge":
                     item["image"] = "https://neoforged.net/img/authors/neoforged.png"
-                case "minecraft":
-                    item["image"] = "https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
+                    
+                # Mods
                 case "create":
                     item["image"] = "https://wiki.createmod.net/create-icon-large.webp" 
+                    
+                # Minecraft
+                case "minecraft" | _:
+                    item["image"] = "https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
     
     try:
         return render_template(
