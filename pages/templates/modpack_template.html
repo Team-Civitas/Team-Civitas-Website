@@ -34,7 +34,7 @@
                     <ul class="card-lista">
                         {% for player in players %}
                         <li>
-                            <img src="https://starlightskins.lunareclipse.studio/render/default/{{ player.username }}/bust"
+                            <img src="{% if not player.image_override %}https://starlightskins.lunareclipse.studio/render/default/{{ player.username }}/bust{% else %} {{ player.image_override }} {% endif %}"
                                 alt="Spelare">
                             <a href="https://namemc.com/profile/{{ player.username }}">
                                 <p id="spelare">{{ player.username }}{% if player.creator %} 💎{% endif %}</p>
