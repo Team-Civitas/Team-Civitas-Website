@@ -143,7 +143,23 @@ def modpack_route(modpack):
     data["download"]["world"]["world_download_url"] = url_for("static", filename=f"files/{data['download']['world']['filename']}")
     data["modpack"]["image_url"] = url_for("static", filename=f"img/logotypes/{data['modpack']['id']}/{data['modpack']['logotype']}")
 
-    print(data)
+    info = data["info"]
+    for item in info:
+        if "version" not in item:
+            item["version"] = ""
+        if "image" not in item: 
+            label = item.get("label").lower()
+            match label:
+                case "forge":
+                    item["image"] = url_for("static", filename="img/details/forge.webp")
+                case "fabric":
+                    item["image"] = "https://fabricmc.net/assets/logo.png"
+                case "neoforge":
+                    item["image"] = "https://neoforged.net/img/authors/neoforged.png"
+                case "minecraft":
+                    item["image"] = "https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
+                case "create":
+                    item["image"] = "https://wiki.createmod.net/create-icon-large.webp" 
     
     try:
         return render_template(
@@ -151,7 +167,7 @@ def modpack_route(modpack):
             modpack=data["modpack"],
             download=data["download"],
             players=data["players"],
-            info=data["info"]
+            info=info
         )
     except FileNotFoundError:
         abort(404, description="Template not found")

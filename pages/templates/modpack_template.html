@@ -52,7 +52,7 @@
                         {% for item in info %}
                         <li>
                             <img src="{{ item.image }}" alt="{{ item.label }}">
-                            <p>{{ item.label }}</p>
+                            <p>{{ item.label }} {{ item.version }}</p>
                         </li>
                         {% endfor %}
                     </ul>

@@ -30,13 +30,11 @@
     ],
     "info": [
         {
-            "label": "Forge",
-            "image": "http://localhost:1515/forge-icon"
+            "label": "Forge"
         },
         {
             "label": "Minecraft",
-            "version": "1.19.2",
-            "image": "https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
+            "version": "1.19.2"
         }
     ]
 }
