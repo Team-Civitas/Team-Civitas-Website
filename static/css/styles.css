@@ -27,11 +27,15 @@ body {
 
 :root {
     --white: #fff;
-    --background-color: #0D1114;
-    --card-bg: #00000090;
+    --background-color: #12171a; /*Ny*/
+    --card-bg: #00000095; /*Ny*/
     --card-bg-hover: #70707050;
     --highlight-color: #41BFFF;
     --border-radius: 15px;
+    
+    /*Tilfälligt borttagna:*/
+    /*--background-color: #0D1114;*/
+    /*--card-bg: #00000090;*/
 }
 
 /*================GLOBAL================*/
