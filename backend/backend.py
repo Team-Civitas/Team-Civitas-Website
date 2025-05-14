@@ -8,8 +8,9 @@ from werkzeug.exceptions import HTTPException
 from markupsafe import escape
 
 import json
+import re
 
-from typing import Dict
+from typing import Dict, List
 
 load_dotenv(os.path.abspath("") + "/.env")
 
@@ -68,6 +69,20 @@ def webhook():
 ############## JSON DATA #################
 ##########################################
 
+def get_filenames_without_extensions(folder_path: str) -> List[str]:
+    """
+    Returns a list of filenames (without extensions) in the specified folder.
+    Only includes regular files (not directories).
+    """
+    if not os.path.isdir(folder_path):
+        return []
+
+    return [
+        os.path.splitext(entry)[0]
+        for entry in os.listdir(folder_path)
+        if os.path.isfile(os.path.join(folder_path, entry))
+    ]
+    
 def is_image_file(filename):
     IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".svg")
     return filename.lower().endswith(IMAGE_EXTENSIONS)
@@ -119,19 +134,34 @@ def json_info():
 ############## Website ###################
 ##########################################
 
+def verifyPath(path):
+    """
+    Verifies if the path is valid and does not contain any illegal characters.
+    """
+    if not re.fullmatch(r'[a-zA-Z0-9_-]+', path):
+        abort(400, description="Invalid path")
+    return True
+
 @app.route("/")
 def home():
     return render_template("subpages/index.html")
 
 @app.route("/<page>")
 def page(page):
+    verifyPath(page)
     try:
-        return render_template(f'subpages/{escape(page)}.html')
+        return render_template(f'subpages/{page}.html')
     except:
         abort(404, description="File not found")
 
+existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
 @app.route("/modpacks/<modpack>")
 def modpack_route(modpack):
+    
+    
+    if modpack not in existingModpacks:
+        abort(404, description="File not found")
+    
     try:
         with open(f"{templateFolder}/data/{escape(modpack)}.json", encoding="utf-8") as f:
             data = json.load(f)
@@ -174,10 +204,12 @@ def modpack_route(modpack):
 
 @app.route("/logotyper/<logo>")
 def logos(logo):
+    verifyPath(logo)
     try:
-        return render_template(f'logotyper/{escape(logo)}.html')
+        return render_template(f'logotyper/{logo}.html')
     except:
         abort(404, description="File not found")
+
 
 ##########################################
 ########### Error Handling ###############
@@ -197,12 +229,6 @@ def page_not_found(e):
 @app.errorhandler(HTTPException)
 def handle_http_exception(e):
     return render_template("templates/errors/error.html", error=e), e.code
-
-##########################################
-
-@app.route("/forge-icon")
-def forge_icon():
-    return send_file(f"{staticFolder}/img/details/forge.webp", mimetype="image/webp")
 
 ##########################################
 ############### RUN APP ##################
