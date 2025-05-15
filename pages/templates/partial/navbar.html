@@ -1,35 +1,30 @@
-<!DOCTYPE html>
-<html lang="sv">
-    <body>
-        {% block nav %}
-        <nav class="navbar" role="navigation" aria-label="Huvudmeny">
-            <a href="/" class="navbar-logo" aria-label="Team Civitas startsida">
-                <img id="navbar-logo-img"
-                    src="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek.png') }}"
-                    alt="Team Civitas logotyp" draggable="false" />
-            </a>
+<nav class="navbar" role="navigation" aria-label="Huvudmeny">
+    <a href="/" class="navbar-logo" aria-label="Team Civitas startsida">
+        <img id="navbar-logo-img"
+            src="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek.png') }}"
+            alt="Team Civitas logotyp" draggable="false" />
+    </a>
 
-            <ul class="navbar-links">
-                <li class="font-size-in-navbar"><a href="/">Hem</a></li>
-                <li class="font-size-in-navbar"><a href="/modpacks">Modpacks</a></li>
-                <li class="font-size-in-navbar"><a href="/servrar">Servrar</a></li>
-                <li class="font-size-in-navbar"><a href="/logotyper">Logotyper</a></li>
-            </ul>
+    <ul class="navbar-links">
+        <li class="font-size-in-navbar"><a href="/">Hem</a></li>
+        <li class="font-size-in-navbar"><a href="/modpacks">Modpacks</a></li>
+        <li class="font-size-in-navbar"><a href="/servrar">Servrar</a></li>
+        <li class="font-size-in-navbar"><a href="/logotyper">Logotyper</a></li>
+    </ul>
 
-            <button class="navbar-dropdown-toggle" id="dropdown-button"
-                aria-label="Visa meny" onclick="toggleDropdown()">
-                <img src="{{ url_for('static', filename='img/dropdown.webp') }}"
-                    alt="Meny ikon" />
-            </button>
-        </nav>
+    <button class="navbar-dropdown-toggle" id="dropdown-button"
+        aria-label="Visa meny" onclick="toggleDropdown()">
+        <img src="{{ url_for('static', filename='img/dropdown.webp') }}"
+            alt="Meny ikon" />
+    </button>
+</nav>
 
-        <!-- MOBILE DROPDOWN -->
-        <div id="dropdown" class="dropdown-menu" class="font-size-in-navbar" hidden>
-            <a href="/">Hem</a>
-            <a href="/modpacks">Modpacks</a>
-            <a href="/servrar">Servrar</a>
-            <a href="/logotyper">Logotyper</a>
-        </div>
-        {% endblock %}
-    </body>
-</html>
+<!-- MOBILE DROPDOWN -->
+<div class="dropdown-wrapper">
+    <div id="dropdown" class="dropdown-menu font-size-in-navbar">
+        <a href="/">Hem<br></a>
+        <a href="/modpacks">Modpacks<br></a>
+        <a href="/servrar">Servrar<br></a>
+        <a href="/logotyper">Logotyper</a>
+    </div>
+</div>
