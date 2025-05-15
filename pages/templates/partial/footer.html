@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <body>
+        {% block footer %}
+        <footer>
+            <div class="footer-brand">
+                <a href="/" aria-label="Tillbaka till startsidan">
+                    <img
+                        src="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek.png') }}"
+                        alt="Team Civitas logotyp" draggable="false" />
+                </a>
+                <p>&copy; Team Civitas</p>
+            </div>
+        </footer>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Team Civitas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="icon" href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}" type="image/webp" />
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    {% include 'templates/partial/navbar.html' %}
+
+    <!--Tillbaka-knapp-->
+    <a href="/" id="tillbaka">‹</a>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <header class="header-content">
+            <p class="not-found-header">404</p>
+        </header>
+
+        <section>
+            <div class="header-content">
+                <h1>Woopsies!</h1>
+                <p>Det verkar som att den här sidan inte finns ännu. Klicka <a class="underlined" href="/">här</a> för att gå tillbaka till
+                    en mer säker plats!</p>
+            </div>
+
+            <div class="not-found-karaktärer">
+                <img id="elf_oliver"
+                    src="https://starlightskins.lunareclipse.studio/render/cheering/Elf_Oliver/full"
+                    draggable="false" alt="Elf_Oliver-karaktär">
+                <img id="danteminecraft"
+                    src="https://starlightskins.lunareclipse.studio/render/relaxing/DanteMinecraft/full"
+                    draggable="false" alt="DanteMinecraft-karaktär">
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'templates/partial/footer.html' %}
+
+</body>
+
+</html>

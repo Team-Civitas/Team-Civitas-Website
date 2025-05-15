@@ -1,0 +1,41 @@
+{
+    "modpack": {
+        "id": "synergy",
+        "name": "Civitas: Synergy",
+        "description": "Civitas: Synergy är en testbänk inför ett kommande, mer seriöst, Create-modpack med Create-version 6.0.0",
+        "logotype": "synergy_logotype.png"
+    },
+    "download": {
+
+        "modpack": {
+            "filename": "civitas_synergy_1.2.0.mrpack",
+            "filename_version": "1.2.0"
+        },
+
+        "world": {
+            "filename": "Saknar världsnerladdning",
+            "filename_version": ""
+        }
+    },
+    "players": [
+        { "username": "DanteMinecraft", "creator": true },
+        { "username": "Elf_Oliver", "creator": true },
+        { "username": "Lulle2345", "creator": true },
+        { "username": "JoarBjorn"},
+        { "username": "MelvinMinecraft1"},
+        { "username": "Minesotis"}
+    ],
+    "info": [
+        {
+            "label": "NeoForge"
+        },
+        {
+            "label": "Minecraft",
+            "version": "1.21.1"
+        },
+        {
+            "label": "Create",
+            "version": "6.0.0+"
+        }
+    ]
+}

@@ -1,423 +1,510 @@
+/*=================IMPORTS=================*/
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Nabla&display=swap');
 
-:root {
-  --white: #fff;
-  --background-color: #0D1114;
-  --card-bg: #00000090;
-  --card-bg-hover: #70707050;
-  --highlight-color: #00ffff;
-  --border-muted: #00000090;
-}
+/*=========================================*/
 
 * {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--white);
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll;
 }
 
 body {
-  background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--background-color);
+
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 80%;
-  margin: auto auto 5vh;
+main {
+    flex: 1;
 }
 
-h1, .modpack h2, .modpack p, .modpack-inforuta, header p, footer p, ul h2, li p {
-  color: var(--white);
+/*================VARIABLES================*/
+
+:root {
+    --white: #fff;
+    --background-color: #0D1114;
+    --card-bg: #00000090;
+    --card-bg-hover: #70707050;
+    --highlight-color: #41BFFF;
+    --red: #ff4141;
+    --border-radius: 15px;
+}
+
+/*================GLOBAL================*/
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover {
+    color: var(--highlight-color);
 }
 
 h1 {
-  font-family: "Archivo Black", sans-serif;
-  font-weight: bold;
-  text-align: center;
+    font-size: 36px;
 }
 
-header p, footer p {
-  text-align: center;
-  max-width: 100%;
+h1,
+h2 {
+    font-family: "Archivo Black", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-header img {
-  width: 20%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 1vh;
 }
 
-#modpack-logotyp-i-header {
-  margin: 2vh 0;
+
+h3 {
+    font-size: 24px;
 }
 
-.civitas-other-wrapper {
-  display: contents;
+h4 {
+    font-size: 20px;
 }
 
+.underlined {
+    text-decoration: underline;
+}
+
+/*Default margins*/
+
+.margin-above-title {
+    margin-top: 2vh;
+}
+
+.margin-beneath-description {
+    margin-bottom: 2vh;
+}
+
+/*Default hover features*/
+.modpack-card:hover,
+.card:hover {
+    background-color: var(--card-bg-hover);
+    transition: ease-in-out 0.15s;
+}
+
+.modpack-card a:hover,
+.card a:hover {
+    color: var(--white);
+}
+
+/*Display flex row*/
+.display-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Not yet available-class*/
+.not-yet-available {
+    color: var(--red);
+}
+
+/*Grayscale filter*/
+.grayscale-img {
+    filter: grayscale(100%);
+}
+
+/*================NAVBAR================*/
+
+.navbar {
+    background-color: var(--card-bg);
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.font-size-in-navbar a {
+    font-size: 18px;
+}
+
+#navbar-logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-links {
+    display: none;
+    gap: 20px;
+
+    list-style: none;
+}
+
+.navbar-dropdown-toggle {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    margin-right: 1vw;
+}
+
+.navbar-dropdown-toggle img {
+    width: 35px;
+    height: 35px;
+}
+
+/*Dropdown menu (overlapping main)*/
+/**/
+/**/
+/**/
+/**/
+/**/
+
+/*Tillbakaknapp*/
 #tillbaka {
-  position: fixed;
-  top: 2.5vh;
-  left: 2.5vw;
-  text-align: left;
-  font-size: 80px;
+    position: absolute;
+    top: 5vh;
+    left: 0.75vw;
+    text-align: left;
+    font-size: 80px;
 }
 
-.modpack-cards, .ovrigt-cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 60px;
-  max-width: 1000px;
-  text-align: center;
-  margin: 0 8vw;
+/*================FOOTER================*/
+
+.footer-brand {
+    background-color: var(--card-bg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.modpack, .modpack-mimic, .kort, .kort-rött {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--card-bg);
-  border-radius: 20px;
-  padding: 5%;
-  transition: ease-in-out 0.15s;
+.footer-brand img {
+    width: 80px;
+    height: 80px;
+
+    padding-top: 2vh;
 }
 
-.modpack-mimic h1 {
-  user-select: none;
+/*==================404=================*/
+/*404 page*/
+.not-found-header {
+    font-size: 20rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
-#mimic-1, #mimic-2 {
-  display: none;
+.not-found-karaktärer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.modpack:hover, .kort:hover {
-  background-color: var(--card-bg-hover);
+.not-found-karaktärer img {
+    margin-top: 5vh;
+    height: 30vh;
 }
 
-.kort-rött:hover {
-  background-color: #2c0000;
-  cursor: not-allowed;
+/*==========================================================*/
+/*                       LANDING PAGE                       */
+/*==========================================================*/
+
+/*================HEADER================*/
+
+#background-image {
+    background-image: url('/static/img/black.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 75vh;
 }
 
-.modpack-inforuta {
-  border-top: solid 2px var(--white);
+.header-content img {
+    width: 250px;
+    height: 250px;
 }
 
-.modpack img, .kort img, .kort-rött img {
-  width: 100%;
-  margin-bottom: 1vh;
+.header-content p {
+    max-width: 80%;
 }
 
-.modpack h2 {
-  margin: 1vh 0;
+.dark-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
 }
 
-.modpack-mimic {
-  justify-content: center;
-  align-items: center;
+/*================FEATURED CONTENT================*/
+
+.featured-modpacks {
+    text-align: center;
+    margin: 5vh 0;
 }
 
-.sektioner {
-  margin-top: 10vh;
-  text-align: center;
-  background-color: var(--card-bg);
-  padding: 2vh 0;
-  transition: ease-in-out 0.15s;
+.modpack-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
 }
 
-.sektioner:hover {
-  background-color: var(--card-bg-hover);
+.modpack-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    width: 300px;
 }
 
-.sektioner img {
-  width: 20%;
+.modpack-card img {
+    width: 90%;
+    padding: 5%;
 }
 
-.sektioner-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.border-top {
+    border-top: #fff solid 2px;
 }
 
-footer {
-  margin-top: 5vh;
-  padding: 2vh 0;
-  background-color: var(--card-bg);
+/*==========================================================*/
+/*                     BROWSE MODPACKS                      */
+/*==========================================================*/
+
+.header-content {
+    text-align: center;
+    justify-items: center;
 }
 
-.footer-detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1vh;
+/*================CARDS================*/
+
+.center-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer-detail img {
-  width: 10vh;
-  transition: ease-in-out 0.1s;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 60px;
+    margin-bottom: 60px;
 }
 
-.footer-detail img:hover {
-  scale: 110%;
+.card img {
+    width: 100%;
 }
 
-#modpack-namn {
-  margin-bottom: 1vh;
+/*Cards => Modpack Page*/
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 5%;
 }
 
-.listor {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/*Card mimics => Modpack Page*/
+#modpack-mimic {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none
 }
 
-ul {
-  margin-top: 3vh;
+#modpack-mimic:hover {
+    background-color: var(--card-bg) !important;
 }
 
-ul h2 {
-  margin-bottom: 0.5vh;
+/*==========================================================*/
+/*                 INDIVIDUAL MODPACK PAGE                  */
+/*==========================================================*/
+
+/*Individual Modpack Lists*/
+.ind-modpack-listor {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 60px;
+    margin-bottom: 60px;
 }
 
-li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 0.5vh;
+.ind-modpack-listor .card {
+    background-color: var(--card-bg) !important;
 }
 
-li #spelare:hover, #file-download:hover {
-  color: var(--highlight-color);
+.ind-modpack-listor .card ul li a:hover,
+.highlight-override:hover {
+    color: var(--highlight-color) !important;
 }
 
-li p {
-  margin-left: 0.5vw;
+.text-align-left {
+    text-align: left;
 }
 
-.detaljer-lista {
-  background-color: var(--card-bg);
-  padding: 5vw;
-  width: 70vw;
-  border-radius: 20px;
+.card-lista li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5vh 0;
 }
 
-.detaljer-lista img {
-  width: 30px;
+.card-lista img {
+    width: 30px;
 }
 
-#download-header {
-  margin: 1vh 0;
+#download-symbol {
+    align-self: center;
+    width: 30px;
+    height: 30px;
 }
 
-.portfolio h1 {
-  font-size: 36px;
-}
-
+/*Portfolio*/
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 60px;
-  max-width: 80%;
-  margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 60px;
 }
 
 .portfolio-grid img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  border: 2px solid var(--border-muted);
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    transition: ease-in-out 0.15s;
 }
 
 .portfolio-grid img:hover {
-  border: 2px solid var(--white);
+    filter: brightness(1.15);
+    transform: scale(1.025);
+    transition: ease-in-out 0.15s;
 }
 
-.downloads {
-  width: 15%;
-}
-
-/*PORTFOLIO-POPUP*/
+/*Portfolio-Popup*/
 #imagepopup {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup-image {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  z-index: 998;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    z-index: 998;
 }
 
 .popup-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  padding: 0 20px;
-  z-index: 999;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 20px;
+    z-index: 999;
 }
 
 .popup-arrow-left {
-  left: 10px;
+    left: 10px;
 }
 
 .popup-arrow-right {
-  right: 10px;
+    right: 10px;
 }
 
-/* 404 */
-.error-404 {
-  max-width: 100%;
+/*==========================================================*/
+/*              LOGOTYPES DOWNLOAD PROPERTIES               */
+/*==========================================================*/
+
+/*Download Button Properties*/
+
+#direktnedladdning {
+    position: relative;
 }
 
-.four-o-four-flex, .four-o-four-karaktärer-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.download-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: drop-shadow(0 0 0.75rem var(--card-bg));
 }
 
-.four-o-four-flex {
-  justify-content: center;
+#direktnedladdning:hover .download-icon {
+    opacity: 1;
 }
 
-.four-o-four-karaktärer-flex {
-  justify-content: space-evenly;
-}
+/*================MEDIA QUERIES================*/
 
-.four-o-four-flex img {
-  width: 35%;
-}
-
-.four-o-four-flex p {
-  font-size: 8rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
-
-#four-o-four-beskrivning {
-  margin-top: 2vh;
-  text-align: center;
-}
-
-.four-o-four a {
-  text-decoration: underline;
-}
-
-.four-o-four a:hover {
-  color: var(--highlight-color);
-}
-
-.four-o-four-karaktärer-flex img {
-  margin-top: 5vh;
-  height: 30vh;
-}
-
-#error-title {
-  margin-top: 20vh;
-}
-
-/* MEDIA QUERIES */
+/*Tablet*/
 @media (min-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-  .listor {
-    flex-direction: row;
-  }
+    .cards,
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .detaljer-lista {
-    padding: 2vw;
-    width: 25vw;
-  }
-
-  #download-header-civitascraft {
-    text-align: center;
-  }
-
-  .modpack-cards, .ovrigt-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ovrigt-cards {
-    margin: 0 60px;
-  }
-
-  .civitas-other {
-    grid-column: span 1;
-  }
-
-  .four-o-four-flex p {
-    font-size: 20rem;
-  }
-
-  .four-o-four h1 {
-    font-size: 36px;
-  }
-
-  #four-o-four-beskrivning {
-    margin: 2vh auto;
-    max-width: 80%;
-    font-size: 24px;
-  }
-
-  .four-o-four-karaktärer-flex img {
-    margin-top: 5vh;
-    height: 30vh;
-  }
+    .modpack-card {
+        width: 400px;
+    }
 }
 
+/*Desktop*/
 @media (min-width: 1025px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
-  .listor {
-    flex-direction: row;
-  }
+    .cards,
+    .portfolio-grid,
+    .ind-modpack-listor {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-  .detaljer-lista {
-    padding: 1vw;
-    width: 15vw;
-  }
+    .navbar-links {
+        display: flex;
+    }
 
-  .modpack-cards {
-    grid-template-columns: repeat(3, 1fr);
-    margin: auto;
-  }
+    .modpack-list {
+        flex-direction: row;
+    }
 
-  .ovrigt-cards {
-    margin: auto;
-  }
-
-  #mimic-1, #mimic-2 {
-    display: flex;
-  }
-
-  .civitas-other {
-    grid-column: 2 / span 1;
-  }
-
-  .four-o-four-flex img {
-    width: 15%;
-  }
-
-  #four-o-four-beskrivning {
-    font-size: 16px;
-  }
+    #modpack-mimic {
+        display: flex;
+    }
 }

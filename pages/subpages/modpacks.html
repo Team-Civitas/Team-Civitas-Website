@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modpacks | Team Civitas</title>
+
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}" />
+        <script defer
+            src="{{ url_for('static', filename='script.js') }}"></script>
+        <link rel="icon"
+            href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
+            type="image/webp" />
+    </head>
+
+    <body>
+
+        <!-- NAVIGATION -->
+        {% include 'templates/partial/navbar.html' %}
+
+        <!--Tillbaka-knapp-->
+        <a href="/" id="tillbaka">‹</a>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <header class="header-content">
+                <h1 class="margin-above-title">MODPACKS</h1>
+                <p class="margin-beneath-description">Här finns modpacks från
+                    hela Civitashistorien!</p>
+            </header>
+
+            <section>
+                <div class="center-cards">
+                    <div class="cards">
+                        <!--Modpack 1-->
+                        <div class="card">
+                            <a href="/modpacks/overdrive">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/overdrive/overdrive_logotype.png') }}"
+                                    alt="Civitas: overdrive">
+                                <div class="border-top">
+                                    <h3>Civitas: Overdrive</h3>
+                                    <p>Startdatum: Sommaren 2025</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Modpack 2-->
+                        <div class="card">
+                            <a href="/modpacks/synergy">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/synergy/synergy_logotype.png') }}"
+                                    alt="Civitas: Synergy">
+                                <div class="border-top">
+                                    <h3>Civitas: Synergy</h3>
+                                    <p>2025-03 – 2025-04</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Modpack 3-->
+                        <div class="card">
+                            <a href="/modpacks/createhorizons">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/create-horizons/create_horizons_logotype.png') }}"
+                                    alt="Civitas: Create Horizons">
+                                <div class="border-top">
+                                    <h3>Civitas: Create Horizons</h3>
+                                    <p>2024-11 – 2025-01</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Modpack 4-->
+                        <div class="card">
+                            <a href="/modpacks/endurance">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/endurance/civitas_endurance.png') }}"
+                                    alt="Civitas: Endurance">
+                                <div class="border-top">
+                                    <h3>Civitas: Endurance</h3>
+                                    <p>2024-07</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Modpack 5-->
+                        <div class="card">
+                            <a href="/modpacks/recreated">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/re-created/civitas_re-created.png') }}"
+                                    alt="Civitas: Re-Created">
+                                <div class="border-top">
+                                    <h3>Civitas: Re-Created</h3>
+                                    <p>2023-12 – 2024-07</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Modpack 6-->
+                        <div class="card">
+                            <a href="/modpacks/createrevolution">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/create-revolution/civitas_create_reloaded.png') }}"
+                                    alt="Civitas: Create Revolution">
+                                <div class="border-top">
+                                    <h3>Civitas: Create Revolution</h3>
+                                    <p>2023-07 – 2023-08</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Modpack 7-->
+                        <div class="card">
+                            <a href="/modpacks/arcanum">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/arcanum/civitas_arcanum_transparent.png') }}"
+                                    alt="Civitas: Arcanum">
+                                <div class="border-top">
+                                    <h3>Civitas: Arcanum</h3>
+                                    <p>2023-05 – 2023-06</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Modpack 8-->
+                        <div class="card">
+                            <a href="/modpacks/create">
+                                <img draggable="false"
+                                    src="{{ url_for('static', filename='/img/logotypes/create/civitas_create.png') }}"
+                                    alt="Civitas: Create">
+                                <div class="border-top">
+                                    <h3>Civitas: Create</h3>
+                                    <p>2023-01 – 2023-04</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Mimic-->
+                        <div class="card" id="modpack-mimic">
+                            <h2>Kommande<br>Modpack</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        {% include 'templates/partial/footer.html' %}
+
+    </body>
+
+</html>
