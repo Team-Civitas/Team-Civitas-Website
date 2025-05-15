@@ -59,7 +59,7 @@ function changeBackground(imageData) {
 //################### DROPDOWN ###################//
 //################################################//
 
-function showDropdown() {
+function toggleDropdown() {
 
   var dropdown = document.getElementById("dropdown");
 
