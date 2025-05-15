@@ -239,11 +239,9 @@ h4 {
     height: 250px;
 }
 
-/* ADDAT AV OLIVER */
 .header-content p {
-    max-width: 75vw;
+    max-width: 80%;
 }
-/* SLUT AV OLIVER */
 
 .dark-overlay {
     width: 100%;
@@ -294,9 +292,7 @@ h4 {
 
 .header-content {
     text-align: center;
-    /* ADDAT AV OLIVER */
     justify-items: center;
-    /* SLUT AV OLIVER */
 }
 
 /*================CARDS================*/
@@ -383,11 +379,9 @@ h4 {
 }
 
 #download-symbol {
+    align-self: center;
     width: 30px;
     height: 30px;
-    /* ADDAT AV OLIVER */
-    align-self: center;
-    /* SLUT AV OLIVER */
 }
 
 /*Portfolio*/
