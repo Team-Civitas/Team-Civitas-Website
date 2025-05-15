@@ -60,19 +60,9 @@ function changeBackground(imageData) {
 //################################################//
 
 function toggleDropdown() {
-
-  var dropdown = document.getElementById("dropdown");
-
-  dropdown.classList.toggle("active");
-  console.log("Dropdown togglades");
-
-  dropdown.style.transition = 'opacity 0.5s ease';
+    const dropdown = document.getElementById("dropdown");
+    dropdown.classList.toggle('hidden');
 }
-
-window.addEventListener("resize", () => {
-  const dropdown = document.getElementById("dropdown");
-  if (dropdown) dropdown.classList.remove("active");
-});
 
 //################################################//
 //############# LOAD IMGS AND POPUP ##############//

@@ -127,6 +127,12 @@ h4 {
     filter: grayscale(100%);
 }
 
+/*Hidden class*/
+.hidden {
+    display: flex !important;
+}
+
+
 /*================NAVBAR================*/
 
 .navbar {
@@ -167,11 +173,38 @@ h4 {
 }
 
 /*Dropdown menu (overlapping main)*/
-/**/
-/**/
-/**/
-/**/
-/**/
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: var(--card-bg);
+    border: 3px solid var(--card-bg-hover);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(5px);
+
+    padding: 1rem;
+    z-index: 1000;
+    min-width: 200px;
+
+    display: none;
+    flex-direction: column;
+}
+
+.dropdown-menu a {
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+}
+
+.dropdown-menu a:hover {
+    color: var(--highlight-color);
+}
 
 /*Tillbakaknapp*/
 #tillbaka {
