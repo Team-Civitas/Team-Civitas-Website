@@ -158,6 +158,7 @@ existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
 existingModpacks.remove("template")
 @app.route("/modpacks/<modpack>")
 def modpack_route(modpack):
+    global existingModpacks
     
     if not production:
         existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
