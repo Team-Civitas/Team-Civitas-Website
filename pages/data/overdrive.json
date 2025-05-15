@@ -2,6 +2,7 @@
     "modpack": {
         "id": "overdrive",
         "name": "Civitas: Overdrive",
+        "runtime": "Startdatum: Sommaren 2025",
         "description": "Civitas: Overdrive är det första Civitas-modpacket med Create-version 6.0.X. Modpacket är en påbyggd version av Civitas: Synergy, där vissa moddar lagts till och visa tagits bort. Dessutom använder Civitas: Overdrive modden Axiom som klienthjälpmedel istället för WorldEdit, vilket utökar spelares chanser till att vara kreativa.",
         "logotype": "overdrive_logotype.png"
     },

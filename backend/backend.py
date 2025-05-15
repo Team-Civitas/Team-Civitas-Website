@@ -26,6 +26,46 @@ if not production:
     from livereload import Server # type: ignore
 
 ##########################################
+####### Global Changing Variables ########
+##########################################
+
+json_data = {}
+existingModpacks = []
+modpackData = []
+
+def update_json_data():
+    global json_data
+    json_data = count_images_with_paths(staticFolder + "/img")
+
+def loadExistingModpacks() -> List[str]:
+    existing = get_filenames_without_extensions(f"{templateFolder}/data")
+    if "template" in existing:
+        existing.remove("template")
+    return existing
+
+def update_modpack_data():
+    global existingModpacks, modpackData
+    existingModpacks = loadExistingModpacks()
+    modpackData = loadModpacksData()
+
+def loadModpacksData() -> List[Dict]:
+    modpacks = []
+    for name in existingModpacks:
+        path = os.path.join(templateFolder, "data", f"{escape(name)}.json")
+        try:
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+                modpacks.append(data["modpack"])
+        except Exception:
+            continue
+    return sorted(modpacks, key=lambda x: x["runtime"], reverse=True)
+
+
+def init():
+    update_json_data()
+    update_modpack_data()
+
+##########################################
 ########## Webhook Handler ###############
 ##########################################
 
@@ -120,16 +160,10 @@ def count_images_with_paths(root_folder: str, base_path: str = "") -> Dict[str, 
 
     return results
 
-json_data = count_images_with_paths(staticFolder + "/img")
 @app.route("/json-info")
 def json_info():
-    global json_data
-
-    if not production:
-        json_data = count_images_with_paths(staticFolder + "/img")
-    
     return jsonify(json_data)
-
+    
 ##########################################
 ############## Website ###################
 ##########################################
@@ -146,6 +180,10 @@ def verifyPath(path):
 def home():
     return render_template("subpages/index.html")
 
+@app.route("/modpacks")
+def modpacks():
+    return render_template("templates/page/modpacks_template.html", modpacks=modpackData)
+
 @app.route("/<page>")
 def page(page):
     verifyPath(page)
@@ -154,18 +192,11 @@ def page(page):
     except:
         abort(404, description="File not found")
 
-existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
-existingModpacks.remove("template")
 @app.route("/modpacks/<modpack>")
 def modpack_route(modpack):
-    
-    if not production:
-        existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
-        existingModpacks.remove("template")
-        
     if modpack not in existingModpacks:
         abort(404, description="File not found")
-    
+
     try:
         with open(f"{templateFolder}/data/{escape(modpack)}.json", encoding="utf-8") as f:
             data = json.load(f)
@@ -202,7 +233,7 @@ def modpack_route(modpack):
     
     try:
         return render_template(
-            "templates/modpack_template.html",
+            "templates/page/modpack_template.html",
             modpack=data["modpack"],
             download=data["download"],
             players=data["players"],
@@ -244,13 +275,14 @@ def handle_http_exception(e):
 ##########################################
 
 if __name__ == "__main__":
+    init()
     app.debug = not production
     if production:
         app.run(port=1515)
     else: 
         server = Server(app.wsgi_app)
 
-        server.watch(f"{templateFolder}/**/*")
-        server.watch(f"{staticFolder}/**/*")
+        server.watch(f"{templateFolder}/**/*", init())
+        server.watch(f"{staticFolder}/**/*", init())
 
         server.serve(port=1515)

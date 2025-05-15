@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modpacks | Team Civitas</title>
+
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}" />
+        <script defer
+            src="{{ url_for('static', filename='script.js') }}"></script>
+        <link rel="icon"
+            href="{{ url_for('static', filename='img/modpacks/civitas_main.webp') }}"
+            type="image/webp" />
+    </head>
+
+    <body>
+
+        <!-- NAVIGATION -->
+        {% include 'templates/partial/navbar.html' %}
+
+        <!--Tillbaka-knapp-->
+        <a href="/" id="tillbaka">‹</a>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <header class="header-content">
+                <h1 class="margin-above-title">MODPACKS</h1>
+                <p class="margin-beneath-description">Här finns modpacks från
+                    hela Civitashistorien!</p>
+            </header>
+
+            <section>
+                <div class="center-cards">
+                    <div class="cards">
+                        {% for modpack in modpacks %}
+                            <div class="card">
+                                <a href="/modpacks/{{ modpack.id }}">
+                                    <img draggable="false"
+                                        src="{{ url_for('static', filename='img/logotypes/' ~ modpack.id ~ '/' ~ modpack.logotype) }}"
+                                        alt="{{ modpack.name }}">
+                                    <div class="border-top">
+                                        <h3>{{ modpack.name }}</h3>
+                                        <p>{{ modpack.runtime }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+
+                        <!--Mimic-->
+                        <div class="card" id="modpack-mimic">
+                            <h2>Kommande<br>Modpack</h2>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        {% include 'templates/partial/footer.html' %}
+
+    </body>
+
+</html>

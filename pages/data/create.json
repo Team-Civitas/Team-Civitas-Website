@@ -2,6 +2,7 @@
     "modpack": {
         "id": "create",
         "name": "Civitas: Create",
+        "runtime": "2023-01 – 2023-04",
         "description": "Efter att Vaults & Space (Pre-Civitas Modpack) var färdigspelat och teamet övergick från Uncrusted till Team Civitas så startades Civitas: Create - Det första Team Civitas-modpacket någonsin. Modpacket hade Create-modden i fokus och innehöll till en början Valkyrien Skies, men efter endast någon dag togs Valkyrien Skies bort på grund av kompatibilitetsproblem och prestandabuggar vilket gjorde modpacket till ett vanligt Create-modpack.",
         "logotype": "civitas_create.png"
     },

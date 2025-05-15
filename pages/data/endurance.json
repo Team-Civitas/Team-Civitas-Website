@@ -2,6 +2,7 @@
     "modpack": {
         "id": "endurance",
         "name": "Civitas: Endurance",
+        "runtime": "2024-07",
         "description": "Civitas: Endurance var från början tänkt att bli ett singleplayer-modpack, men efter några få diskussioner startades en gemensam server med fyra aktiva spelare. Modpacket var centrerat runt modden Terrafirmacraft, som försvårade spelet och gjorde det betydligt mer utmanande genom att lägga till gravitation, väder, klimat, och realism.",
         "logotype": "civitas_endurance.png"
     },
