@@ -509,8 +509,32 @@ h4 {
 /*                  ANPASSNINGAR - SUBPAGE                  */
 /*==========================================================*/
 
+.regler-allmänna-tågnätverket {
+    width: 1000px;
+
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1%;
+
+    margin: 2vh 0;
+}
+
+.regler-allmänna-tågnätverket h2 {
+    text-decoration: underline;
+}
+
+.regler-allmänna-tågnätverket p {
+    color: #cccccc;
+    display: flex;
+    justify-self: center;
+    
+    font-style: italic;
+
+    margin-bottom: 5vh;
+}
+
 .anpassning {
-    max-width: 1000px;
+    width: 1000px;
     display: flex;
     flex-direction: row;
     justify-content: center;
