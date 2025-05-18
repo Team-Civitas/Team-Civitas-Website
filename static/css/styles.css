@@ -505,6 +505,62 @@ h4 {
     opacity: 1;
 }
 
+/*==========================================================*/
+/*                  ANPASSNINGAR - SUBPAGE                  */
+/*==========================================================*/
+
+.regler-allmänna-tågnätverket {
+    width: 1000px;
+
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1%;
+
+    margin: 2vh 0;
+}
+
+.regler-allmänna-tågnätverket h2 {
+    text-decoration: underline;
+}
+
+.regler-allmänna-tågnätverket p {
+    color: #cccccc;
+    display: flex;
+    justify-self: center;
+    
+    font-style: italic;
+
+    margin-bottom: 5vh;
+}
+
+.anpassning {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1%;
+
+    margin: 2vh 0;
+}
+
+.anpassning p {
+    text-align: left !important;
+}
+
+#img-anpassning-tågmått {
+    height: 30%;
+    width: 30%;
+}
+
+#img-anpassning-tunnel {
+    height: 50%;
+    width: 50%;
+}
+
 /*================MEDIA QUERIES================*/
 
 /*Tablet*/

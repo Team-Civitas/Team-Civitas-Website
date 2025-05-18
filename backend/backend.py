@@ -17,17 +17,46 @@ load_dotenv(os.path.abspath("") + "/.env")
 staticFolder = os.path.abspath("") + "/static"
 templateFolder = os.path.abspath("") + "/pages"
 
-app = flask.Flask(__name__, static_folder=staticFolder, template_folder=templateFolder)
 production = True if os.getenv("ENV") == "production" else False
+development = True if os.getenv("ENV") == "development" else False
+
+app = flask.Flask(__name__, static_folder=staticFolder, template_folder=templateFolder)
+PORT = os.getenv("PORT")
+
 script_path = os.path.abspath("") + "/backend/update.sh"
 WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
 
-if not production:
+if development:
     from livereload import Server # type: ignore
 
 ##########################################
 ########## Webhook Handler ###############
 ##########################################
+
+GITHUB_META_URL = "https://api.github.com/meta"
+GITHUB_HOOKS_CIDRS = []
+GITHUB_CIDRS_LAST_FETCHED = 0
+CIDR_CACHE_DURATION = 60 * 60  # 1 hour
+
+def fetch_github_hook_ips():
+    global GITHUB_HOOKS_CIDRS, GITHUB_CIDRS_LAST_FETCHED
+
+    current_time = time.time()
+    if current_time - GITHUB_CIDRS_LAST_FETCHED > CIDR_CACHE_DURATION:
+        try:
+            response = requests.get(GITHUB_META_URL, timeout=5)
+            if response.status_code == 200:
+                data = response.json()
+                GITHUB_HOOKS_CIDRS = [ip_network(cidr) for cidr in data.get("hooks", [])]
+                GITHUB_CIDRS_LAST_FETCHED = current_time
+        except Exception as e:
+            print(f"Failed to fetch GitHub IP ranges: {e}")
+
+def is_ip_from_github(ip):
+    fetch_github_hook_ips()
+    request_ip = ip_address(ip)
+    return any(request_ip in cidr for cidr in GITHUB_HOOKS_CIDRS)
+
 
 def verify_signature(payload, signature):
     """
@@ -41,19 +70,19 @@ def verify_signature(payload, signature):
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
-    # Get the signature from the headers (GitHub sends it as X-Hub-Signature-256)
     signature = request.headers.get('X-Hub-Signature-256')
     if not signature:
         abort(400, description="Bad Request: No signature provided")
     
-    # Get the raw payload
-    payload = request.get_data()
+    # IP Check
+    ip = request.remote_addr
+    if not is_ip_from_github(ip):
+        abort(403, description="Forbidden: IP not in GitHub range")
     
-    # Validate the signature
+    payload = request.get_data()
     if not verify_signature(payload, signature):
         abort(403, description="Forbidden: Invalid webhook signature")
     
-    # If the signature is valid, proceed with the script execution
     try:
         if production:
             subprocess.run(f"sh {script_path}", check=True, shell=True)
@@ -61,7 +90,6 @@ def webhook():
         else:
             print("Whoh!, I executed the github pull script")
             return {"status": "Failed", "message": "Server is not in production mode."}
-    
     except subprocess.CalledProcessError as e:
         return {"status": "error", "message": f"Error executing script: {e}"}
 
@@ -125,7 +153,7 @@ json_data = count_images_with_paths(staticFolder + "/img")
 def json_info():
     global json_data
 
-    if not production:
+    if development:
         json_data = count_images_with_paths(staticFolder + "/img")
     
     return jsonify(json_data)
@@ -160,7 +188,7 @@ existingModpacks.remove("template")
 def modpack_route(modpack):
     global existingModpacks
     
-    if not production:
+    if development:
         existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
         existingModpacks.remove("template")
         
@@ -245,13 +273,14 @@ def handle_http_exception(e):
 ##########################################
 
 if __name__ == "__main__":
-    app.debug = not production
-    if production:
-        app.run(port=1515)
-    else: 
+    app.debug = development
+    if development:
         server = Server(app.wsgi_app)
 
         server.watch(f"{templateFolder}/**/*")
         server.watch(f"{staticFolder}/**/*")
 
-        server.serve(port=1515)
+        server.serve(port=PORT)
+
+    else: 
+        app.run(port=PORT)
