@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Anpassningar | Team Civitas</title>
+
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}" />
+        <script defer
+            src="{{ url_for('static', filename='script.js') }}"></script>
+        <link rel="icon"
+            href="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek Cut.png') }}"
+            type="image/webp" />
+    </head>
+
+    <body>
+
+        <!-- NAVIGATION -->
+        {% include 'templates/partial/navbar.html' %}
+
+        <!--Tillbaka-knapp-->
+        <a href="/" id="tillbaka">‹</a>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <header class="header-content">
+                <h1 class="margin-above-title">ANPASSNINGAR</h1>
+                <p class="margin-beneath-description">Här finns information om
+                    hur du ska bygga din järnväg och dina tåg på Civitas:
+                    Overdrive</p>
+            </header>
+
+            <section class="header-content">
+
+                <div class="anpassning">
+                    <p>När du bygger dina tåg ska du se till att de är högst 5
+                        block breda och högst 7 block höga. Om tågen är bredare
+                        eller högre än så finns det risk att de slår i taket
+                        eller väggarna på den allmänna järnvägen
+
+                        .</p>
+                    <img
+                        id="img-anpassning-tågmått"
+                        src="{{ url_for('static', filename='img/anpassningar/anpassning_tågmått.png') }}"
+                        alt="Anpassning | Tågmått" />
+                </div>
+
+                <div class="anpassning">
+                    <p>När du bygger väggar eller tunnlar kring tågen, ska du
+                        lämna ett avstånd på minst 1 block på varje sida av
+                        tåget. Det innebär att om tåget är 5 block brett, måste
+                        tunneln vara minst 7 block bred (1 block på varje sida
+                        utöver tågets bredd). De flesta sträckor är
+                        dubbelspåriga,
+                        och då ska tunneln vara minst 13 block bred.<br><br>
+                        Dessutom ska det vara 9 block högt från marken upp till
+                        taket – taket ska alltså placeras på det tionde blocket
+                        räknat från marknivån. Det gäller både för tunnlar och
+                        övergångar.</p>
+                    <img
+                        id="img-anpassning-tunnel"
+                        src="{{ url_for('static', filename='img/anpassningar/anpassning_tunnel.png') }}"
+                        alt="Anpassning | Tågmått" />
+                </div>
+
+                <div class="anpassning">
+                    <p>När du bygger en perrong (plattform) till tåg är det
+                        viktigt att du placerar kanten på perrongen rätt så att
+                        man inte av misstag ramlar ner på spåret när man kliver
+                        av. Se bild för guide.</p>
+                    <img
+                        id="img-anpassning-tunnel"
+                        src="{{ url_for('static', filename='img/anpassningar/anpassning_station.png') }}"
+                        alt="Anpassning | Tågmått" />
+                </div>
+
+                <div class="anpassning">
+                    <p>När du kopplar in signaler (rödljus) till det allmänna
+                        tågnätverket ska du placera dem enligt det exempel som
+                        visas på bilden bredvid. Följ placeringen noggrant för
+                        att säkerställa att signalsystemet fungerar korrekt och
+                        inte stör tågtrafiken.</p>
+                    <img
+                        id="img-anpassning-tunnel"
+                        src="{{ url_for('static', filename='img/anpassningar/anpassning_signaler.png') }}"
+                        alt="Anpassning | Tågmått" />
+                </div>
+
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        {% include 'templates/partial/footer.html' %}
+
+    </body>
+
+</html>
