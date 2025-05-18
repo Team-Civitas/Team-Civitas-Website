@@ -17,12 +17,16 @@ load_dotenv(os.path.abspath("") + "/.env")
 staticFolder = os.path.abspath("") + "/static"
 templateFolder = os.path.abspath("") + "/pages"
 
-app = flask.Flask(__name__, static_folder=staticFolder, template_folder=templateFolder)
 production = True if os.getenv("ENV") == "production" else False
+development = True if os.getenv("ENV") == "development" else False
+
+app = flask.Flask(__name__, static_folder=staticFolder, template_folder=templateFolder)
+PORT = os.getenv("PORT")
+
 script_path = os.path.abspath("") + "/backend/update.sh"
 WEBHOOK_KEY = os.getenv("WEBHOOK_KEY")
 
-if not production:
+if development:
     from livereload import Server # type: ignore
 
 ##########################################
@@ -149,7 +153,7 @@ json_data = count_images_with_paths(staticFolder + "/img")
 def json_info():
     global json_data
 
-    if not production:
+    if development:
         json_data = count_images_with_paths(staticFolder + "/img")
     
     return jsonify(json_data)
@@ -184,7 +188,7 @@ existingModpacks.remove("template")
 def modpack_route(modpack):
     global existingModpacks
     
-    if not production:
+    if development:
         existingModpacks = get_filenames_without_extensions(f"{templateFolder}/data")
         existingModpacks.remove("template")
         
@@ -269,13 +273,14 @@ def handle_http_exception(e):
 ##########################################
 
 if __name__ == "__main__":
-    app.debug = not production
-    if production:
-        app.run(port=1515)
-    else: 
+    app.debug = development
+    if development:
         server = Server(app.wsgi_app)
 
         server.watch(f"{templateFolder}/**/*")
         server.watch(f"{staticFolder}/**/*")
 
-        server.serve(port=1515)
+        server.serve(port=PORT)
+
+    else: 
+        app.run(port=PORT)
