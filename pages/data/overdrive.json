@@ -2,7 +2,7 @@
     "modpack": {
         "id": "overdrive",
         "name": "Civitas: Overdrive",
-        "description": "Civitas: Overdrive är det första Civitas-modpacket med Create-version 6.0.X. Modpacket är en påbyggd version av Civitas: Synergy, där vissa moddar lagts till och visa tagits bort. Dessutom använder Civitas: Overdrive modden Axiom som klienthjälpmedel istället för WorldEdit, vilket utökar spelares chanser till att vara kreativa.",
+        "description": "Civitas: Overdrive är det första fullskaliga och officiella Civitas-modpacket byggt med NeoForge och Minecraft 1.21.1. Det är även det första i serien som använder Create 6.0.0+ och Axiom (tillsammans med WorldEdit). <br><br> Även om ett mindre testmodpack – Civitas: Synergy – föregick Overdrive, markerar det här modpacket ett nytt kliv i seriens versionsutveckling. Overdrive bygger vidare på Synergy med nya moddar, genomtänka justeringar, samt balanserade prestandaförbättringar; allt detta samtidigt som det också går att klassificera som en förbättrad och utvecklad version av favoriten Civitas: Re-Created.",
         "logotype": "overdrive_logotype.png"
     },
     "download": {
@@ -19,15 +19,16 @@
     },
     "players": [
         { "username": "DanteMinecraft", "creator": true },
-        { "username": "Elf_Oliver", "creator": true }
+        { "username": "Elf_Oliver", "creator": true },
+        { "username": "Lulle2345" }
     ],
     "info": [
         {
-            "label": "Forge"
+            "label": "NeoForge"
         },
         {
             "label": "Minecraft",
-            "version": "1.20.1"
+            "version": "1.21.1"
         },
         {
             "label": "Create",

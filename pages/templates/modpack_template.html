@@ -22,7 +22,7 @@
     <header class="header-content">
         <img src="{{ modpack.image_url }}" alt="{{ modpack.name }}-logotyp">
         <h1 class="margin-above-title">{{ modpack.name }}</h1>
-        <p class="margin-beneath-description">{{ modpack.description }}</p>
+        <p class="margin-beneath-description">{{ modpack.description | safe }}</p>
     </header>
 
     <section>
