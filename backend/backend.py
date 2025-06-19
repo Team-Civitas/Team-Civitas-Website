@@ -72,18 +72,19 @@ def verify_signature(payload, signature):
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
-    signature = request.headers.get('X-Hub-Signature-256')
-    if not signature:
-        abort(400, description="Bad Request: No signature provided")
-    
-    # IP Check
-    ip = request.remote_addr
-    if not is_ip_from_github(ip):
-        abort(403, description="Forbidden: IP not in GitHub range")
-    
-    payload = request.get_data()
-    if not verify_signature(payload, signature):
-        abort(403, description="Forbidden: Invalid webhook signature")
+    if production: 
+        signature = request.headers.get('X-Hub-Signature-256')
+        if not signature:
+            abort(400, description="Bad Request: No signature provided")
+        
+        # IP Check
+        ip = request.remote_addr
+        if not is_ip_from_github(ip):
+            abort(403, description="Forbidden: IP not in GitHub range")
+        
+        payload = request.get_data()
+        if not verify_signature(payload, signature):
+            abort(403, description="Forbidden: Invalid webhook signature")
     
     try:
         if production:
