@@ -8,12 +8,12 @@
     "download": {
 
         "modpack": {
-            "filename": "Saknar modpacknerladdning",
+            "filename": "Saknar modpacknedladdning",
             "filename_version": ""
         },
 
         "world": {
-            "filename": "Saknar världsnerladdning",
+            "filename": "Saknar världsnedladdning",
             "filename_version": ""
         }
     },
@@ -22,10 +22,14 @@
         { "username": "Elf_Oliver", "creator": true },
         { "username": "Lulle2345" },
         { "username": "Pickyben" },
+        { "username": "SkogisAB" },
+        { "username": "MelvinMinecraft1" },
+        { "username": "NoobElis" },
+        { "username": "Isac04_" },
         { "username": "Zcloak" },
-        { "username": "RealFemboySlayer" },
         { "username": "TwitchErik71" },
         { "username": "Isca04_" }
+        { "username": "RealFemboySlayer" }
     ],
     "info": [
         {
