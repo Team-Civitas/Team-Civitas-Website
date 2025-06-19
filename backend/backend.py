@@ -78,7 +78,7 @@ def webhook():
             abort(400, description="Bad Request: No signature provided")
         
         # IP Check
-        ip = request.remote_addr
+        ip = request.headers.get('X-Forwarded-For', request.remote_addr).split(',')[0].strip()
         if not is_ip_from_github(ip):
             abort(403, description="Forbidden: IP not in GitHub range")
         
