@@ -51,7 +51,7 @@ function changeBackground(imageData) {
   const count = searchInJson(imageData, "featured_imgs");
   if (count && count > 0) {
     const index = getRandomInt(1, count);
-    backgroundImageElement.style.backgroundImage = `url('/static/img/featured_imgs/featured_imgs (${index}).webp')`;
+    backgroundImageElement.style.backgroundImage = `url('/static/img/featured_imgs/img (${index}).webp')`;
   }
 }
 
