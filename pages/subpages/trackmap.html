@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hem | Team Civitas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="icon" href="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek Cut.png') }}"
+        type="image/webp" />
+</head>
+
+<body style="height: 100vh">
+
+    <!-- NAVIGATION -->
+    {% include 'templates/partial/navbar.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <iframe src="http://survival.teamcivitas.net:3876/" frameborder="0"
+            style="width: 100%; height: 100%; border: none"></iframe>
+    </main>
+
+</body>
+
+</html>
