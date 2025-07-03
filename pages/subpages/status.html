@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Status | Team Civitas</title>
+
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}" />
+        <script defer
+            src="{{ url_for('static', filename='script.js') }}"></script>
+        <link rel="icon"
+            href="{{ url_for('static', filename='img/logotypes/team-civitas/Team Civitas Sleek Cut.png') }}"
+            type="image/webp" />
+    </head>
+
+    <body>
+
+        <!-- NAVIGATION -->
+        {% include 'templates/partial/navbar.html' %}
+
+        <!--Tillbaka-knapp-->
+        <a href="/" id="tillbaka">‹</a>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <header class="header-content">
+                <h1 class="margin-above-title">Status-sida</h1>
+            </header>
+
+            <div id="status-container" style="font-family: sans-serif;"></div>
+
+<script>
+const API_KEY = "ur3011682-99c4e2cd8e5037f1c795f840"; // ← Byt ut denna
+
+// Egendefinierade namn per monitor-ID
+const customNames = {
+  800871980: "Civitas: Overdrive | Survivalserver",
+  800871966: "Civitas: Overdrive | Creativeserver"
+};
+
+fetch("https://api.uptimerobot.com/v2/getMonitors", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    api_key: API_KEY,
+    format: "json"
+  })
+})
+.then(response => response.json())
+.then(data => {
+  const container = document.getElementById("status-container");
+
+  data.monitors.forEach(monitor => {
+    const isOnline = monitor.status === 2;
+    const name = customNames[monitor.id] || "Okänd tjänst";
+
+    const row = document.createElement("div");
+    row.style.marginBottom = "8px";
+    row.style.display = "flex";
+    row.style.alignItems = "center";
+
+    const dot = document.createElement("span");
+    dot.textContent = "●";
+    dot.style.color = isOnline ? "green" : "red";
+    dot.style.marginRight = "8px";
+
+    const text = document.createElement("span");
+    text.textContent = `${name}: ${isOnline ? "Online" : "Offline"}`;
+
+    row.appendChild(dot);
+    row.appendChild(text);
+    container.appendChild(row);
+  });
+})
+.catch(error => {
+  const errorMessage = document.createElement("div");
+  errorMessage.textContent = "Kunde inte hämta statusdata.";
+  document.getElementById("status-container").appendChild(errorMessage);
+  console.error("Fel vid hämtning av statusdata:", error);
+});
+</script>
+
+
+
+        </main>
+
+        <!-- FOOTER -->
+        {% include 'templates/partial/footer.html' %}
+
+    </body>
+
+</html>
