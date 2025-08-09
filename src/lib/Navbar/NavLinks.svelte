@@ -6,12 +6,3 @@
 	<li><a href="/anpassningar">Anpassningar</a></li>
 	<li><a href="/trainmap">Tågkarta</a></li>
 </ul>
-
-<style>
-    ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        font-size: x-large;
-    }
-</style>

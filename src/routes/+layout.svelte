@@ -38,17 +38,25 @@
 	{/if}
 </nav>
 
+{@render children()}
+
+<footer>
+	<div class="footer-brand">
+		<a href="/" aria-label="Tillbaka till startsidan">
+			<img src={civitasIcon} alt="Team Civitas logotyp" draggable="false" />
+		</a>
+		<p>&copy; Team Civitas</p>
+	</div>
+</footer>
+
 <style>
 	.navbar {
 		background-color: var(--card-bg);
-		height: 60px;
 		width: 100vw;
 
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		position: fixed; /* changed from fixed */
-		padding: 0 1rem;
 	}
 
 	.links {
@@ -60,12 +68,18 @@
 		height: 100%;
 	}
 
+	.links :global(ul) {
+		list-style: none;
+		display: flex;
+		gap: 20px;
+		font-size: large;
+	}
+
 	.dropdown-toggle {
 		background-color: transparent;
 		border-color: transparent;
 	}
 
-	/* Keep dropdown-toggle on right */
 	@media (min-width: 1025px) {
 		.dropdown-toggle {
 			display: none;
@@ -77,9 +91,24 @@
 	}
 
 	.nav-img {
+		padding: 0.2rem;
 		width: 50px;
 		height: 50px;
 	}
-</style>
 
-{@render children()}
+	.footer-brand {
+		background-color: var(--card-bg);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.footer-brand img {
+		width: 80px;
+		height: 80px;
+
+		padding-top: 2vh;
+	}
+</style>

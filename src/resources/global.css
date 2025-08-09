@@ -10,6 +10,7 @@
 
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 body {
@@ -99,27 +100,10 @@ h4 {
     margin-bottom: 2vh;
 }
 
-/*Default hover features*/
-.modpack-card:hover,
-.card:hover {
-    background-color: var(--card-bg-hover);
-    transition: ease-in-out 0.15s;
-}
-
-.modpack-card a:hover,
-.card a:hover {
-    color: var(--white);
-}
-
 /*Display flex row*/
 .display-flex-row {
     display: flex;
     flex-direction: row;
-}
-
-/*Not yet available-class*/
-.not-yet-available {
-    color: var(--red);
 }
 
 /*Grayscale filter*/
