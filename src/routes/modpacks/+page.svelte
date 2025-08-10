@@ -24,6 +24,7 @@
 	{#each data as modpack}
 		<ModpackCard
 			name={modpack.modpack.name}
+			href="modpacks/{modpack.modpack.id}"
 			src={getImgPath(modpack)}
 			alt={modpack.modpack.id}
 			time={modpack.modpack.time}

@@ -3,7 +3,7 @@
 </script>
 
 {#if href}
-	<div class="modpack-card">
+	<div class="modpack-card href-link">
 		<a {href}>
 			<img {src} {alt} />
 			<div class="border-top">
@@ -25,6 +25,11 @@
 {/if}
 
 <style>
+	.href-link:hover {
+		background-color: var(--card-bg-hover);
+		transition: ease-in-out 0.15s;
+	}
+
 	.modpack-card {
 		display: flex;
 		flex-direction: column;
