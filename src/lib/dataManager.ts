@@ -5,7 +5,7 @@ async function    run   (    )  {
 
 let      dataFiles
 
-=      import.meta.glob   (  "../resources/data/*"  )
+=      import.meta.glob   (  "../data/*"  )
 
 
 let

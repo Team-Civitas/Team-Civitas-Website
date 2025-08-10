@@ -1,22 +1,25 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import civitasIcon from '$img/logotypes/team-civitas/Team Civitas Sleek.svg';
-	import overdriveIcon from '$img/logotypes/overdrive/overdrive_logotype.png';
-	import recreatedIcon from '$img/logotypes/re-created/civitas_re-created.png';
 	import ModpackCard from '$lib/Card.svelte';
 
-	const featuredImages = import.meta.glob('$img/featured_imgs/*', {
+	const civitasIcon = '/img/logotypes/team-civitas/Team Civitas Sleek.svg';
+	const overdriveIcon = '/img/logotypes/overdrive/overdrive_logotype.png';
+	const recreatedIcon = '/img/logotypes/re-created/civitas_re-created.png';
+
+	const featuredImageModules = import.meta.glob('/src/img/featured_imgs/*', {
 		eager: true,
 		import: 'default'
-	}) as Record<string, string>;
+	});
 
-	const imageKeys = Object.keys(featuredImages);
+	const featuredImages = Object.values(featuredImageModules) as string[];
 
-	let featuredImage: string | null = null;
+	let featuredImage: string | undefined = undefined;
 
 	onMount(() => {
-		const randomIndex = Math.floor(Math.random() * imageKeys.length);
-		featuredImage = featuredImages[imageKeys[randomIndex]];
+		if (featuredImages.length > 0) {
+			const randomIndex = Math.floor(Math.random() * featuredImages.length);
+			featuredImage = featuredImages[randomIndex];
+		}
 	});
 </script>
 
@@ -25,6 +28,7 @@
 		{#if featuredImage}
 			<img src={featuredImage} alt="Featured background" class="hero-image" draggable="false" />
 		{/if}
+
 		<div class="overlay">
 			<div class="overlay-content">
 				<img src={civitasIcon} alt="Team Civitas logo" class="logo" draggable="false" />

@@ -1,9 +1,4 @@
 <script lang="ts">
-	import dropdownIcon from '$img/dropdown.webp';
-	import civitasIcon from '$img/logotypes/team-civitas/Team Civitas Sleek.svg';
-	import '$res/global.css';
-	import favicon from '$img/logotypes/team-civitas/Team Civitas Sleek.svg';
-
 	import NavLinks from '$lib/Navbar/NavLinks.svelte';
 	import MobileDropdown from '$lib/Navbar/MobileDropdown.svelte';
 	import { onMount } from 'svelte';
@@ -16,18 +11,23 @@
 
 	let onRoot = $state(false);
 	onMount(() => {
-		onRoot = !(location.pathname == '/');
+		onRoot = location.pathname == '/';
 	});
 
 	let { children } = $props();
+
+	const dropdownIcon = '/img/dropdown.webp';
+	const civitasIcon = '/img/logotypes/team-civitas/Team Civitas Sleek.svg';
+	const favicon = civitasIcon;
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="stylesheet" href="/global.css" />
 </svelte:head>
 
-{#if onRoot}
-	<a href="/" id="tillbaka">‹</a>
+{#if !onRoot}
+	<a href="../" id="tillbaka">‹</a>
 {/if}
 
 <nav class="navbar">

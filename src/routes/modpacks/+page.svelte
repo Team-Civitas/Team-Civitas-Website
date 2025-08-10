@@ -3,15 +3,13 @@
 	import ModpackCard from '$lib/Card.svelte';
 	import Grid from '$lib/Grid.svelte';
 
-	let imgPath = '/src/resources/img';
-
 	let data: any[] = [];
 	dataManager().then((ret) => {
 		data = ret;
 	});
 
 	function getImgPath(modpack: any) {
-		return `${imgPath}/logotypes/${modpack.modpack.id}/${modpack.modpack.logotype}`;
+		return `/img/logotypes/${modpack.modpack.id}/${modpack.modpack.logotype}`;
 	}
 </script>
 
@@ -24,7 +22,7 @@
 	{#each data as modpack}
 		<ModpackCard
 			name={modpack.modpack.name}
-			href="modpacks/{modpack.modpack.id}"
+			href={`/modpacks/${modpack.modpack.id}`}
 			src={getImgPath(modpack)}
 			alt={modpack.modpack.id}
 			time={modpack.modpack.time}
