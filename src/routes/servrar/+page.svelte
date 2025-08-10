@@ -1,6 +1,6 @@
 <script lang="ts">
-    import civitaIcon from '$img/logotypes/team-civitas-classic/Team Civitas 2023-2025.png';
-    import civitasSMPIcon from '$img/logotypes/smp/civitas_smp.png';
+    const civitaIcon = '/img/logotypes/team-civitas-classic/Team Civitas 2023-2025.png';
+    const civitasSMPIcon = '/img/logotypes/smp/civitas_smp.png';
     import Card from '$lib/Card.svelte';
     import Grid from '$lib/Grid.svelte';
 </script>

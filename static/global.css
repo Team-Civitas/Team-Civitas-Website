@@ -96,6 +96,11 @@ h4 {
     justify-items: center;
 }
 
+.header-content img {
+    width: 250px;
+    height: 250px;
+}
+
 .text-align-left {
     text-align: left;
 }

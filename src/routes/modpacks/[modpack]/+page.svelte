@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-	import { fly } from 'svelte/transition';
+	import { error } from '@sveltejs/kit';
 
 	interface Modpack {
 		name: string;
@@ -32,16 +32,13 @@
 		players: Player[];
 		info: InfoItem[];
 		download: { modpack: DownloadFile; world: DownloadFile };
-	}
-
-	interface ModpackModule {
-		default: ModpackData;
+		portfolio: string[]; // Keep it for type but will not be used for images now
 	}
 
 	let modpackData: ModpackData | null = null;
 	let portfolioImages: { url: string; alt: string }[] = [];
 	let loading = true;
-	let error: string | null = null;
+	let fetchError: string | null = null;
 
 	function getPlayerImage(player: Player): string {
 		if (player.image_override) {
@@ -67,45 +64,56 @@
 		}
 	}
 
+	const allPortfolioImages = import.meta.glob('/src/img/portfolio/*/*.{jpg,jpeg,png,webp}', {
+		eager: true
+	});
+
 	onMount(async () => {
 		try {
 			const modpackId = $page.params.modpack;
 
-			// Load JSON directly from static/data
-			const res = await fetch(`/data/${modpackId}.json`);
+			const res = await fetch(`/src/data/${modpackId}.json`);
 			if (!res.ok) throw new Error(`Modpack data for "${modpackId}" not found`);
-			modpackData = await res.json();
+			const data = (await res.json()) as ModpackData;
 
-			if (modpackData) {
-				// Static logotype path
-				modpackData.modpack.logotype = `/img/logotypes/${modpackId}/${modpackData.modpack.logotype}`;
+			// Process modpack data as before
+			data.modpack.logotype = `/img/logotypes/${modpackId}/${data.modpack.logotype}`;
 
-				// Static file downloads
-				if (modpackData.download.modpack.filename !== 'Saknar') {
-					(modpackData.download.modpack as any).modpack_download_url =
-						`/files/${modpackData.download.modpack.filename}`;
-				}
-				if (modpackData.download.world.filename !== 'Saknar världsnedladdning') {
-					(modpackData.download.world as any).world_download_url =
-						`/files/${modpackData.download.world.filename}`;
-				}
-
-				// Info images
-				modpackData.info = modpackData.info.map((item) => ({
-					...item,
-					image: getInfoItemImage(item.label)
-				}));
+			if (data.download.modpack.filename !== 'Saknar') {
+				(data.download.modpack as any).modpack_download_url =
+					`/files/${data.download.modpack.filename}`;
+			}
+			if (data.download.world.filename !== 'Saknar världsnedladdning') {
+				(data.download.world as any).world_download_url = `/files/${data.download.world.filename}`;
 			}
 
-			// Portfolio images (if filenames are known in JSON)
-			if ((modpackData as any).portfolio && Array.isArray((modpackData as any).portfolio)) {
-				portfolioImages = (modpackData as any).portfolio.map((filename: string) => ({
-					url: `/img/portfolio/${modpackId}/${filename}`,
-					alt: filename.split('.')[0]
-				}));
+			data.info = data.info.map((item) => ({
+				...item,
+				image: getInfoItemImage(item.label)
+			}));
+
+			modpackData = data;
+
+			// Fetch portfolio images count from your API endpoint
+			const portfolioRes = await fetch('/api/json-info');
+			if (!portfolioRes.ok) throw new Error('Failed to fetch portfolio images info');
+			const portfolioData = await portfolioRes.json();
+
+			// portfolioData might have folder keys with counts
+			// We find the count for this modpack portfolio folder: e.g. 'portfolio/<modpackId>'
+			const portfolioKey = `portfolio/${modpackId}`;
+
+			const count = portfolioData[portfolioKey] || 0;
+
+			portfolioImages = [];
+			for (let i = 1; i <= count; i++) {
+				portfolioImages.push({
+					url: encodeURI(`/img/portfolio/${modpackId}/${modpackId} (${i}).webp`),
+					alt: `${modpackId} (${i})`
+				});
 			}
 		} catch (err) {
-			error = (err as Error).message;
+			fetchError = (err as Error).message;
 		} finally {
 			loading = false;
 		}
@@ -114,8 +122,8 @@
 
 {#if loading}
 	<p>Laddar...</p>
-{:else if error}
-	{Error(error)}
+{:else if fetchError}
+	{error(404, fetchError)}
 {:else if modpackData}
 	<div>
 		<header class="header-content">
