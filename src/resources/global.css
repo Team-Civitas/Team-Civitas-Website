@@ -90,6 +90,11 @@ h4 {
     text-decoration: underline;
 }
 
+.header-content {
+    text-align: center;
+    justify-items: center;
+}
+
 /*Default margins*/
 
 .margin-above-title {

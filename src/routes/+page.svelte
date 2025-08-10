@@ -3,7 +3,7 @@
 	import civitasIcon from '$img/logotypes/team-civitas/Team Civitas Sleek.svg';
 	import overdriveIcon from '$img/logotypes/overdrive/overdrive_logotype.png';
 	import recreatedIcon from '$img/logotypes/re-created/civitas_re-created.png';
-	import ModpackCard from '$lib/ModpackCard.svelte';
+	import ModpackCard from '$lib/Card.svelte';
 
 	const featuredImages = import.meta.glob('$img/featured_imgs/*', {
 		eager: true,

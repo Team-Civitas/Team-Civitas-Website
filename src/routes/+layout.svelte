@@ -6,6 +6,7 @@
 
 	import NavLinks from '$lib/Navbar/NavLinks.svelte';
 	import MobileDropdown from '$lib/Navbar/MobileDropdown.svelte';
+	import { onMount } from 'svelte';
 
 	let dropdownOpen = $state(false);
 
@@ -13,12 +14,21 @@
 		dropdownOpen = !dropdownOpen;
 	}
 
+	let onRoot = $state(false);
+	onMount(() => {
+		onRoot = !(location.pathname == '/');
+	});
+
 	let { children } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
+
+{#if onRoot}
+	<a href="/" id="tillbaka">‹</a>
+{/if}
 
 <nav class="navbar">
 	<a href="/" class="navbar-logo">
@@ -65,7 +75,6 @@
 		transform: translateX(-50%);
 		display: none;
 		align-items: center;
-		height: 100%;
 	}
 
 	.links :global(ul) {
