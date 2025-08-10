@@ -8,7 +8,6 @@
 	let data: any[] = [];
 	dataManager().then((ret) => {
 		data = ret;
-		console.log(data);
 	});
 
 	function getImgPath(modpack: any) {
