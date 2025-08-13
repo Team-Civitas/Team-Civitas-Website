@@ -1,5 +1,5 @@
 export default async function run() {
-  let dataFiles = import.meta.glob("../data/*");
+  let dataFiles = import.meta.glob("/src/resources/data/*");
 
   let jsonData = [];
 

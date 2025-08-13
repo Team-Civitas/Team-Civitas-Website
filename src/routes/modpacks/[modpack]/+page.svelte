@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { error } from '@sveltejs/kit';
 
 	interface Modpack {
@@ -32,7 +32,7 @@
 		players: Player[];
 		info: InfoItem[];
 		download: { modpack: DownloadFile; world: DownloadFile };
-		portfolio: string[]; // Keep it for type but will not be used for images now
+		portfolio: string[];
 	}
 
 	let modpackData: ModpackData | null = null;
@@ -51,11 +51,11 @@
 		const lowerLabel = label.toLowerCase();
 		switch (lowerLabel) {
 			case 'forge':
-				return '/img/details/forge.webp';
+				return '$img/details/forge.webp';
 			case 'fabric':
 				return 'https://fabricmc.net/assets/logo.png';
 			case 'neoforge':
-				return 'https://neoforged.net/img/authors/neoforged.png';
+				return 'https://neoforged.net$img/authors/neoforged.png';
 			case 'create':
 				return 'https://wiki.createmod.net/assets/create-icon-large.webp';
 			case 'minecraft':
@@ -64,20 +64,20 @@
 		}
 	}
 
-	const allPortfolioImages = import.meta.glob('/src/img/portfolio/*/*.{jpg,jpeg,png,webp}', {
+	const allPortfolioImages = import.meta.glob('/src$img/portfolio/*/*.{jpg,jpeg,png,webp}', {
 		eager: true
 	});
 
 	onMount(async () => {
 		try {
-			const modpackId = $page.params.modpack;
+			const modpackId = page.params.modpack;
 
-			const res = await fetch(`/src/data/${modpackId}.json`);
+			const res = await fetch(`/data/${modpackId}.json`);
 			if (!res.ok) throw new Error(`Modpack data for "${modpackId}" not found`);
 			const data = (await res.json()) as ModpackData;
 
 			// Process modpack data as before
-			data.modpack.logotype = `/img/logotypes/${modpackId}/${data.modpack.logotype}`;
+			data.modpack.logotype = `$img/logotypes/${modpackId}/${data.modpack.logotype}`;
 
 			if (data.download.modpack.filename !== 'Saknar') {
 				(data.download.modpack as any).modpack_download_url =
@@ -108,7 +108,7 @@
 			portfolioImages = [];
 			for (let i = 1; i <= count; i++) {
 				portfolioImages.push({
-					url: encodeURI(`/img/portfolio/${modpackId}/${modpackId} (${i}).webp`),
+					url: encodeURI(`$img/portfolio/${modpackId}/${modpackId} (${i}).webp`),
 					alt: `${modpackId} (${i})`
 				});
 			}
@@ -167,7 +167,7 @@
 						<div class="text-align-left">
 							<h3>Modpack:</h3>
 							<div class="display-flex-row">
-								<img id="download-symbol" src="/img/download.webp" alt="Ladda ner" />
+								<img id="download-symbol" src="$img/download.webp" alt="Ladda ner" />
 								{#if modpackData.download.modpack.filename === 'Saknar'}
 									<p>{modpackData.download.modpack.filename}</p>
 								{:else}
@@ -182,7 +182,7 @@
 							</div>
 							<h3>Världar:</h3>
 							<div class="display-flex-row">
-								<img id="download-symbol" src="/img/download.webp" alt="Ladda ner" />
+								<img id="download-symbol" src="$img/download.webp" alt="Ladda ner" />
 								{#if modpackData.download.world.filename === 'Saknar världsnedladdning'}
 									<p>{modpackData.download.world.filename}</p>
 								{:else}

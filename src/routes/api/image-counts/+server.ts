@@ -2,7 +2,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 import fs from 'fs';
 import path from 'path';
 
-const STATIC_IMG_PATH = 'static/img/logotypes';
+const STATIC_IMG_PATH = 'static$img/logotypes';
 const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.bmp'];
 
 function isImageFile(filename: string) {
@@ -51,7 +51,7 @@ export const GET: RequestHandler = () => {
         const firstImage = getFirstImageInFolder(folderPath);
         results[`logotypes/${entry}`] = {
           count,
-          firstImage: firstImage ? `/img/logotypes/${entry}/${firstImage}` : undefined
+          firstImage: firstImage ? `$img/logotypes/${entry}/${firstImage}` : undefined
         };
       }
     }

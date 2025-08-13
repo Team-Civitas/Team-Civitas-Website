@@ -9,7 +9,7 @@
 	});
 
 	function getImgPath(modpack: any) {
-		return `/img/logotypes/${modpack.modpack.id}/${modpack.modpack.logotype}`;
+		return `/src/resources/img/logotypes/${modpack.modpack.id}/${modpack.modpack.logotype}`;
 	}
 </script>
 
@@ -18,7 +18,7 @@
 	<p class="margin-beneath-description">Här finns modpacks från hela Civitashistorien!</p>
 </header>
 
-<Grid>
+<Grid> 
 	{#each data as modpack}
 		<ModpackCard
 			name={modpack.modpack.name}

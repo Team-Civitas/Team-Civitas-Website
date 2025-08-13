@@ -2,11 +2,11 @@
 	import { onMount } from 'svelte';
 	import ModpackCard from '$lib/Card.svelte';
 
-	const civitasIcon = '/img/logotypes/team-civitas/Team Civitas Sleek.svg';
-	const overdriveIcon = '/img/logotypes/overdrive/overdrive_logotype.png';
-	const recreatedIcon = '/img/logotypes/re-created/civitas_re-created.png';
+	import civitasIcon from '$img/logotypes/team-civitas/Team Civitas Sleek.svg';
+	import overdriveIcon from '$img/logotypes/overdrive/overdrive_logotype.png';
+	import recreatedIcon from '$img/logotypes/re-created/civitas_re-created.png';
 
-	const featuredImageModules = import.meta.glob('/src/img/featured_imgs/*', {
+	const featuredImageModules = import.meta.glob('/src/resources/img/featured_imgs/*', {
 		eager: true,
 		import: 'default'
 	});

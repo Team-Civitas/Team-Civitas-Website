@@ -3,6 +3,10 @@
 	import MobileDropdown from '$lib/Navbar/MobileDropdown.svelte';
 	import { onMount } from 'svelte';
 
+	import dropdownIcon from '$img/dropdown.webp';
+	import civitasIcon from '$img/logotypes/team-civitas/Team Civitas Sleek.svg';
+	const favicon = civitasIcon;
+
 	let dropdownOpen = $state(false);
 
 	function toggleDropdown() {
@@ -16,9 +20,6 @@
 
 	let { children } = $props();
 
-	const dropdownIcon = '/img/dropdown.webp';
-	const civitasIcon = '/img/logotypes/team-civitas/Team Civitas Sleek.svg';
-	const favicon = civitasIcon;
 </script>
 
 <svelte:head>
@@ -48,7 +49,9 @@
 	{/if}
 </nav>
 
-{@render children()}
+<main>
+	{@render children()}
+</main>
 
 <footer>
 	<div class="footer-brand">
