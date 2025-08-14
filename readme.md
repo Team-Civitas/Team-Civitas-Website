@@ -1,48 +1,38 @@
-# Team Civitas
+# sv
 
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-<img src="https://teamcivitas.net/static/img/modpacks/civitas_other.webp" alt="Team Civitas logotyp" width="150"/>
+## Creating a project
 
----
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Modpack-översikt
+```sh
+# create a new project in the current directory
+npx sv create
 
-| Modpack                     | Period                      |
-|-----------------------------|-----------------------------|
-| Civitas: Synergy            | Mars 2025 – Pågående        |
-| Civitas: Create Horizons    | Nov 2024 – Jan 2025         |
-| Civitas: Re-Created         | Dec 2023 – Juli 2024        |
-| Civitas: Endurance          | Juli 2023                   |
-| Civitas: Create Revolution  | Juli 2023 – Aug 2023        |
-| Civitas: Arcanum            | Maj 2023 – Juni 2023        |
-| Civitas: Create             | Jan 2023 – April 2023       |
+# create a new project in my-app
+npx sv create my-app
+```
 
----
+## Developing
 
-## Kommande modpack
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-Information om framtida projekt anges på webbplatsen eller i Discordservern.
+```sh
+npm run dev
 
----
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-## CivitasCraft
+## Building
 
-Civitascraft är/var Team Civitas vanilla Minecraft-server.
+To create a production version of your app:
 
----
+```sh
+npm run build
+```
 
-## Övrigt innehåll
+You can preview the production build with `npm run preview`.
 
-- Portfolio-bilder från varje modpack
-- Världsfiler för nedladdning
-- Samlat arkiv över Team Civitas historia
-
----
-
-## Webbplats
-
-👉 https://teamcivitas.net/
-
----
-
-© Team Civitas
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
