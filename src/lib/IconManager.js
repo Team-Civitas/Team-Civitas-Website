@@ -1,0 +1,1 @@
+export { logotype } from './Icons/logotype.svg';
