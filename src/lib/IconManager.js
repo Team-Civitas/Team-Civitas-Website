@@ -1,1 +1,1 @@
-export { logotype } from './Icons/logotype.svg';
+export { logotype } from './Icons/logo.svg';

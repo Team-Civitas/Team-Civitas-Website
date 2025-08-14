@@ -1,5 +1,5 @@
 <script>
-	import favicon from '$lib/icons/logotype.svg';
+	import favicon from '$lib/Icons/logo.svg';
 
 	let { children } = $props();
 </script>
