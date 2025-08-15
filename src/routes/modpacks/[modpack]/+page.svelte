@@ -170,6 +170,10 @@
 </div>
 
 <style>
+	.container {
+		padding-bottom: 1rem;
+	}
+
 	.modpack-header {
 		padding: 1rem;
 		display: flex;
