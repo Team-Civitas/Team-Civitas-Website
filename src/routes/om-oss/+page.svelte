@@ -9,11 +9,11 @@
 <div class="container">
 	<h1 class="heading heading-left">HUR BÖRJADE ALLT?</h1>
 	<p class="description">
-		<strong>Team Civitas</strong> grundades av DanteMC (DanteMinecraft) år 2020 och har sedan dess vuxit till en
-		större gemenskap med personer från hela Sverige. Vår resa började med att vi spelade på en
-		Minecraft-server vid namnet "Civitascraft" och har sedan dess utvecklats till att omfatta en
-		mängd olika spel och projekt. Idag har vi en stark närvaro inom Minecraft, där vi främst spelar
-		olika modpacks och skapar egna äventyr. Vårt team är inte bara en samling spelare, utan en
+		<strong>Team Civitas</strong> grundades av DanteMC (DanteMinecraft) den 10 oktober år 2020 och har
+		sedan dess vuxit till en större gemenskap med personer från hela Sverige. Vår resa började med att
+		vi spelade på en Minecraft-server vid namnet "Civitascraft" och har sedan dess utvecklats till att
+		omfatta en mängd olika spel och projekt. Idag har vi en stark närvaro inom Minecraft, där vi främst
+		spelar olika modpacks och skapar egna äventyr. Vårt team är inte bara en samling spelare, utan en
 		kreativ gemenskap där vi delar idéer, bygger tillsammans och skapar minnen som varar livet ut.
 	</p>
 </div>
