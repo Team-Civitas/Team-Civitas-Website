@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import Box from './Box.svelte';
 
-	let { src, title, children } = $props();
+	let { src, title } = $props();
 	// svelte-ignore non_reactive_update
 	let alt = '';
 
@@ -19,16 +19,11 @@
 		{#if src}
 			<img {src} {alt} />
 		{/if}
-		<span>
-			{#if title}
-				<div class="title">
-					<Box padding="1rem" color="#272727">
-						<h1>{title}</h1>
-					</Box>
-				</div>
-			{/if}
-			{@render children?.()}
-		</span>
+		{#if title}
+			<div class="title-container">
+				<h1>{title}</h1>
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -52,6 +47,7 @@
 		border-radius: var(--border-radius);
 
 		width: 500px;
+		position: relative;
 	}
 
 	.member-card img {
@@ -60,8 +56,21 @@
 		border-radius: var(--border-radius);
 	}
 
-    .title {
-        transform: translateY(-100px);
+	.title-container {
+        display: flex;
+		position: absolute;
+		bottom: 0;
+        background-color: #00000080;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        border-top: white;
+    }
+
+    .title-container h1 {
+        padding: 1rem;
+        margin-bottom: 5rem;
+        color: var(--primary-color)
     }
 
 	/**
