@@ -20,9 +20,6 @@
 			<img {src} {alt} />
 		{/if}
 		<span>
-			{#if src && title}
-				<hr />
-			{/if}
 			{#if title}
 				<h1>{title}</h1>
 			{/if}
@@ -54,13 +51,23 @@
 	}
 
 	.member-card img {
-		width: 50%;
+		width: auto;
+		height: 500px;
 		border-radius: var(--border-radius);
 	}
 
     span {
+
+		position: absolute;
+		transform: translateY(500%);
+
         width: 100%;
         text-align: center;
         color: var(--primary-color);
+
+		text-shadow: #000000 0 1px 15px;
     }
+
+
+
 </style>
