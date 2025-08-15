@@ -19,6 +19,7 @@
 html {
     font-size: 16px;
     overflow-y: scroll;
+    height: 100%;
 }
 
 :root {
@@ -70,4 +71,26 @@ p {
     color: var(--primary-color);
 
     margin-bottom: 1vh;
+}
+
+.underlined {
+    position: relative;
+}
+
+.underlined::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--highlight-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.underlined:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }

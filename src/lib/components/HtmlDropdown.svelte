@@ -30,7 +30,7 @@
 		onmouseleave={handleMouseLeave}
 		onmouseenter={handleMouseEnter}
 	>
-		<button type="button" aria-label="mega-menu" onclick={toggleMenu}>
+		<button type="button" aria-label="mega-menu" onclick={toggleMenu} class="underlined">
 			{name}<i class="fa fa-caret-down" style="margin-left: 7.5px;"></i>
 		</button>
 		<div class="dropdown-content {active ? 'active' : ''}">{@render children()}</div>

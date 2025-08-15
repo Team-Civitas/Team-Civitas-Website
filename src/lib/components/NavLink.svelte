@@ -4,14 +4,15 @@
 
 	let { href, name = href } = $props();
 
-	name = toDecode(name);
+	name = toDecode(name)
 
-	if (name == '') {
-		name = 'Hem';
-	}
+    if (name == "") {
+        name = "Hem"
+    }
+
 </script>
 
-<a {href} class:active={page.url.pathname === href}>{name}</a>
+<a {href} class="{page.url.pathname === href ? 'active' : ''} underlined">{name}</a>
 
 <style>
 	a {

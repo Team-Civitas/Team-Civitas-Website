@@ -10,7 +10,7 @@
 	<HtmlDropdown {name}>
 		<ul class="content">
 			{#each hrefs as href}
-				<li><NavLink {href}/></li>
+				<li><a {href}>{toDecode(href)}</a></li>
 			{/each}
 		</ul>
 	</HtmlDropdown>
@@ -51,5 +51,18 @@
 	.content li {
 		margin: 0.5rem 0;
 	}
-	
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		padding: 2px;
+		margin: 0 10px;
+
+		transition: color 0.5s ease;
+	}
+
+	a:hover {
+		color: var(--highlight-color);
+	}
 </style>
