@@ -21,6 +21,7 @@
 
 	.NavMegaMenu :global(.html-dropdown > button:hover) {
 		color: var(--highlight-color);
+		cursor: pointer;
 	}
 
 	.NavMegaMenu :global(.dropdown-content) {
