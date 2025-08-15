@@ -20,9 +20,9 @@
 
 		<div>
 			<NavLink href="/" />
-			<NavLink href="/projekt" />
-			<NavLink href="/identitet" />
 			<NavLink href="/om-oss" />
+			<button>Projekt</button>
+			<NavLink href="/sociala-medier" />
 		</div>
 	</div>
 </nav>
