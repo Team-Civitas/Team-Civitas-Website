@@ -29,5 +29,10 @@
 		margin-top: 0.5rem;
 		border-radius: var(--border-radius);
 		transition: color 0.5s ease;
+
+		background-color: #00000050;
+		border: 3px solid #272727;
+		border-radius: 50vw;
+		backdrop-filter: blur(5px);
 	}
 </style>
