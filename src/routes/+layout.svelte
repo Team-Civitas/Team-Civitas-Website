@@ -4,6 +4,7 @@
 	let { children } = $props();
 
 	import { page } from '$app/stores';
+	import NavLink from '$lib/components/NavLink.svelte';
 </script>
 
 <svelte:head>
@@ -14,10 +15,10 @@
 	<div>
 		<img src={logotype} alt="logo" />
 		<div>
-			<a href="/" class:active={$page.url.pathname == '/'}>Hem</a>
-			<a href="/projekt" class:active={$page.url.pathname == '/projekt'}>Projekt</a>
-			<a href="/identitet" class:active={$page.url.pathname == '/identitet'}>Identitet</a>
-			<a href="/om-oss" class:active={$page.url.pathname == '/om-oss'}>Om oss</a>
+			<NavLink href="/" />
+			<NavLink href="/projekt" />
+			<NavLink href="/identitet" />
+			<NavLink href="/om-oss" />
 		</div>
 	</div>
 </nav>
@@ -49,20 +50,5 @@
 	nav img {
 		width: 50px;
 		height: 50px;
-	}
-
-	nav a {
-		color: white;
-		text-decoration: none;
-
-		padding: 2px;
-		margin: 0 10px;
-
-		transition: color 0.3s ease;
-	}
-
-	nav a:hover,
-	nav a.active {
-		color: aqua;
 	}
 </style>
