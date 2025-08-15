@@ -18,10 +18,10 @@
 
 <nav>
 	<div>
-		<div class="nav-logo">
+		<a class="nav-logo" href="/">
 			<img src={logotype} alt="logo" />
 			<p>Team Civitas</p>
-		</div>
+		</a>
 
 		<div class="links">
 			<NavLink href="/" />
@@ -53,6 +53,7 @@
 		align-items: center;
 		font-family: 'Archivo Black', sans-serif;
 		font-size: 1.5rem;
+		text-decoration: none;
 	}
 
 	.nav-logo p {
