@@ -22,9 +22,9 @@
 	</div>
 </nav>
 
-<div class="container">
+<main>
 	{@render children?.()}
-</div>
+</main>
 
 <style>
 	@import '/global.css';
@@ -64,10 +64,5 @@
 	nav a:hover,
 	nav a.active {
 		color: aqua;
-	}
-
-	.container {
-		max-width: 90%;
-		margin: 0 auto;
 	}
 </style>
