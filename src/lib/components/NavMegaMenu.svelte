@@ -39,9 +39,11 @@
 		transition: color 0.5s ease;
 
 		background-color: #00000050;
-		border: 3px solid #000000;
+		border: 3px solid #ffffff;
 		border-radius: var(--border-radius);
 		backdrop-filter: blur(5px);
+
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 	}
 
 	.content {
