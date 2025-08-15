@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+
+@keyframes scroll-bg {
+    from {
+        background-position: 0 -250px;
+    }
+
+    to {
+        background-position: -2480px -250px;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,4 +36,26 @@ body {
     max-width: 60%;
     margin: 0 auto;
     padding-top: 70px;
+}
+
+.heading {
+    font-size: 2rem;
+    font-family: 'Archivo Black', sans-serif;
+    text-align: left;
+    color: var(--primary-color);
+
+    margin-bottom: 1vh;
+}
+
+p {
+    color: var(--primary-color);
+}
+
+.subheading {
+    font-size: 1.5rem;
+    font-family: 'Archivo Black', sans-serif;
+    text-align: left;
+    color: var(--primary-color);
+
+    margin-bottom: 1vh;
 }
