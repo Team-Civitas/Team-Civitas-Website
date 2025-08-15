@@ -42,6 +42,12 @@ body {
     padding-top: 70px;
 }
 
+.container-wide {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
 .heading {
     font-size: 2rem;
     font-family: 'Archivo Black', sans-serif;

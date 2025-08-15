@@ -58,6 +58,6 @@
 	.civitas-core {
 		display: flex;
 		justify-content: center;
-		gap: 1rem;
+		gap: 2rem;
 	}
 </style>

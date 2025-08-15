@@ -10,5 +10,6 @@
     .horizontalScroll {
         display: flex;
         overflow-x: auto;
+        gap: 3rem;
     }
 </style>
