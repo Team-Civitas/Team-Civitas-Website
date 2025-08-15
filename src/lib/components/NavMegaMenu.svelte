@@ -1,11 +1,19 @@
 <script>
+	import { toDecode } from '$lib/stringFuncs';
 	import HtmlDropdown from './HtmlDropdown.svelte';
+	import NavLink from './NavLink.svelte';
 
-	let { children, name } = $props();
+	let { children, name, hrefs } = $props();
 </script>
 
 <div class="NavMegaMenu">
-	<HtmlDropdown {name}>{@render children()}</HtmlDropdown>
+	<HtmlDropdown {name}>
+		<ul class="content">
+			{#each hrefs as href}
+				<li><NavLink {href}/></li>
+			{/each}
+		</ul>
+	</HtmlDropdown>
 </div>
 
 <style>
@@ -29,5 +37,9 @@
 		margin-top: 0.5rem;
 		border-radius: var(--border-radius);
 		transition: color 0.5s ease;
+	}
+
+	.content {
+		list-style: none;
 	}
 </style>

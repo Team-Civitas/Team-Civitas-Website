@@ -1,19 +1,17 @@
 <script>
 	import { page } from '$app/state';
+	import { toDecode } from '$lib/stringFuncs';
 
 	let { href, name = href } = $props();
 
-	name = name.startsWith('/') ? name.slice(1) : name;
-	name = name.replace(/\b\w/g, (char) => char.toUpperCase());
-	name = name.replace('-', ' ');
+	name = toDecode(name);
 
-    if (name == "") {
-        name = "Hem"
-    }
-
+	if (name == '') {
+		name = 'Hem';
+	}
 </script>
 
-<a {href} class:active={page.url.pathname === href }>{name}</a>
+<a {href} class:active={page.url.pathname === href}>{name}</a>
 
 <style>
 	a {
