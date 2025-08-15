@@ -13,7 +13,8 @@
 
 	<TitledCard
 		src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
-	/>
+		title="YOO GAYS"
+	>JAG ÄR FETT GAY</TitledCard>
 </div>
 
 <style>
