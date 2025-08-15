@@ -12,7 +12,7 @@
 <div>
 	<div class="html-dropdown" role="menu" tabindex="0" onmouseleave={() => (active = false)}>
 		<button type="button" aria-label="mega-menu" onclick={toggleMenu}>
-			{name}
+			{name}<i class="fa fa-caret-down" style="margin-left: 7.5px;"></i>
 		</button>
 
 		<div class="dropdown-content {active ? 'active' : ''}">{@render children()}</div>
