@@ -31,9 +31,6 @@
 </div>
 
 <style>
-	p.description {
-		font-size: 1.5rem; /*Overrides p*/
-	}
 
 	p.justified {
 		text-align: justify;

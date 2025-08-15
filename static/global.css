@@ -49,16 +49,19 @@ body {
     margin-bottom: 1vh;
 }
 
-.heading-left, .subheading-left {
+.heading-left,
+.subheading-left {
     text-align: left;
 }
 
-.heading-center, .subheading-center {
+.heading-center,
+.subheading-center {
     text-align: center;
 }
 
 p {
     color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
 .subheading {
