@@ -23,7 +23,7 @@
 		padding: 2px;
 		margin: 0 10px;
 
-		transition: color 0.3s ease;
+		transition: color 0.5s ease;
 	}
 
 	a:hover,

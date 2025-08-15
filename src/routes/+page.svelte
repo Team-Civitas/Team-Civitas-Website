@@ -35,8 +35,6 @@
 </div>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-
 	@keyframes scroll-bg {
 		from {
 			background-position: 0 0;

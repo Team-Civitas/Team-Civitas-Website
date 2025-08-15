@@ -13,7 +13,11 @@
 
 <nav>
 	<div>
-		<img src={logotype} alt="logo" />
+		<div class="nav-logo">
+			<img src={logotype} alt="logo" />
+			<p>Team Civitas</p>
+		</div>
+
 		<div>
 			<NavLink href="/" />
 			<NavLink href="/projekt" />
@@ -35,6 +39,19 @@
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 19.27%, rgba(0, 0, 0, 0) 100%);
 
 		font-size: large;
+		position: absolute;
+		width: 100%;
+	}
+
+	.nav-logo {
+		display: flex;
+		align-items: center;
+		font-family: 'Archivo Black', sans-serif;
+		font-size: 1.5rem;
+	}
+
+	.nav-logo p {
+		margin-left: 5px;
 	}
 
 	nav > div {

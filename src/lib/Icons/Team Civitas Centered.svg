@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="2000"
+   height="2000"
+   viewBox="0 0 2000 2000"
+   sodipodi:docname="Team Civitas Centered.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:export-filename="Team Civitas.png"
+   inkscape:export-xdpi="384"
+   inkscape:export-ydpi="384"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="powerstroke"
+       message=""
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1.3"
+       scale_width="1"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       end_linecap_type="zerowidth"
+       offset_points="3,18.867925"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       not_jump="false"
+       sort_points="true" />
+    <inkscape:path-effect
+       effect="fill_between_many"
+       method="bsplinespiro"
+       autoreverse="false"
+       close="false"
+       join="false"
+       linkedpaths="#path2,0,1"
+       id="path-effect3" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.28814601"
+     inkscape:cx="600.39005"
+     inkscape:cy="983.87618"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     id="path1"
+     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+     inkscape:label="Outer"
+     d="M 1726.8226,322.3701 78.162475,848.44625 1296.3382,1928.9639 Z M 1586.1722,469.80565 1414.5296,1110.3818 1242.8871,1750.958 757.18005,1320.1358 271.47106,889.31545 928.82067,679.56151 Z" />
+  <path
+     d="m 889.16591,827.89302 -92.3315,343.91128 q -2.0077,7.9981 -3.0145,14.9971 -0.01,6 -1.0106,10.999 -3.0684,70.9971 96.9315,71.0935 l 284.99989,0.2747 26.0944,-97.9749 -246.99995,-0.2381 92.32965,-341.91118 246.9999,0.23799 26.0943,-97.97489 -284.9998,-0.2747 q -117.99985,-0.11371 -145.09329,96.8602 z"
+     id="text3"
+     style="font-style:italic;font-stretch:condensed;font-size:1000px;font-family:'Cobalt Alien Condensed Italic';-inkscape-font-specification:'Cobalt Alien Condensed Italic,  Italic Condensed';display:inline;opacity:1;fill:#ffffff;stroke-width:0"
+     aria-label="C"
+     inkscape:label="Letter" />
+</svg>

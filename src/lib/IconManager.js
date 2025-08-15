@@ -1,4 +1,4 @@
-import logotype from './Icons/Team Civitas.svg';
+import logotype from './Icons/Team Civitas Centered.svg';
 
 
 export { logotype };
