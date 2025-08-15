@@ -4,8 +4,8 @@
 
 	let { src, title, children } = $props();
 	// svelte-ignore non_reactive_update
-		let alt = '';
-    
+	let alt = '';
+
 	onMount(() => {
 		if (src) {
 			let altParts = src.split('/');
@@ -19,6 +19,15 @@
 		{#if src}
 			<img {src} {alt} />
 		{/if}
+		<span>
+			{#if src && title}
+				<hr />
+			{/if}
+			{#if title}
+				<h1>{title}</h1>
+			{/if}
+			{@render children?.()}
+		</span>
 	</div>
 </div>
 
@@ -42,11 +51,16 @@
 		border-radius: var(--border-radius);
 
 		width: 500px;
-		height: 500px;
 	}
 
 	.member-card img {
 		width: 50%;
 		border-radius: var(--border-radius);
 	}
+
+    span {
+        width: 100%;
+        text-align: center;
+        color: var(--primary-color);
+    }
 </style>
