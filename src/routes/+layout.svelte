@@ -25,7 +25,7 @@
 
 		<div class="links">
 			<NavLink href="/" />
-			<NavMegaMenu name="Projekt" hrefs={["/modpacks", "/kartor", "/logotyper", "/servrar"]}/>
+			<NavMegaMenu name="Projekt" hrefs={["/modpacks", "/spelkartor", "/logotyper", "/servrar"]}/>
 			<NavLink href="/identitet" />
 			<NavLink href="/om-oss" />
 			<NavLink href="/sociala-medier" />
