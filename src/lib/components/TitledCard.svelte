@@ -21,7 +21,11 @@
 		{/if}
 		<span>
 			{#if title}
-				<h1>{title}</h1>
+				<div class="title">
+					<Box padding="1rem" color="#272727">
+						<h1>{title}</h1>
+					</Box>
+				</div>
 			{/if}
 			{@render children?.()}
 		</span>
@@ -56,18 +60,19 @@
 		border-radius: var(--border-radius);
 	}
 
-    span {
+    .title {
+        transform: translateY(-100px);
+    }
 
+	/**
+	span {
 		position: absolute;
 		transform: translateY(500%);
 
-        width: 100%;
-        text-align: center;
-        color: var(--primary-color);
+		width: 100%;
+		text-align: center;
+		color: var(--primary-color);
 
 		text-shadow: #000000 0 1px 15px;
-    }
-
-
-
+	}*/
 </style>
