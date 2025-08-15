@@ -65,12 +65,15 @@
         justify-content: center;
         align-items: center;
         border-top: white;
+		border-bottom-left-radius: var(--border-radius);
+		border-bottom-right-radius: var(--border-radius);
     }
 
     .title-container h1 {
         padding: 1rem;
-        margin-bottom: 5rem;
-        color: var(--primary-color)
+        margin-bottom: 2rem;
+		margin-top: 1rem;
+        color: var(--primary-color);
     }
 
 	/**
