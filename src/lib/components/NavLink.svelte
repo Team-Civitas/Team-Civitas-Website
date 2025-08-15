@@ -13,7 +13,7 @@
 
 </script>
 
-<a {href} class:active={page.url.pathname == { href }}>{name}</a>
+<a {href} class:active={page.url.pathname === href }>{name}</a>
 
 <style>
 	a {
