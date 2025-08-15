@@ -24,7 +24,7 @@
 		margin: 0 10px;
 		color: inherit;
 		font: inherit;
-		transition: color 0.5s ease;
+		transition: color 0.2s ease;
 	}
 
 	.NavMegaMenu :global(.html-dropdown > button:hover) {
@@ -36,14 +36,12 @@
 		padding: 1rem;
 		margin-top: 0.5rem;
 		border-radius: var(--border-radius);
-		transition: color 0.5s ease;
+		transition: color 0.2s ease;
 
-		background-color: #00000050;
-		border: 3px solid #ffffff;
+		background-color: var(--background-color);
 		border-radius: var(--border-radius);
-		backdrop-filter: blur(5px);
 
-		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 8px 10px rgba(0, 0, 0, 0.6);
 	}
 
 	.content {
