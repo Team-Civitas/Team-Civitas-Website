@@ -24,7 +24,6 @@
 			<NavMegaMenu name="Projekt">YOO</NavMegaMenu>
 			<NavLink href="/identitet" />
 			<NavLink href="/om-oss" />
-			<button>Projekt</button>
 			<NavLink href="/sociala-medier" />
 		</div>
 	</div>
