@@ -3,6 +3,7 @@
 
 	let { children } = $props();
 
+	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import NavLink from '$lib/components/NavLink.svelte';
 	import NavMegaMenu from '$lib/components/NavMegaMenu.svelte';
@@ -26,15 +27,13 @@
 		<div class="links">
 			<NavLink href="/" />
 			<NavLink href="/om-oss" />
-			<NavMegaMenu name="Projekt" hrefs={["/modpacks", "/spelkartor", "/logotyper", "/servrar"]}/>
+			<NavMegaMenu name="Projekt" hrefs={['/modpacks', '/spelkartor', '/logotyper', '/servrar']} />
 			<NavLink href="/sociala-medier" />
 		</div>
 	</div>
 </nav>
 
-<main>
-	{@render children?.()}
-</main>
+{@render children?.()}
 
 <style>
 	@import '/global.css';
