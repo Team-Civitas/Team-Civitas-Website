@@ -1,6 +1,7 @@
 <script>
 	import bannerImg from '$lib/assets/data/CivitasStories/Civitas Overdrive/overdrive_banner.png';
 	import modpackImg from '$lib/assets/data/CivitasStories/Civitas Overdrive/Civitas Overdrive.png';
+	import downloadImg from '$lib/assets/Images/download.webp';
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
 	import Box from '$lib/components/Box.svelte';
@@ -11,8 +12,8 @@
 
 <div class="container">
 	<Box>
-		<div class="modpack-header">
-			<img src={modpackImg} alt="" />
+		<div class="modpack-header" style="align-items: center;">
+			<img id="modpack-image" src={modpackImg} alt="" />
 			<div>
 				<h1 class="heading heading-left">CIVITAS: OVERDRIVE</h1>
 				<p>
@@ -27,34 +28,186 @@
 			</div>
 		</div>
 	</Box>
-    <Box>
+	<Box>
 		<div class="modpack-header">
-            <ul>
-                <li>Ny och förbättrad grafik</li>
-                <li>Fler byggblock och resurser</li>
-                <li>Optimerad prestanda</li>
-            </ul>
+			<div style="width: 300px;">
+				<h1 class="heading">SPELARE</h1>
+				<ul>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/bust"
+							alt="DanteMC"
+						/>DanteMinecraft
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/Elf_Oliver/bust"
+							alt="Elf_Oliver"
+						/>Elf_Oliver
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/Lulle2345/bust"
+							alt="Lulle2345"
+						/>Lulle2345
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/Zcloak/bust"
+							alt="Zcloak"
+						/>Zcloak
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/Pickyben/bust"
+							alt="Pickyben"
+						/>Pickyben
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/SkogisAB/bust"
+							alt="SkogisAB"
+						/>SkogisAB
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/RealFemboySlayer/bust"
+							alt="RealFemboySlayer"
+						/>RealFemboySlayer
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/Isac04_/bust"
+							alt="Isac04_"
+						/>Isac04_
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/TwitchErik71/bust"
+							alt="TwitchErik71"
+						/>TwitchErik71
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/NoobElis/bust"
+							alt="NoobElis"
+						/>NoobElis
+					</li>
+					<li>
+						<img
+							src="https://starlightskins.lunareclipse.studio/render/ultimate/MelvinMinecraft1/bust"
+							alt="MelvinMinecraft1"
+						/>MelvinMinecraft1
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h1 class="heading">INFORMATION OM MODPACK</h1>
+				<ul>
+					<li>
+						<img src="https://neoforged.net/img/authors/neoforged.png" alt="NeoForge" />NeoForge
+					</li>
+					<li>
+						<img
+							src="https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB"
+							alt="Minecraft"
+						/>Minecraft 1.21.1
+					</li>
+					<li>
+						<img
+							src="https://wiki.createmod.net/assets/create-icon-large.webp"
+							alt="Create"
+						/>Create 6.0.0+
+					</li>
+					<li>
+						<img
+							src="https://media.forgecdn.net/avatars/thumbnails/875/313/256/256/638297701708807643.png"
+							alt="Axiom"
+						/>Axiom
+					</li>
+					<li>
+						<img
+							src="https://media.forgecdn.net/attachments/16/948/logo.png"
+							alt="WorldEdit"
+						/>WorldEdit
+					</li>
+				</ul>
+				<hr style="margin: 2rem 0; width:100%" />
+				<h1 class="heading">NEDLADDNINGAR</h1>
+				<ul>
+					<li>
+						<a href="#"
+							><img src={downloadImg} style="width:30px; height:auto;" alt="Ladda ner NeoForge" />
+							<p class="underlined">Ladda ner NeoForge</p></a
+						>
+					</li>
+					<li>
+						<a href="#"
+							><img
+								src={downloadImg}
+								style="width:30px; height:auto;"
+								alt="Ladda ner Create 6.0.0+"
+							/>
+							<p class="underlined">Ladda ner Create 6.0.0+</p></a
+						>
+					</li>
+					<li>
+						<a href="#"
+							><img src={downloadImg} style="width:30px; height:auto;" alt="Ladda ner Axiom" />
+							<p class="underlined">Ladda ner Axiom</p></a
+						>
+					</li>
+					<li>
+						<a href="#"
+							><img src={downloadImg} style="width:30px; height:auto;" alt="Ladda ner WorldEdit" />
+							<p class="underlined">Ladda ner WorldEdit</p></a
+						>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</Box>
 </div>
 
 <style>
-
-    body {
-        color: var(--text-color);
-    }
-
 	.modpack-header {
 		padding: 1rem;
 		display: flex;
 		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-        gap: 2rem 2rem;
+		margin-bottom: 3rem;
 	}
 
-	.modpack-header img {
-		width: 30%;
+	#modpack-image {
+		width: 300px;
 		height: auto;
+	}
+
+	li {
+		list-style: none;
+		color: var(--primary-color);
+
+		display: flex;
+		align-items: center;
+
+		font-size: 1.2rem;
+	}
+
+	p {
+		font-size: 1.2rem;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+
+		text-decoration: none;
+		color: var(--primary-color);
+	}
+
+	ul > li > img,
+	ul > li > a > img {
+		width: 50px;
+		height: auto;
+		margin: 0.25rem;
 	}
 </style>
