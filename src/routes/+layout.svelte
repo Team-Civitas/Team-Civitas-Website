@@ -35,7 +35,7 @@
 	@import '/global.css';
 
 	nav {
-		color: white;
+		color: var(--primary-color);
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 19.27%, rgba(0, 0, 0, 0) 100%);
 
 		font-size: large;

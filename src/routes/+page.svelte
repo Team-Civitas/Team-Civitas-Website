@@ -37,22 +37,20 @@
 <style>
 	@keyframes scroll-bg {
 		from {
-			background-position: 0 0;
+			background-position: 0 -250px;
 		}
 		to {
-			background-position: -2480px 0;
+			background-position: -2480px -250px;
 		}
 	}
 
 	.header-background {
-		background-position: center;
-		background-size: contain;
 		height: 100%;
 
 		background-image: url(../lib/assets/Images/bruce_banner.png);
 
 		background-repeat: repeat-x;
-		animation: scroll-bg 60s linear infinite;
+		animation: scroll-bg 50s linear infinite;
 	}
 
 	img {

@@ -28,6 +28,6 @@
 
 	a:hover,
 	a.active {
-		color: aqua;
+		color: var(--highlight-color);
 	}
 </style>

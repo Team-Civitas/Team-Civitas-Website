@@ -13,6 +13,7 @@ html {
 :root {
     --primary-color: #ffffff;
     --background-color: #0D1114;
+    --highlight-color: #41BFFF;
 }
 
 body {
