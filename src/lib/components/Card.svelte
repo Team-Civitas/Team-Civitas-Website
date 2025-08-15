@@ -2,12 +2,12 @@
 	let { children, color = 'var(--backgound-secondary-color)' } = $props();
 </script>
 
-<div class="box" style="background-color: {color};">
+<div class="card" style="background-color: {color};">
 	{@render children()}
 </div>
 
 <style>
-	.box {
+	.card {
 		border-radius: var(--border-radius);
 	}
 </style>

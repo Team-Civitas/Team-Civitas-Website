@@ -1,12 +1,11 @@
 <script>
-	import { logotype } from '$lib/IconManager';
+	import Header from '$lib/components/Header.svelte';
+import { logotype } from '$lib/IconManager';
 </script>
 
-<div class="header-background">
-	<h1 class="header-heading">OM OSS</h1>
-</div>
+<Header title="OM OSS"/>
 
-<div class="container">
+<div>
 	<h2 class="heading heading-center">TEAMET BAKOM CIVITAS</h2>
 	<hr />
 	<h3 class="subheading subheading-center">GRUNDARE</h3>
@@ -21,28 +20,6 @@
 </div>
 
 <style>
-	.header-background {
-		height: 100%;
-
-		background-image: url(../../lib/assets/Images/bruce_banner.png);
-
-		background-repeat: repeat-x;
-		animation: scroll-bg 50s linear infinite;
-	}
-
-	.header-heading {
-		height: 500px;
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		font-size: 15rem;
-		font-family: 'Archivo Black', sans-serif;
-
-		color: var(--primary-color);
-	}
-
 	.member-container {
 		display: flex;
 		flex-direction: column;

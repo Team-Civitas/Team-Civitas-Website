@@ -1,10 +1,9 @@
 <script>
+	import Header from '$lib/components/Header.svelte';
 	import { logotype } from '$lib/IconManager';
 </script>
 
-<div class="header-background">
-	<img src={logotype} alt="logo" />
-</div>
+<Header src={logotype} />
 
 <div class="container">
 	<h1 class="heading heading-left">TEAM CIVITAS</h1>
@@ -32,23 +31,6 @@
 </div>
 
 <style>
-
-	.header-background {
-		height: 100%;
-
-		background-image: url(../lib/assets/Images/bruce_banner.png);
-
-		background-repeat: repeat-x;
-		animation: scroll-bg 50s linear infinite;
-	}
-
-	img {
-		display: block;
-		margin: auto;
-		width: 500px;
-		height: auto;
-	}
-
 	p.description {
 		font-size: 1.5rem; /*Overrides p*/
 	}
