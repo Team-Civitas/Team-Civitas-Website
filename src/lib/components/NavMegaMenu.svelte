@@ -39,12 +39,17 @@
 		transition: color 0.5s ease;
 
 		background-color: #00000050;
-		border: 3px solid #272727;
-		border-radius: 50vw;
+		border: 3px solid #000000;
+		border-radius: var(--border-radius);
 		backdrop-filter: blur(5px);
 	}
 
 	.content {
 		list-style: none;
 	}
+
+	.content li {
+		margin: 0.5rem 0;
+	}
+	
 </style>
