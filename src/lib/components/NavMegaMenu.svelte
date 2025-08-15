@@ -13,6 +13,7 @@
 		background: none;
 		border: none;
 		padding: 2px;
+		margin: 0 10px;
 		color: inherit;
 		font: inherit;
 	}
