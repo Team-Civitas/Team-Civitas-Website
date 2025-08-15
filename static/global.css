@@ -13,7 +13,10 @@ html {
 :root {
     --primary-color: #ffffff;
     --background-color: #0D1114;
+    --backgound-secondary-color: #1d2124; /*TODO: FIX COLOUR*/
     --highlight-color: #41BFFF;
+
+    --border-radius: 1rem;
 }
 
 body {

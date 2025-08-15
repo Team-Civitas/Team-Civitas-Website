@@ -5,6 +5,7 @@
 
 	import { page } from '$app/stores';
 	import NavLink from '$lib/components/NavLink.svelte';
+	import NavMegaMenu from '$lib/components/NavMegaMenu.svelte';
 </script>
 
 <svelte:head>
@@ -18,9 +19,9 @@
 			<p>Team Civitas</p>
 		</div>
 
-		<div>
+		<div class="links">
 			<NavLink href="/" />
-			<NavLink href="/projekt" />
+			<NavMegaMenu name="Projekt">YOO</NavMegaMenu>
 			<NavLink href="/identitet" />
 			<NavLink href="/om-oss" />
 		</div>
@@ -67,5 +68,10 @@
 	nav img {
 		width: 50px;
 		height: 50px;
+	}
+
+	.links {
+		display: flex;
+		flex-direction: row;
 	}
 </style>

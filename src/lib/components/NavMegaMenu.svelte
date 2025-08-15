@@ -1,0 +1,25 @@
+<script>
+	import HtmlDropdown from './HtmlDropdown.svelte';
+
+	let { children, name } = $props();
+</script>
+
+<div class="NavMegaMenu">
+	<HtmlDropdown {name}>{@render children()}</HtmlDropdown>
+</div>
+
+<style>
+	.NavMegaMenu :global(.html-dropdown > button) {
+		background: none;
+		border: none;
+		padding: 2px;
+		color: inherit;
+		font: inherit;
+	}
+
+	.NavMegaMenu :global(.dropdown-content) {
+		padding: 1rem;
+		margin-top: 0.5rem;
+		border-radius: var(--border-radius);
+	}
+</style>
