@@ -24,7 +24,7 @@ html {
 :root {
     --primary-color: #ffffff;
     --background-color: #0D1114;
-    --backgound-secondary-color: #1d2124; /*TODO: FIX COLOUR*/
+    --background-secondary-color: #050708;
     --highlight-color: #41BFFF;
 
     --border-radius: 1rem;
@@ -44,10 +44,17 @@ body {
 .heading {
     font-size: 2rem;
     font-family: 'Archivo Black', sans-serif;
-    text-align: left;
     color: var(--primary-color);
 
     margin-bottom: 1vh;
+}
+
+.heading-left, .subheading-left {
+    text-align: left;
+}
+
+.heading-center, .subheading-center {
+    text-align: center;
 }
 
 p {
@@ -57,7 +64,6 @@ p {
 .subheading {
     font-size: 1.5rem;
     font-family: 'Archivo Black', sans-serif;
-    text-align: left;
     color: var(--primary-color);
 
     margin-bottom: 1vh;

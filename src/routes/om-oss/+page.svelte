@@ -7,14 +7,20 @@
 </div>
 
 <div class="container">
-	<h2 class="heading">TEAMET BAKOM CIVITAS</h2>
-	<hr>
-	<h3 class="subheading">GRUNDARE</h3>
-
+	<h2 class="heading heading-center">TEAMET BAKOM CIVITAS</h2>
+	<hr />
+	<h3 class="subheading subheading-center">GRUNDARE</h3>
+	<div class="member-container">
+		<div class="member-card">
+			<img
+				src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
+				alt="DanteMinecraft - Grundare"
+			/>
+		</div>
+	</div>
 </div>
 
 <style>
-
 	.header-background {
 		height: 100%;
 
@@ -30,15 +36,37 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
-        font-size: 15rem;
+
+		font-size: 15rem;
 		font-family: 'Archivo Black', sans-serif;
 
 		color: var(--primary-color);
 	}
 
-	hr + h3 {
-		margin-top: 3rem;
+	.member-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
+	.member-card {
+		margin: 1rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		background-color: var(--background-secondary-color);
+		padding: 1rem;
+		border-radius: var(--border-radius);
+
+		width: 500px;
+		height: 500px;
+	}
+
+	.member-card img {
+		width: 50%;
+		border-radius: var(--border-radius);
+	}
 </style>

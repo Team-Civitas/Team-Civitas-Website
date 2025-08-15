@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-	<h1 class="heading">TEAM CIVITAS</h1>
+	<h1 class="heading heading-left">TEAM CIVITAS</h1>
 	<p class="description">
 		Team Civitas är en kreativ gemenskap för vänner som gillar att bygga, spela och skapa
 		tillsammans. Sedan starten har vi utforskat ett brett spektrum av modpacks och sparat våra
@@ -17,7 +17,7 @@
 		ögonblick.
 	</p>
 
-	<h2 class="heading">VÅR HISTORIA</h2>
+	<h2 class="heading heading-left">VÅR HISTORIA</h2>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a felis non odio finibus tempor a at
 		massa. Donec massa urna, euismod ac ipsum quis, feugiat lobortis sem. Suspendisse eu ante ante.
