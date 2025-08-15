@@ -1,0 +1,31 @@
+export const arcanum = {
+  "modpack": {
+    "id": "arcanum",
+    "name": "Civitas: Arcanum",
+    "description": "Civitas: Arcanum var det första modpacket i Civitastrilogin som inte var centrerat runt Create-modden. Arcanum hade istället fokus på medeltiden och kungarriken, där möjligheter att använda magi och erövra fästningar var självklara. Tyvärr var modpacket väldigt instabilt, vilket resulterade i en kort spelperiod på grund av korrupta chunks och långa loading times.",
+    "time": "2023-05 - 2023-06",
+    "versions": {
+      "minecraft": "1.19.2",
+      "forge": null
+    }
+  },
+  "downloads": {
+    "modpack": {
+      "filename": "The Civitas Stories- Arcanum-0.0.1-1.19.2.zip",
+      "version": "0.0.1"
+    },
+    "world": {
+      "filename": null,
+      "version": null
+    }
+  },
+  "players": [
+    { "username": "DanteMinecraft", "creator": true },
+    { "username": "Zcloak", "creator": true },
+    { "username": "Farligtt", "creator": false },
+    { "username": "fraggeYT", "creator": false },
+    { "username": "ixy404", "creator": false },
+    { "username": "NoobElis", "creator": false },
+    { "username": "TwitchErik71", "creator": false }
+  ]
+}

@@ -75,16 +75,4 @@
 		margin-top: 1rem;
         color: var(--primary-color);
     }
-
-	/**
-	span {
-		position: absolute;
-		transform: translateY(500%);
-
-		width: 100%;
-		text-align: center;
-		color: var(--primary-color);
-
-		text-shadow: #000000 0 1px 15px;
-	}*/
 </style>

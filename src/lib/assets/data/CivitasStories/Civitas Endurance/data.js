@@ -1,0 +1,29 @@
+export const endurance = {
+  "modpack": {
+    "id": "endurance",
+    "name": "Civitas: Endurance",
+    "description": "Civitas: Endurance var från början tänkt att bli ett singleplayer-modpack, men efter några få diskussioner startades en gemensam server med fyra aktiva spelare. Modpacket var centrerat runt modden Terrafirmacraft, som försvårade spelet och gjorde det betydligt mer utmanande genom att lägga till gravitation, väder, klimat, och realism.",
+    "time": "2024-07",
+    "versions": {
+      "minecraft": "1.20.1",
+      "create": null,
+      "forge": null
+    }
+  },
+  "downloads": {
+    "modpack": {
+      "filename": "The Civitas Stories- Endurance.zip",
+      "version": "1.0.0"
+    },
+    "world": {
+      "filename": null,
+      "version": null
+    }
+  },
+  "players": [
+    { "username": "DanteMinecraft", "creator": true },
+    { "username": "Elf_Oliver", "creator": true },
+    { "username": "Lulle2345", "creator": true },
+    { "username": "Zcloak", "creator": true }
+  ]
+}

@@ -25,7 +25,7 @@
 		<TitledCard
 			src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
 			title="DanteMC (DanteMinecraft)"
-		></TitledCard>
+		/>
 	</div>
 	<div>
 		<h4 class="subheading subheading-center">CIVITAS CORE</h4>
@@ -33,15 +33,15 @@
 			<TitledCard
 				src="https://starlightskins.lunareclipse.studio/render/ultimate/Elf_Oliver/full"
 				title="Elf_Oliver"
-			></TitledCard>
+			/>
 			<TitledCard
 				src="https://starlightskins.lunareclipse.studio/render/ultimate/Lulle2345/full"
 				title="Lulle2345"
-			></TitledCard>
+			/>
 			<TitledCard
 				src="https://starlightskins.lunareclipse.studio/render/ultimate/Zcloak/full"
 				title="Zcloak"
-			></TitledCard>
+			/>
 		</div>
 	</div>
 </div>

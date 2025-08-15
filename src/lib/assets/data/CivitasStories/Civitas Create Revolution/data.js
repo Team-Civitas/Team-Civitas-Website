@@ -1,0 +1,32 @@
+export const createRevolution = {
+  "modpack": {
+    "id": "create-revolution",
+    "name": "Civitas: Create Revolution",
+    "description": "Civitas: Create Revolution var det andra Create-baserade modpacket i Civitastrilogin. Med nya funktioner som monorails, rymdraketer (från Ad Astra) och flertalet nya spelare hoppades det på ett långvarigt modpack, men så blev tyvärr inte fallet.",
+    "time": "2023-07 - 2023-08",
+    "versions": {
+      "minecraft": "1.19.2",
+      "create": "0.5.1+",
+      "forge": null
+    }
+  },
+  "downloads": {
+    "modpack": {
+      "filename": "The Civitas Stories Create Revolution-1.4.4.zip",
+      "version": "1.4.4"
+    },
+    "world": {
+      "filename": null,
+      "version": null
+    }
+  },
+  "players": [
+    { "username": "DanteMinecraft", "creator": true },
+    { "username": "Zcloak", "creator": true },
+    { "username": "Elf_Oliver", "creator": false },
+    { "username": "Lulle2345", "creator": false },
+    { "username": "Farligtt", "creator": false },
+    { "username": "NoobElis", "creator": false },
+    { "username": "TwitchErik71", "creator": false }
+  ]
+}

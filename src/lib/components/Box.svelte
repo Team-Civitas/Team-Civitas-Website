@@ -3,7 +3,7 @@
 </script>
 
 <div class="box" style="background-color: {color}; padding: {padding};">
-	{@render children()}
+	{@render children?.()}
 </div>
 
 <style>

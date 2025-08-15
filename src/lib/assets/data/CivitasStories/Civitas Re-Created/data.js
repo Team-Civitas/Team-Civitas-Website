@@ -1,0 +1,36 @@
+export const reCreated = {
+  "modpack": {
+    "id": "re-created", 
+    "name": "Civitas: Re-Created",
+    "description": "Civitas: Re-Created var det mest populära och längst spelade modpacket i Civitashistorien. Med en tidsperiod som pågick mellan december 2023 till juli 2024 så utforskades det hur man effektivt kunde bygga upp en stor infrastruktur för passargerartrafik samt olika samhällen. Civitas: Re-Created är också det modpack med flest spelare någonsin, med ett rekord på över 10 spelare i whitelistan.",
+    "time": "2023-12 - 2024-07",
+    "versions": {
+      "minecraft": "1.20.1",
+      "create": "0.5.1+",
+      "forge": null,
+      "fabric": null
+    }
+  },
+  "downloads": {
+    "modpack": {
+      "filename": "The Civitas Stories_Re-Created-1.4.1.zip",
+      "version": "1.4.1"
+    },
+    "world": {
+      "filename": null,
+      "version": null
+    }
+  },
+  "players": [
+    { "username": "DanteMinecraft", "creator": true },
+    { "username": "SkogisAB", "creator": true },
+    { "username": "Beequid", "creator": false },
+    { "username": "Elf_Oliver", "creator": false },
+    { "username": "Lulle2345", "creator": false },
+    { "username": "RealFemboySlayer", "creator": false },
+    { "username": "robban10", "creator": false },
+    { "username": "Sky_Rice", "creator": false },
+    { "username": "Timcraft242", "creator": false },
+    { "username": "Zcloak", "creator": false }
+  ]
+}
