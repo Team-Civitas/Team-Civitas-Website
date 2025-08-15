@@ -1,8 +1,9 @@
 <script>
-	let { title, src } = $props();
+	import bannerImg from '../../lib/assets/Images/bruce_banner.png';
+	let { title, src, bannersrc = bannerImg } = $props();
 </script>
 
-<div class="header-background">
+<div class="header-background" style="background-image: url({bannersrc});">
 	{#if title}
 		<h1 class="header-heading">{title}</h1>
 	{/if}

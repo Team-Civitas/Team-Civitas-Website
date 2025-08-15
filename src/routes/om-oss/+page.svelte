@@ -4,7 +4,7 @@
 	import { logotype } from '$lib/IconManager';
 </script>
 
-<Header title="OM OSS" />
+<Header title="OM OSS" bannersrc="../../lib/assets/OriginalModpacks/Civitas Spellbound/spellbound_banner.png" />
 
 <div class="container">
 	<h1 class="heading heading-left">HUR BÖRJADE ALLT?</h1>
