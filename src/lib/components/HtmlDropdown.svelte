@@ -15,9 +15,7 @@
 			{name}
 		</button>
 
-		{#if active}
-			<div class="dropdown-content">{@render children()}</div>
-		{/if}
+		<div class="dropdown-content {active ? 'active' : ''}">{@render children()}</div>
 	</div>
 </div>
 
@@ -28,10 +26,15 @@
 	}
 
 	.dropdown-content {
+		display: none;
 		position: absolute;
 		background: var(--backgound-secondary-color);
 		top: 100%;
 		left: 50%;
 		transform: translateX(-50%);
+	}
+
+	.active {
+		display: inherit;
 	}
 </style>
