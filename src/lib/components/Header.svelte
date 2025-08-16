@@ -61,6 +61,7 @@
 
 		.header-heading {
 			font-size: 2.5rem;
+			height: 330px;
 		}
 	}
 </style>

@@ -7,18 +7,6 @@
 	import { page } from '$app/stores';
 	import NavLink from '$lib/components/NavLink.svelte';
 	import NavMegaMenu from '$lib/components/NavMegaMenu.svelte';
-	import { onNavigate } from '$app/navigation';
-
-	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
-
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
-	});
 </script>
 
 <svelte:head>
@@ -44,7 +32,7 @@
 				<NavLink name="Sociala Medier" href="https://linktr.ee/teamcivitas" />
 			</div>
 			<a href="https://linktr.ee/teamcivitas" class="sociala-medier-manual-link"
-				><img src="/src/lib/assets/Images/screen.webp" /></a
+				><img src="/src/lib/assets/Images/screen.webp" alt=""/></a
 			>
 		</div>
 	</div>
@@ -114,52 +102,6 @@
 	.sociala-medier-manual-link img {
 		width: 30px;
 		height: 30px;
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-	}
-
-	@keyframes fade-out {
-		to {
-			opacity: 0;
-		}
-	}
-
-	@keyframes slide-from-right {
-		from {
-			transform: translateX(30px);
-		}
-	}
-
-	@keyframes slide-to-left {
-		to {
-			transform: translateX(-30px);
-		}
-	}
-
-	@media (prefers-reduced-motion) {
-		::view-transition-group(*),
-		::view-transition-old(*),
-		::view-transition-new(*) {
-			animation: none !important;
-		}
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		:root::view-transition-old(root) {
-			animation:
-				90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-				300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
-		}
-
-		:root::view-transition-new(root) {
-			animation:
-				210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-				300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
-		}
 	}
 
 	@media (min-width: 769px) {
