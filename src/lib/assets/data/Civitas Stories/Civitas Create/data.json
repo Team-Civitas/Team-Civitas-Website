@@ -10,25 +10,42 @@
     "versions": {
       "minecraft": "1.18.2",
       "create": "0.5.0+",
-      "forge": null
+      "neoforge": null
     }
   },
   "downloads": {
-    "modpack": {
-      "filename": "The Civitas Stories- Create-1.2.zip",
-      "version": "1.2"
-    },
-    "world": {
-      "filename": null,
-      "version": null
-    }
+    "modpacks": [
+      {
+        "url": "The Civitas Stories- Create-1.2.zip",
+        "version": "1.2"
+      }
+    ],
+    "worlds": []
   },
   "players": [
-    { "username": "DanteMinecraft", "creator": true },
-    { "username": "Zcloak", "creator": true },
-    { "username": "Farligtt", "creator": false },
-    { "username": "JukkasMan", "creator": false, "image_override": "https://starlightskins.lunareclipse.studio/render/default/zh0ooou/bust" },
-    { "username": "NoobElis", "creator": false },
-    { "username": "TwitchErik71", "creator": false }
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Zcloak",
+      "creator": true
+    },
+    {
+      "username": "Farligtt",
+      "creator": false
+    },
+    {
+      "username": "zh0ooou",
+      "creator": false
+    },
+    {
+      "username": "NoobElis",
+      "creator": false
+    },
+    {
+      "username": "TwitchErik71",
+      "creator": false
+    }
   ]
 }

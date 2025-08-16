@@ -10,26 +10,46 @@
     "versions": {
       "minecraft": "1.19.2",
       "create": "0.5.1+",
-      "forge": null
+      "neoforge": null
     }
   },
   "downloads": {
-    "modpack": {
-      "filename": "The Civitas Stories Create Revolution-1.4.4.zip",
-      "version": "1.4.4"
-    },
-    "world": {
-      "filename": null,
-      "version": null
-    }
+    "modpacks": [
+      {
+        "url": "The Civitas Stories Create Revolution-1.4.4.zip",
+        "version": "1.4.4"
+      }
+    ],
+    "worlds": []
   },
   "players": [
-    { "username": "DanteMinecraft", "creator": true },
-    { "username": "Zcloak", "creator": true },
-    { "username": "Elf_Oliver", "creator": false },
-    { "username": "Lulle2345", "creator": false },
-    { "username": "Farligtt", "creator": false },
-    { "username": "NoobElis", "creator": false },
-    { "username": "TwitchErik71", "creator": false }
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Zcloak",
+      "creator": true
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": false
+    },
+    {
+      "username": "Lulle2345",
+      "creator": false
+    },
+    {
+      "username": "Farligtt",
+      "creator": false
+    },
+    {
+      "username": "NoobElis",
+      "creator": false
+    },
+    {
+      "username": "TwitchErik71",
+      "creator": false
+    }
   ]
 }

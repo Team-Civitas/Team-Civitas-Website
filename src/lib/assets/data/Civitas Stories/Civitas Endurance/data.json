@@ -10,23 +10,34 @@
     "versions": {
       "minecraft": "1.20.1",
       "create": null,
-      "forge": null
+      "neoforge": null
     }
   },
   "downloads": {
-    "modpack": {
-      "filename": "The Civitas Stories- Endurance.zip",
-      "version": "1.0.0"
-    },
-    "world": {
-      "filename": null,
-      "version": null
-    }
+    "modpacks": [
+      {
+        "url": "The Civitas Stories- Endurance.zip",
+        "version": "1.0.0"
+      }
+    ],
+    "worlds": []
   },
   "players": [
-    { "username": "DanteMinecraft", "creator": true },
-    { "username": "Elf_Oliver", "creator": true },
-    { "username": "Lulle2345", "creator": true },
-    { "username": "Zcloak", "creator": true }
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": true
+    },
+    {
+      "username": "Lulle2345",
+      "creator": true
+    },
+    {
+      "username": "Zcloak",
+      "creator": true
+    }
   ]
 }
