@@ -10,6 +10,7 @@
 <div class="container">
 	<h1 class="heading heading-center" style="font-size: 3rem;">UTFORSKA</h1>
 
+	
 	<div class="landing-page-cards">
 		<a class="animate" href="#placeholder" use:inView
 			><TitledCard title="Aktuella Projekt" src={logotype} useHover={true} /></a
@@ -52,7 +53,6 @@
 	/*Phone*/
 	@media (max-width: 480px) {
 		.landing-page-cards {
-			scale: 0.65;
 			gap: 1em;
 		}
 	}

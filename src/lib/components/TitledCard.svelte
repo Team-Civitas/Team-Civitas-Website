@@ -35,7 +35,7 @@
 		align-items: center;
 		justify-content: center;
 	}
-/*baban*/
+
 	.titled-card {
 		margin: 1rem 0;
 
@@ -80,4 +80,16 @@
 		margin-top: 1rem;
         color: var(--primary-color);
     }
+
+	@media (max-width: 768px) {
+		.titled-card, .titled-card img {
+			width: 90%;
+			height: auto;
+		}
+
+		.titled-container h1 {
+			font-size: 1.5rem;
+		}
+	}
+
 </style>
