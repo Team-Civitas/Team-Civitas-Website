@@ -2,12 +2,9 @@
 	import { onMount } from 'svelte';
 	import Box from './Box.svelte';
 
-	let { src, title } = $props();
+	let { src, title, useHover = false } = $props();
 	// svelte-ignore non_reactive_update
 	let alt = '';
-
-	// Default value of useHover
-	let useHover = false;
 
 	onMount(() => {
 		if (src) {

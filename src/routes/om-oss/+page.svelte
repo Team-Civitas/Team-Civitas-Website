@@ -40,7 +40,7 @@
 				<TitledCard
 					src="https://starlightskins.lunareclipse.studio/render/ultimate/Elf_Oliver/full"
 					title="Elf_Oliver"
-					useHover={false}
+					useHover={true}
 				/>
 			</div>
 			<div class="animate" use:inView>
