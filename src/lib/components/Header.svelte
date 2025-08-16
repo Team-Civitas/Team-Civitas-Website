@@ -41,4 +41,26 @@
 		width: 500px;
 		height: auto;
 	}
+
+	@media (max-width: 768px) {
+		img {
+			padding: 2.5rem 0;
+			width: 300px;
+		}
+
+		.header-heading {
+			font-size: 3.5rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		img {
+			padding: 2.5rem 0;
+			width: 250px;
+		}
+
+		.header-heading {
+			font-size: 2.5rem;
+		}
+	}
 </style>

@@ -21,7 +21,7 @@
 	<div>
 		<a class="nav-logo" href="/">
 			<img src={logotype} alt="logo" />
-			<p>Team Civitas</p>
+			<p class="nav-logo-text">Team Civitas</p>
 		</a>
 
 		<div class="links">
@@ -90,5 +90,18 @@
 		text-align: center;
 		padding: 3rem;
 		background-color: var(--background-secondary-color);
+	}
+
+	@media (max-width: 768px) {
+		.nav-logo-text {
+			display: none;
+		}
+
+		nav > div {
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: 480px) {
 	}
 </style>
