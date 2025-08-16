@@ -1,6 +1,6 @@
 <script>
-	import bannerImg from '$lib/assets/data/CivitasStories/Civitas Overdrive/overdrive_banner.png';
-	import modpackImg from '$lib/assets/data/CivitasStories/Civitas Overdrive/Civitas Overdrive.png';
+	import bannerImg from '$lib/assets/data/Civitas Stories/Civitas Overdrive/overdrive_banner.png';
+	import modpackImg from '$lib/assets/data/Civitas Stories/Civitas Overdrive/Civitas Overdrive.png';
 	import downloadImg from '$lib/assets/Images/download.webp';
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
