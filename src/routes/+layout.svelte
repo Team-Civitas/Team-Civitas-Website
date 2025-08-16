@@ -35,7 +35,7 @@
 				<NavLink name="Sociala Medier" href="https://linktr.ee/teamcivitas" />
 			</div>
 			<a href="https://linktr.ee/teamcivitas" class="sociala-medier-manual-link"
-				><img src="/src/lib/assets/Images/screen.webp" /></a
+				><img src="/src/lib/assets/Images/screen.webp" alt=""/></a
 			>
 		</div>
 	</div>
