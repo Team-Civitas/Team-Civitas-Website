@@ -64,3 +64,15 @@ export function getModpacks() {
 
     return grouped
 }
+
+export function getModpack(id: string) {
+    const modpacks = getModpacks()
+    for (const group of Object.values(modpacks)) {
+        for (const modpack of group) {
+            if (modpack.data.modpack.id === id) {
+                return modpack
+            }
+        }
+    }
+    return null
+}
