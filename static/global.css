@@ -1,6 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+/* Animation for TitledCards */
+.animate {
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+}
 
+.animate.visible {
+  animation: fadeSlide 0.8s forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/*Header scroll*/
 @keyframes scroll-bg {
     from {
         background-position: 0 -250px;
@@ -11,6 +32,7 @@
     }
 }
 
+/*Global settings*/
 * {
     margin: 0;
     padding: 0;

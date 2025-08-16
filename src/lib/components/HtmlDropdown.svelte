@@ -44,7 +44,8 @@
 	}
 
 	.dropdown-content {
-		display: none;
+		opacity: 0;
+		pointer-events: none;
 		position: absolute;
 		background: var(--backgound-secondary-color);
 		top: 100%;
@@ -53,6 +54,7 @@
 	}
 
 	.active {
-		display: inherit;
+		opacity: 1;
+		pointer-events: auto;
 	}
 </style>

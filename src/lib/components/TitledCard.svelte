@@ -6,6 +6,9 @@
 	// svelte-ignore non_reactive_update
 	let alt = '';
 
+	// Default value of useHover
+	let useHover = false;
+
 	onMount(() => {
 		if (src) {
 			let altParts = src.split('/');
@@ -14,10 +17,10 @@
 	});
 </script>
 
-<div class="member-container">
-	<div class="member-card">
+<div class="titled-container">
+	<div class="titled-card {useHover ? 'hover-enabled' : ''}">
 		{#if src}
-			<img {src} {alt} />
+			<img loading="lazy" {src} {alt} />
 		{/if}
 		{#if title}
 			<div class="title-container">
@@ -28,14 +31,14 @@
 </div>
 
 <style>
-	.member-container {
+	.titled-container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
 
-	.member-card {
+	.titled-card {
 		margin: 1rem 0;
 		display: flex;
 		flex-direction: column;
@@ -48,9 +51,17 @@
 
 		width: 500px;
 		position: relative;
+
+		transition: transform 0.3s ease;
 	}
 
-	.member-card img {
+	.hover-enabled:hover {
+		transform: scale(1.05);
+		transition: transform 0.3s ease;
+		box-shadow: 0 0 6px 8px #00000027;
+	}
+
+	.titled-card img {
 		width: auto;
 		height: 500px;
 		border-radius: var(--border-radius);

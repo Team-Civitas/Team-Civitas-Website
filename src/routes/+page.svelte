@@ -2,18 +2,33 @@
 	import Header from '$lib/components/Header.svelte';
 	import TitledCard from '$lib/components/TitledCard.svelte';
 	import { logotype } from '$lib/IconManager';
+	import { inView } from '$lib/inView.js';
 </script>
 
 <Header src={logotype} />
 
 <div class="container">
-
 	<h1 class="heading heading-center" style="font-size: 3rem;">UTFORSKA</h1>
 
 	<div class="landing-page-cards">
-		<a href="#placeholder"><TitledCard title="Aktuella Projekt" src="https://starlightskins.lunareclipse.studio/render/ultimate/Elf_Oliver/full" /></a>
-		<a href="#placeholder"><TitledCard title="Höjdpunkter" src="https://starlightskins.lunareclipse.studio/render/ultimate/Lulle2345/full" /></a>
-		<a href="#placeholder"><TitledCard title="Sociala Medier" src="https://starlightskins.lunareclipse.studio/render/ultimate/Zcloak/full" /></a>
+		<a class="animate" href="#placeholder" use:inView
+			><TitledCard
+				title="Aktuella Projekt"
+				src={logotype}
+			/></a
+		>
+		<a class="animate" href="#placeholder" use:inView
+			><TitledCard
+				title="Höjdpunkter"
+				src={logotype}
+			/></a
+		>
+		<a class="animate" href="#placeholder" use:inView
+			><TitledCard
+				title="Sociala Medier"
+				src={logotype}
+			/></a
+		>
 	</div>
 
 	<h2 class="heading heading-left">TEAM CIVITAS</h2>

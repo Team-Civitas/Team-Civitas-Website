@@ -2,9 +2,13 @@
 	import Header from '$lib/components/Header.svelte';
 	import TitledCard from '$lib/components/TitledCard.svelte';
 	import { logotype } from '$lib/IconManager';
+	import { inView } from '$lib/inView.js';
 </script>
 
-<Header title="OM OSS" bannersrc="../../lib/assets/OriginalModpacks/Civitas Spellbound/spellbound_banner.png" />
+<Header
+	title="OM OSS"
+	bannersrc="../../lib/assets/OriginalModpacks/Civitas Spellbound/spellbound_banner.png"
+/>
 
 <div class="container">
 	<h1 class="heading heading-left">HUR BÖRJADE ALLT?</h1>
@@ -22,26 +26,35 @@
 	<h2 class="heading heading-center">TEAMET BAKOM CIVITAS</h2>
 	<div>
 		<h3 class="subheading subheading-center">GRUNDARE</h3>
-		<TitledCard
-			src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
-			title="DanteMC (DanteMinecraft)"
-		/>
+		<div class="animate" use:inView>
+			<TitledCard
+				src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
+				title="DanteMC (DanteMinecraft)"
+			/>
+		</div>
 	</div>
 	<div>
 		<h4 class="subheading subheading-center">CIVITAS CORE</h4>
 		<div class="civitas-core">
-			<TitledCard
-				src="https://starlightskins.lunareclipse.studio/render/ultimate/Elf_Oliver/full"
-				title="Elf_Oliver"
-			/>
-			<TitledCard
-				src="https://starlightskins.lunareclipse.studio/render/ultimate/Lulle2345/full"
-				title="Lulle2345"
-			/>
-			<TitledCard
-				src="https://starlightskins.lunareclipse.studio/render/ultimate/Zcloak/full"
-				title="Zcloak"
-			/>
+			<div class="animate" use:inView>
+				<TitledCard
+					src="https://starlightskins.lunareclipse.studio/render/ultimate/Elf_Oliver/full"
+					title="Elf_Oliver"
+					useHover={false}
+				/>
+			</div>
+			<div class="animate" use:inView>
+				<TitledCard
+					src="https://starlightskins.lunareclipse.studio/render/ultimate/Lulle2345/full"
+					title="Lulle2345"
+				/>
+			</div>
+			<div class="animate" use:inView>
+				<TitledCard
+					src="https://starlightskins.lunareclipse.studio/render/ultimate/Zcloak/full"
+					title="Zcloak"
+				/>
+			</div>
 		</div>
 	</div>
 </div>
