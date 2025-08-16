@@ -28,8 +28,8 @@
 			<NavLink href="/" />
 			<NavLink href="/om-oss" />
 			<NavMegaMenu name="Projekt" hrefs={['/modpacks', '/spelkartor', '/logotyper', '/servrar']} />
-			<div class="sociala-medier-navlink"><NavLink href="/sociala-medier" /></div>
-			<a href="/sociala-medier" class="sociala-medier-manual-link"><img src="path/to/your/icon.png"/></a>
+			<div class="sociala-medier-navlink"><NavLink name="Sociala Medier" href="https://linktr.ee/teamcivitas" /></div>
+			<a href="https://linktr.ee/teamcivitas" class="sociala-medier-manual-link"><img src="/src/lib/assets/Images/screen.webp"/></a>
 		</div>
 	</div>
 </nav>
@@ -92,6 +92,11 @@
 		text-align: center;
 		padding: 3rem;
 		background-color: var(--background-secondary-color);
+	}
+
+	.sociala-medier-manual-link img {
+		width: 30px;
+		height: 30px;
 	}
 
 	@media (min-width: 769px) {
