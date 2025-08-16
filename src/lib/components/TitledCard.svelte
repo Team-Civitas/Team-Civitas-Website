@@ -28,7 +28,7 @@
 </div>
 
 <style>
-	.titled-container {
+	.titled-container, .titled-card {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -37,10 +37,6 @@
 
 	.titled-card {
 		margin: 1rem 0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 
 		background-color: var(--background-secondary-color);
 		padding: 1rem;
