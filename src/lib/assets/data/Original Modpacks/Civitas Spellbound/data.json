@@ -9,22 +9,31 @@
     },
     "versions": {
       "minecraft": "1.21.1",
-      "forge": null
+      "create": null,
+      "neoforge": null
     }
   },
   "downloads": {
-    "modpack": {
-      "filename": null,
-      "version": null
-    },
-    "world": {
-      "filename": null,
-      "version": null
-    }
+    "modpacks": [
+      {
+        "url": null,
+        "version": null
+      }
+    ],
+    "worlds": []
   },
   "players": [
-    { "username": "DanteMinecraft", "creator": true },
-    { "username": "Elf_Oliver", "creator": true },
-    { "username": "Zcloak", "creator": true }
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": true
+    },
+    {
+      "username": "Zcloak",
+      "creator": true
+    }
   ]
 }

@@ -14,21 +14,38 @@
     }
   },
   "downloads": {
-    "modpack": {
-      "filename": "civitas_synergy_1.2.0.mrpack",
-      "version": "1.2.0"
-    },
-    "world": {
-      "filename": null,
-      "version": null
-    }
+    "modpacks": [
+      {
+        "url": "civitas_synergy_1.2.0.mrpack",
+        "version": "1.2.0"
+      }
+    ],
+    "worlds": []
   },
   "players": [
-    { "username": "DanteMinecraft", "creator": true },
-    { "username": "Elf_Oliver", "creator": true },
-    { "username": "Lulle2345", "creator": true },
-    { "username": "JoarBjorn", "creator": false },
-    { "username": "MelvinMinecraft1", "creator": false },
-    { "username": "Minesotis", "creator": false }
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": true
+    },
+    {
+      "username": "Lulle2345",
+      "creator": true
+    },
+    {
+      "username": "JoarBjorn",
+      "creator": false
+    },
+    {
+      "username": "MelvinMinecraft1",
+      "creator": false
+    },
+    {
+      "username": "Minesotis",
+      "creator": false
+    }
   ]
 }

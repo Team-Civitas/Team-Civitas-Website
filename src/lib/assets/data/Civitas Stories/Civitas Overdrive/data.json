@@ -14,26 +14,58 @@
     }
   },
   "downloads": {
-    "modpack": {
-      "filename": null,
-      "version": null
-    },
-    "world": {
-      "filename": null,
-      "version": null
-    }
+    "modpacks": [
+      {
+        "url": null,
+        "version": null
+      }
+    ],
+    "worlds": []
   },
   "players": [
-    { "username": "DanteMinecraft", "creator": true },
-    { "username": "Elf_Oliver", "creator": true },
-    { "username": "Lulle2345", "creator": false },
-    { "username": "Pickyben", "creator": false },
-    { "username": "SkogisAB", "creator": false },
-    { "username": "MelvinMinecraft1", "creator": false },
-    { "username": "NoobElis", "creator": false },
-    { "username": "Isac04_", "creator": false },
-    { "username": "Zcloak", "creator": false },
-    { "username": "TwitchErik71", "creator": false },
-    { "username": "RealFemboySlayer", "creator": false }
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": true
+    },
+    {
+      "username": "Lulle2345",
+      "creator": false
+    },
+    {
+      "username": "Pickyben",
+      "creator": false
+    },
+    {
+      "username": "SkogisAB",
+      "creator": false
+    },
+    {
+      "username": "MelvinMinecraft1",
+      "creator": false
+    },
+    {
+      "username": "NoobElis",
+      "creator": false
+    },
+    {
+      "username": "Isac04_",
+      "creator": false
+    },
+    {
+      "username": "Zcloak",
+      "creator": false
+    },
+    {
+      "username": "TwitchErik71",
+      "creator": false
+    },
+    {
+      "username": "RealFemboySlayer",
+      "creator": false
+    }
   ]
 }
