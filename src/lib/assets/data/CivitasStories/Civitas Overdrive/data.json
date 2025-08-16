@@ -1,4 +1,4 @@
-export const overdrive = {
+{
   "modpack": {
     "id": "overdrive",
     "name": "Civitas: Overdrive",

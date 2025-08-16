@@ -1,4 +1,4 @@
-export const arcanum = {
+{
   "modpack": {
     "id": "arcanum",
     "name": "Civitas: Arcanum",

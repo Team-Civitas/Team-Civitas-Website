@@ -5,6 +5,8 @@
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
 	import Box from '$lib/components/Box.svelte';
+	import { wut } from '$lib/assets/data/dataHandler';
+	wut();
 	console.log(page.params.modpack);
 </script>
 

@@ -1,1 +1,0 @@
-const dataModules = import.meta.glob("./**/data.json")

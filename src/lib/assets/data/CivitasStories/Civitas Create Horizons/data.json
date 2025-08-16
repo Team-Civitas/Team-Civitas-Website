@@ -1,4 +1,4 @@
-export const createHorizons = {
+{
   "modpack": {
     "id": "create-horizons",
     "name": "Civitas: Create Horizons",

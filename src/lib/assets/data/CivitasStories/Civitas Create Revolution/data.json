@@ -1,4 +1,4 @@
-export const createRevolution = {
+{
   "modpack": {
     "id": "create-revolution",
     "name": "Civitas: Create Revolution",
