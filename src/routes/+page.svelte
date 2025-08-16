@@ -46,9 +46,6 @@
 	@media (max-width: 768px) {
 		.landing-page-cards {
 			flex-direction: column;
-
-			scale: 0.65;
-			gap: 1em;
 		}
 	}
 
