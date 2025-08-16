@@ -8,9 +8,9 @@
 
 	let showDescription = false;
 
-	onMount(() => {
-		showDescription = true; // triggers the animation
-	});
+	function handleInView() {
+		showDescription = true;
+	}
 </script>
 
 <Header src={logotype} />
@@ -31,18 +31,21 @@
 	</div>
 
 	<div class="description-container">
-		{#if showDescription}
-			<h2 class="heading heading-left">TEAM CIVITAS</h2>
+		<h2 class="heading heading-left">TEAM CIVITAS</h2>
 
-			<p class="description" in:fly={{ y: 50, duration: 500 }}>
-				Team Civitas är en kreativ gemenskap för vänner som gillar att bygga, spela och skapa
-				tillsammans. Sedan starten har vi utforskat ett brett spektrum av modpacks och sparat våra
-				äventyr i form av bilder och minnen. Vi är inte ett offentligt community – utan ett litet
-				team där varje medlem bidrar till att forma vår historia. Från experimentella events till
-				återkommande Minecraftservrar, står Team Civitas för engagemang, kreativitet och minnesvärda
-				ögonblick.
-			</p>
-		{/if}
+		<div use:inView on:enterViewport={handleInView}>
+			
+			{#if showDescription}
+				<p class="description" in:fly={{ y: 50, duration: 500 }}>
+					Team Civitas är en kreativ gemenskap för vänner som gillar att bygga, spela och skapa
+					tillsammans. Sedan starten har vi utforskat ett brett spektrum av modpacks och sparat våra
+					äventyr i form av bilder och minnen. Vi är inte ett offentligt community – utan ett litet
+					team där varje medlem bidrar till att forma vår historia. Från experimentella events till
+					återkommande Minecraftservrar, står Team Civitas för engagemang, kreativitet och
+					minnesvärda ögonblick.
+				</p>
+			{/if}
+		</div>
 	</div>
 </div>
 
