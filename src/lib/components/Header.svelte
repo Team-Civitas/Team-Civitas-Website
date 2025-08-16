@@ -29,7 +29,8 @@
 		justify-content: center;
 		align-items: center;
 
-		font-size: 15rem;
+		white-space: nowrap;
+		font-size: 8rem;
 		font-family: 'Archivo Black', sans-serif;
 
 		color: var(--primary-color);
