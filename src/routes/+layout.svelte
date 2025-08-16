@@ -7,6 +7,18 @@
 	import { page } from '$app/stores';
 	import NavLink from '$lib/components/NavLink.svelte';
 	import NavMegaMenu from '$lib/components/NavMegaMenu.svelte';
+	import { onNavigate } from '$app/navigation';
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <svelte:head>
@@ -28,8 +40,12 @@
 			<NavLink href="/" />
 			<NavLink href="/om-oss" />
 			<NavMegaMenu name="Projekt" hrefs={['/modpacks', '/spelkartor', '/logotyper', '/servrar']} />
-			<div class="sociala-medier-navlink"><NavLink name="Sociala Medier" href="https://linktr.ee/teamcivitas" /></div>
-			<a href="https://linktr.ee/teamcivitas" class="sociala-medier-manual-link"><img src="/src/lib/assets/Images/screen.webp"/></a>
+			<div class="sociala-medier-navlink">
+				<NavLink name="Sociala Medier" href="https://linktr.ee/teamcivitas" />
+			</div>
+			<a href="https://linktr.ee/teamcivitas" class="sociala-medier-manual-link"
+				><img src="/src/lib/assets/Images/screen.webp" /></a
+			>
 		</div>
 	</div>
 </nav>
