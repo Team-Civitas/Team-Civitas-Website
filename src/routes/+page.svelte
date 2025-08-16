@@ -15,18 +15,21 @@
 			><TitledCard
 				title="Aktuella Projekt"
 				src={logotype}
+				useHover={true}
 			/></a
 		>
 		<a class="animate" href="#placeholder" use:inView
 			><TitledCard
 				title="Höjdpunkter"
 				src={logotype}
+				useHover={true}
 			/></a
 		>
 		<a class="animate" href="#placeholder" use:inView
 			><TitledCard
 				title="Sociala Medier"
 				src={logotype}
+				useHover={true}
 			/></a
 		>
 	</div>
