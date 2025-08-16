@@ -27,7 +27,7 @@
 	};
 </script>
 
-<Header title={modpack.data.modpack.name} bannersrc={bannerImg} />
+<Header title={modpack.data.modpack.name.replace(/^Civitas:\s*/, '').toUpperCase()} bannersrc={bannerImg} />
 
 <div class="container">
 	<Box>
@@ -63,7 +63,8 @@
 					{#each Object.entries(modpack.data.modpack.versions) as [framework, version]}
 						<li>
 							<img src={frameworks[framework]} alt={framework} />
-							{framework} {version ? version : ''}
+							{framework}
+							{version ? version : ''}
 						</li>
 					{/each}
 				</ul>
@@ -75,7 +76,11 @@
 					{#each modpack.data.downloads.modpacks as download}
 						<li>
 							<a href={download.url}>
-								<img src="/src/lib/assets/Images/download.webp" style="width:30px; height:auto;" alt="Download" />
+								<img
+									src="/src/lib/assets/Images/download.webp"
+									style="width:30px; height:auto;"
+									alt="Download"
+								/>
 								<p class="underlined">{`Ladda ner ${download.version}`}</p>
 							</a>
 						</li>
