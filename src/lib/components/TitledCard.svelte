@@ -35,7 +35,7 @@
 		align-items: center;
 		justify-content: center;
 	}
-
+/*baban*/
 	.titled-card {
 		margin: 1rem 0;
 
