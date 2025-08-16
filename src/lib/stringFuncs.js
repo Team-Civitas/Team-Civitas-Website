@@ -12,7 +12,7 @@ export function extractName(path) {
 }
 
 export function formatIconName(rawName) {
-  const nameParts = rawName.split(/[_ -]/);
+  const nameParts = rawName.split(" ");
   const type = nameParts[0];
   const rest = nameParts.slice(1).join(' ');
   return `${type}: ${rest}`;
