@@ -88,6 +88,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 10px;
+		view-transition-name: header;
 	}
 
 	nav img {
@@ -113,6 +114,36 @@
 	.sociala-medier-manual-link img {
 		width: 30px;
 		height: 30px;
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fade-out {
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes slide-from-right {
+		from {
+			transform: translateX(30px);
+		}
+	}
+
+	@keyframes slide-to-left {
+		to {
+			transform: translateX(-30px);
+		}
+	}
+
+	:root::view-transition-new(root) {
+		animation:
+			310ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+			400ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-left;
 	}
 
 	@media (min-width: 769px) {
