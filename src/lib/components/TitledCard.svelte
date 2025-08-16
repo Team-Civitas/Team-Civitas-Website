@@ -43,7 +43,7 @@
 		padding: 1rem;
 		border-radius: var(--border-radius);
 
-		width: 500px;
+		width: 300px;
 		position: relative;
 
 		transition: transform 0.3s ease;
@@ -56,8 +56,7 @@
 	}
 
 	.titled-card img {
-		width: auto;
-		height: 500px;
+		width: 100%;
 		border-radius: var(--border-radius);
 	}
 

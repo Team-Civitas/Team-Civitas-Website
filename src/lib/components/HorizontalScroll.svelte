@@ -1,15 +1,15 @@
 <script>
-    let { children } = $props();
+	let { children } = $props();
 </script>
 
 <div class="horizontalScroll">
-    {@render children()}
+	{@render children()}
 </div>
 
 <style>
-    .horizontalScroll {
-        display: flex;
-        overflow-x: auto;
-        gap: 3rem;
-    }
+	.horizontalScroll {
+		display: flex;
+		overflow-x: auto;
+		gap: 3rem;
+	}
 </style>
