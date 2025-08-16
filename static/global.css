@@ -131,15 +131,12 @@ p {
         max-width: 80%;
         padding-top: 20px;
     }
-
-    p {
-        font-size: 0.5rem;
-    }
 }
 
 @media (max-width: 480px) {
     .container {
         max-width: 90%;
         padding-top: 10px;
+
     }
 }

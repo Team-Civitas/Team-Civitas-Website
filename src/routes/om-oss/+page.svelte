@@ -22,7 +22,7 @@
 	</p>
 </div>
 
-<div>
+<div class="container">
 	<h2 class="heading heading-center">TEAMET BAKOM CIVITAS</h2>
 	<div>
 		<h3 class="subheading subheading-center">GRUNDARE</h3>
@@ -71,5 +71,16 @@
 		display: flex;
 		justify-content: center;
 		gap: 2rem;
+	}
+
+	@media (max-width: 768px) {
+	}
+
+	@media (max-width: 480px) {
+		.civitas-core {
+			display: flex;
+			flex-direction: column;
+			gap: 0rem;
+		}
 	}
 </style>
