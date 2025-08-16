@@ -35,6 +35,10 @@
 
 {@render children?.()}
 
+<footer>
+	<p>© 2025 Team Civitas</p>
+</footer>
+
 <style>
 	@import '/global.css';
 
@@ -77,5 +81,14 @@
 	.links {
 		display: flex;
 		flex-direction: row;
+	}
+
+	footer {
+		margin-top: 1rem;
+
+		color: var(--primary-color);
+		text-align: center;
+		padding: 3rem;
+		background-color: var(--background-secondary-color);
 	}
 </style>

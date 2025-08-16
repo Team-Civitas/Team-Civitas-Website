@@ -28,7 +28,7 @@
 
 <Header title="MODPACKS" />
 
-<div class="container-wide">
+<div class="container container-wide">
 	<h1 class="heading heading-left">THE CIVITAS STORIES</h1>
 	<HorizontalScroll>
 		{#each civitasIcons as icon}
