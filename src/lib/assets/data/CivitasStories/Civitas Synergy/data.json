@@ -3,7 +3,10 @@
     "id": "synergy",
     "name": "Civitas: Synergy",
     "description": "Civitas: Synergy är en testbänk inför ett kommande, mer seriöst, Create-modpack med Create-version 6.0.0",
-    "time": "2025-03 - 2025-04",
+    "time": {
+      "start": "2025-03",
+      "end": "2025-04"
+    },
     "versions": {
       "minecraft": "1.21.1",
       "create": "6.0.0+",

@@ -1,34 +1,47 @@
-type Modpack = {
-    modpackType: string
-    json: string
-}
-
-export function wut() {
+export function getModpacks() {
     type Modpack = {
         name: string
         path: string
         data: any
         image: string
         banner: string
+        group: string
+        sortTime: number
     }
+
+    type GroupedModpacks = Record<string, Modpack[]>
 
     const files = import.meta.glob("./**/*", { eager: true }) as Record<string, any>
 
-    const modpacks: Modpack[] = []
+    const grouped: GroupedModpacks = {}
+    const byFolder: Record<string, Partial<Modpack> & { group: string }> = {}
 
-    const byFolder: Record<string, Partial<Modpack>> = {}
+    function parseTimeRange(time: { start?: string | null; end?: string | null } | null): number {
+        if (!time) return 0
+        if (time.end) {
+            const [year, month] = time.end.split("-")
+            return new Date(`${year}-${month}-01`).getTime()
+        } else if (time.start) {
+            return Date.now()
+        } else {
+            return 0
+        }
+    }
 
     for (const [path, mod] of Object.entries(files)) {
         const parts = path.split("/")
+        const group = parts[1]
         const folder = parts.slice(0, 3).join("/")
         const filename = parts[parts.length - 1]
 
         if (!byFolder[folder]) {
-            byFolder[folder] = { name: parts[2], path: folder }
+            byFolder[folder] = { name: parts[2], path: folder, group }
         }
 
         if (filename === "data.json") {
-            byFolder[folder].data = (mod as any).default
+            const data = (mod as any).default
+            byFolder[folder].data = data
+            byFolder[folder].sortTime = parseTimeRange(data.modpack?.time ?? null)
         } else if (filename.endsWith("_banner.png")) {
             byFolder[folder].banner = (mod as any).default
         } else if (filename.endsWith(".png")) {
@@ -37,10 +50,17 @@ export function wut() {
     }
 
     for (const folder of Object.values(byFolder)) {
-        if (folder.data && folder.image && folder.banner) {
-            modpacks.push(folder as Modpack)
+        if (folder.data && folder.image && folder.banner && folder.group) {
+            if (!grouped[folder.group]) {
+                grouped[folder.group] = []
+            }
+            grouped[folder.group].push(folder as Modpack)
         }
     }
 
-    return modpacks
+    for (const group in grouped) {
+        grouped[group].sort((a, b) => b.sortTime - a.sortTime)
+    }
+
+    return grouped
 }
