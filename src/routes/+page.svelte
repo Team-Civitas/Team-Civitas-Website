@@ -12,25 +12,13 @@
 
 	<div class="landing-page-cards">
 		<a class="animate" href="#placeholder" use:inView
-			><TitledCard
-				title="Aktuella Projekt"
-				src={logotype}
-				useHover={true}
-			/></a
+			><TitledCard title="Aktuella Projekt" src={logotype} useHover={true} /></a
 		>
 		<a class="animate" href="#placeholder" use:inView
-			><TitledCard
-				title="Höjdpunkter"
-				src={logotype}
-				useHover={true}
-			/></a
+			><TitledCard title="Höjdpunkter" src={logotype} useHover={true} /></a
 		>
 		<a class="animate" href="#placeholder" use:inView
-			><TitledCard
-				title="Sociala Medier"
-				src={logotype}
-				useHover={true}
-			/></a
+			><TitledCard title="Sociala Medier" src={logotype} useHover={true} /></a
 		>
 	</div>
 
@@ -52,5 +40,23 @@
 		flex-direction: row;
 		justify-content: center;
 		gap: 3rem;
+	}
+
+	/*Tablet*/
+	@media (max-width: 768px) {
+		.landing-page-cards {
+			flex-direction: column;
+
+			scale: 0.65;
+			gap: 1em;
+		}
+	}
+
+	/*Phone*/
+	@media (max-width: 480px) {
+		.landing-page-cards {
+			scale: 0.65;
+			gap: 1em;
+		}
 	}
 </style>
