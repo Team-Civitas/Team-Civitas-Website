@@ -28,6 +28,7 @@
 </div>
 
 <style>
+
 	.titled-container, .titled-card {
 		display: flex;
 		flex-direction: column;
