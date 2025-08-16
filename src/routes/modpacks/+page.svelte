@@ -1,49 +1,28 @@
 <script>
+	import { getModpacks } from '$lib/assets/data/dataHandler';
 	import Header from '$lib/components/Header.svelte';
 	import HorizontalScroll from '$lib/components/HorizontalScroll.svelte';
 	import TitledCard from '$lib/components/TitledCard.svelte';
 	import { extractName, formatIconName } from '$lib/stringFuncs';
 
-	// Civitas Stories
-	const civitasStoriesImport = import.meta.glob(
-		'$lib/assets/Images/ModpackIcons/CivitasStories/*',
-		{
-			eager: true,
-			query: '?url',
-			import: 'default'
-		}
-	);
-	let civitasIcons = Object.values(civitasStoriesImport);
-
-	// Originals
-	const originalsImport = import.meta.glob('$lib/assets/Images/ModpackIcons/OriginalModpacks/*', {
-		eager: true,
-		query: '?url',
-		import: 'default'
-	});
-	let originalIcons = Object.values(originalsImport);
-
-	console.log(civitasIcons, originalIcons);
+	const modpackGroup = getModpacks();
+	const groups = Object.entries(modpackGroup).map(([group, modpacks]) => ({
+		group,
+		modpacks
+	}));
 </script>
 
 <Header title="MODPACKS" />
 
 <div class="container container-wide">
-	<h1 class="heading heading-left">THE CIVITAS STORIES</h1>
-	<HorizontalScroll>
-		{#each civitasIcons as icon}
-			<a href="/modpacks/{extractName(icon)}">
-				<TitledCard src={icon} title={formatIconName(extractName(icon))} />
-			</a>
-		{/each}
-	</HorizontalScroll>
-
-	<h1 class="heading heading-left">CIVITAS ORIGINALS</h1>
-	<HorizontalScroll>
-		{#each originalIcons as icon}
-			<a href="/modpacks/{extractName(icon)}">
-				<TitledCard src={icon} title={formatIconName(extractName(icon))} />
-			</a>
-		{/each}
-	</HorizontalScroll>
+	{#each groups as { group, modpacks }}
+		<h1 class="heading heading-left">{group}</h1>
+		<HorizontalScroll>
+			{#each modpacks as modpack}
+				<a href="/modpacks/{extractName(modpack.name)}">
+					<TitledCard src={modpack.image} title={formatIconName(modpack.name)} />
+				</a>
+			{/each}
+		</HorizontalScroll>
+	{/each}
 </div>

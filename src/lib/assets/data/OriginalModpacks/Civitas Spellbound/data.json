@@ -1,9 +1,12 @@
-export const spellbound = {
+{
   "modpack": {
     "id": "spellbound",
     "name": "Civitas: Spellbound",
     "description": "Demo Description",
-    "time": "Not played yet",
+    "time": {
+      "start": null,
+      "end": null
+    },
     "versions": {
       "minecraft": "1.21.1",
       "forge": null

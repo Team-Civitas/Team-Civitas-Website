@@ -5,7 +5,6 @@
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
 	import Box from '$lib/components/Box.svelte';
-	console.log(page.params.modpack);
 </script>
 
 <Header title="OVERDRIVE" bannersrc={bannerImg} />
