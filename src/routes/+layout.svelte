@@ -79,7 +79,6 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 10px;
-		view-transition-name: header;
 	}
 
 	nav img {

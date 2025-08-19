@@ -13,8 +13,8 @@
 
 	const modpack = getModpack(name);
 
-	const bannerImg = modpack.banner; // dynamic path from JSON
-	const modpackImg = modpack.image; // dynamic path from JSON
+	const bannerImg = modpack.banner;
+	const modpackImg = modpack.image;
 
 	const frameworks = {
 		minecraft: 'https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB',

@@ -6,7 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
-	let showDescription = false;
+	let showDescription = $state(false);
 
 	function handleInView() {
 		showDescription = true;
@@ -33,7 +33,7 @@
 	<div class="description-container">
 		<h2 class="heading heading-left">TEAM CIVITAS</h2>
 
-		<div use:inView on:enterViewport={handleInView}>
+		<div use:inView onenterViewport={handleInView}>
 			
 			{#if showDescription}
 				<p class="description" in:fly={{ y: 50, duration: 500 }}>
