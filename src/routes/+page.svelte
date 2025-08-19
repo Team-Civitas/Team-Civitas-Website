@@ -5,6 +5,8 @@
 	import { inView } from '$lib/inView.js';
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import Timeline from '$lib/components/Timeline.svelte';
+	import TimelineCard from '$lib/components/TimelineCard.svelte';
 
 	let showDescription = $state(false);
 
@@ -105,6 +107,16 @@
 			varar livet ut.
 		</p>
 	{/if}
+</div>
+
+<div class="container">
+  <Timeline
+    items={[
+      { title: "WHATT 1", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 3", body: "NAHH BESKRIVNING" }
+    ]}
+  />
 </div>
 
 <style>
