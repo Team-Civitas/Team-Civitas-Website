@@ -3,7 +3,7 @@ export function inView(node, { threshold = 0.2 } = {}) {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          node.dispatchEvent(new CustomEvent("enterViewport")); // ✅ skapar event
+          node.dispatchEvent(new CustomEvent("enterViewport"));
           node.classList.add("visible");
           observer.unobserve(node);
         }

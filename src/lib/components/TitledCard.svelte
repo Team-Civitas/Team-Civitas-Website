@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import Box from './Box.svelte';
 
-	let { src, title, useHover = false } = $props();
+	let { src, title, useHover = false, char_img = false } = $props();
 	// svelte-ignore non_reactive_update
 	let alt = '';
 
@@ -17,8 +17,9 @@
 <div class="titled-container">
 	<div class="titled-card {useHover ? 'hover-enabled' : ''}">
 		{#if src}
-			<img loading="lazy" {src} {alt} />
+			<img loading="lazy" {src} {alt} class="{char_img ? 'char_img' : ''}"/>
 		{/if}
+		
 		{#if title}
 			<div class="title-container">
 				<h1>{title}</h1>
@@ -60,6 +61,11 @@
 		border-radius: var(--border-radius);
 	}
 
+	.char_img {
+		width: auto !important;
+		height: 300px;
+	}
+
 	.title-container {
         display: flex;
 		position: absolute;
@@ -78,6 +84,9 @@
         margin-bottom: 2rem;
 		margin-top: 1rem;
         color: var(--primary-color);
+
+		font-size: 1.5rem;
+		text-wrap: nowrap;
     }
 
 	@media (max-width: 768px) {

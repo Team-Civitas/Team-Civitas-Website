@@ -1,7 +1,7 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import TitledCard from '$lib/components/TitledCard.svelte';
-	import { active_project, logotype, history, socials } from '$lib/IconManager';
+	import { active_project, logotype, history, socials, bruce } from '$lib/IconManager';
 	import { inView } from '$lib/inView.js';
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
@@ -56,28 +56,36 @@
 			<TitledCard
 				src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
 				title="DanteMC (DanteMinecraft)"
+				char_img={true}
+				useHover={true}
 			/>
 		</div>
 	</div>
 	<div>
 		<h5 class="subheading subheading-center">CIVITAS CORE</h5>
-		<div class="civitas-core">
+		<div class="landing-page-cards">
 			<div class="animate" use:inView>
 				<TitledCard
 					src="https://starlightskins.lunareclipse.studio/render/ultimate/Elf_Oliver/full"
 					title="Elf_Oliver"
+					char_img={true}
+					useHover={true}
 				/>
 			</div>
 			<div class="animate" use:inView>
 				<TitledCard
 					src="https://starlightskins.lunareclipse.studio/render/ultimate/Lulle2345/full"
 					title="Lulle2345"
+					char_img={true}
+					useHover={true}
 				/>
 			</div>
 			<div class="animate" use:inView>
 				<TitledCard
 					src="https://starlightskins.lunareclipse.studio/render/ultimate/Zcloak/full"
 					title="Zcloak"
+					char_img={true}
+					useHover={true}
 				/>
 			</div>
 		</div>
@@ -127,12 +135,6 @@
 
 	.subheading {
 		padding: 20px;
-	}
-
-	.civitas-core {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
 	}
 
 	/*Tablet*/

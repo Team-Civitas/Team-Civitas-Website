@@ -101,6 +101,10 @@
 		background-color: var(--background-secondary-color);
 	}
 
+	footer p{
+		font-size: 1.25rem;
+	}
+
 	.sociala-medier-manual-link img {
 		width: 30px;
 		height: 30px;
