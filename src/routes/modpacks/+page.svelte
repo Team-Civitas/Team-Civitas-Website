@@ -20,7 +20,7 @@
 		<HorizontalScroll>
 			{#each modpacks as modpack}
 				<a href="/modpacks/{extractName(modpack.name)}">
-					<TitledCard src={modpack.image} title={formatIconName(modpack.name)} />
+					<TitledCard src={modpack.image} title={formatIconName(modpack.name)} useHover={true}/>
 				</a>
 			{/each}
 		</HorizontalScroll>
