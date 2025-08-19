@@ -1,7 +1,7 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import TitledCard from '$lib/components/TitledCard.svelte';
-	import { logotype } from '$lib/IconManager';
+	import { active_project, logotype, history, socials } from '$lib/IconManager';
 	import { inView } from '$lib/inView.js';
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
@@ -20,13 +20,13 @@
 
 	<div class="landing-page-cards">
 		<a class="animate" href="#placeholder" use:inView
-			><TitledCard title="Aktuella Projekt" src={logotype} useHover={true} /></a
+			><TitledCard title="Aktuella Projekt" src={active_project} useHover={true} /></a
 		>
 		<a class="animate" href="#placeholder" use:inView
-			><TitledCard title="Höjdpunkter" src={logotype} useHover={true} /></a
+			><TitledCard title="Historia" src={history} useHover={true} /></a
 		>
 		<a class="animate" href="#placeholder" use:inView
-			><TitledCard title="Sociala Medier" src={logotype} useHover={true} /></a
+			><TitledCard title="Sociala Medier" src={socials} useHover={true} /></a
 		>
 	</div>
 
