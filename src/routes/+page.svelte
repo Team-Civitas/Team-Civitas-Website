@@ -113,6 +113,13 @@
     items={[
       { title: "WHATT 1", body: "NAHH BESKRIVNING" },
       { title: "WHATT 2", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNINGaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
+      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
       { title: "WHATT 3", body: "NAHH BESKRIVNING" }
     ]}
   />
@@ -159,12 +166,6 @@
 	@media (max-width: 480px) {
 		.landing-page-cards {
 			gap: 1em;
-		}
-
-		.civitas-core {
-			display: flex;
-			flex-direction: column;
-			gap: 0rem;
 		}
 	}
 </style>
