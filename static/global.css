@@ -73,6 +73,7 @@ body {
 }
 
 .container-wide {
+    z-index: 1;
     max-width: 90%;
 }
 
