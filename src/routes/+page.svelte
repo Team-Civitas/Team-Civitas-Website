@@ -6,7 +6,6 @@
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
-	import TimelineCard from '$lib/components/TimelineCard.svelte';
 
 	let showDescription = $state(false);
 
