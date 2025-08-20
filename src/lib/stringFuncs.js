@@ -17,3 +17,7 @@ export function formatIconName(rawName) {
   const rest = nameParts.slice(1).join(' ');
   return `${type}: ${rest}`;
 }
+
+export function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

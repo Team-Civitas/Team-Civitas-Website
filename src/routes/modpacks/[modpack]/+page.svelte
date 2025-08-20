@@ -3,6 +3,8 @@
 	import Box from '$lib/components/Box.svelte';
 	import { page } from '$app/state';
 	import { getModpack } from '$lib/assets/data/dataHandler';
+	import { capitalize } from '$lib/stringFuncs';
+	import { minecraft_logo, fabric_logo, forge_logo, modrinth_logo, neoforge_logo, download_icon, create_logo, create_old_logo } from '$lib/IconManager';
 
 	const name = decodeURI(page.params.modpack)
 		.split(' ')
@@ -17,13 +19,12 @@
 	const modpackImg = modpack.image;
 
 	const frameworks = {
-		minecraft: 'https://feedback.minecraft.net/hc/theming_assets/01HZH4GFS6HZFCFWQPVZT51JSB',
-		forge: '',
-		neoforge: 'https://neoforged.net/img/authors/neoforged.png',
-		fabric: '',
-		create: 'https://wiki.createmod.net/assets/create-icon-large.webp',
-		axiom: 'https://media.forgecdn.net/avatars/thumbnails/875/313/256/256/638297701708807643.png',
-		worldedit: 'https://media.forgecdn.net/attachments/16/948/logo.png'
+		minecraft: minecraft_logo,
+		forge: forge_logo,
+		neoforge: neoforge_logo,
+		fabric: fabric_logo,
+		create_old: create_old_logo,
+		create: create_logo,
 	};
 </script>
 
@@ -63,7 +64,7 @@
 					{#each Object.entries(modpack.data.modpack.versions) as [framework, version]}
 						<li>
 							<img src={frameworks[framework]} alt={framework} />
-							{framework}
+							{capitalize(framework).replaceAll("_old", " ")}
 							{version ? version : ''}
 						</li>
 					{/each}
@@ -77,7 +78,7 @@
 						<li>
 							<a href={download.url}>
 								<img
-									src="/src/lib/assets/Images/download.webp"
+									src={download_icon}
 									style="width:30px; height:auto;"
 									alt="Download"
 								/>

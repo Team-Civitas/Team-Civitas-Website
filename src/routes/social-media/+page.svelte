@@ -72,8 +72,8 @@
 		<SocialButton
 			src={twitch_logo}
 			alt="Twitch"
-			social_title="Revilo0509"
-			social_href="https://www.twitch.tv/revilo0509"
+			social_title="TwitchErik71"
+			social_href="https://www.twitch.tv/twitcherik71"
 			useHover={true}
 		/>
 	</div>

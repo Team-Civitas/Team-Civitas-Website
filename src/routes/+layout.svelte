@@ -1,5 +1,5 @@
 <script>
-	import { logotype } from '$lib/IconManager';
+	import { logotype, screen_icon } from '$lib/IconManager';
 
 	let { children } = $props();
 
@@ -35,7 +35,7 @@
 				<NavLink name="Sociala Medier" href="/social-media" />
 			</div>
 			<a href="/social-media" class="sociala-medier-manual-link"
-				><img src="/src/lib/assets/Images/screen.webp" alt=""/></a
+				><img src={screen_icon} alt=""/></a
 			>
 		</div>
 	</div>

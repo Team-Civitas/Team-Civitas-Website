@@ -135,15 +135,17 @@ p {
 
 ::-webkit-scrollbar-track {
     background: var(--background-secondary-color);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: #fff;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--highlight-color);
+    
 }
 
 @media (max-width: 768px) {

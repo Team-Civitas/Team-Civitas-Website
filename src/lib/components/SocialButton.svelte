@@ -29,7 +29,7 @@
 		background-color: #00000075;
 		border-radius: var(--border-radius);
 
-		width: 300px;
+		width: 350px;
 
 		margin: 1rem auto;
 		transition: transform 0.3s ease;
