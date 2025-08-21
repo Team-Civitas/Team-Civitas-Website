@@ -20,8 +20,7 @@
 			map_img={civitas_punch}
 			map_heading="CIVITAS PUNCH"
 			map_description="Civitas Punch är en nyskapad uppdatering av Minecraft-minispelet Makers Punch II, ursprungligen skapat av MineMakers. Denna version är gjord för Minecraft 1.21.8 och har ännu inte släppts för nedladdning. Kartan är skapad av DanteMC och Elf_Oliver."
-			map_link="https://www.curseforge.com/minecraft/worlds/civitas-punch"
-			useHover={true}
+			useHover={false}
 		></MapList>
 	</div>
 </div>
