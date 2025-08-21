@@ -51,9 +51,4 @@
 		text-decoration: none;
 		color: #fff;
 	}
-	.hover-enabled:hover {
-		transform: scale(1.05);
-		transition: transform 0.3s cubic-bezier(.4, 2, .6, 1);
-		box-shadow: 0 0 6px 8px #00000027;
-	}
 	</style>

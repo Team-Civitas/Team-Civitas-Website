@@ -20,7 +20,10 @@ import active_project from './assets/Images/active_project.webp';
 import history from './assets/Images/history.webp';
 import socials from './assets/Images/socials.webp';
 
+import blocked_in from './assets/Images/blocked_in.webp';
+import civitas_punch from './assets/Images/civitas_punch.webp';
+
 /*Banners*/
 import bruce from './assets/Images/bruce_banner.png';
 
-export { logotype, active_project, history, socials, bruce, twitch_logo, youtube_logo, curseforge_logo, download_icon, screen_icon, create_logo, create_old_logo, fabric_logo, forge_logo, minecraft_logo, modrinth_logo, neoforge_logo };
+export { logotype, active_project, history, socials, bruce, twitch_logo, youtube_logo, curseforge_logo, download_icon, screen_icon, create_logo, create_old_logo, fabric_logo, forge_logo, minecraft_logo, modrinth_logo, neoforge_logo, blocked_in, civitas_punch };
