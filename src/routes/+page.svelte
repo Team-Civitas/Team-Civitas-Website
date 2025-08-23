@@ -109,20 +109,21 @@
 </div>
 
 <div class="container">
-  <Timeline
-    items={[
-      { title: "WHATT 1", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNINGaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 2", body: "NAHH BESKRIVNING" },
-      { title: "WHATT 3", body: "NAHH BESKRIVNING" }
-    ]}
-  />
+<Timeline
+  items={[
+    { title: "Invention of the Telegraph", paragraphs: ["Revolutionized long-distance communication, sending messages across continents in minutes."], date: "1837-05-24" },
+    { title: "First Steam Locomotive", paragraphs: ["The 'Rocket' by George Stephenson transformed transportation and trade."], date: "1829-09-15" },
+    { title: "Discovery of Electricity", paragraphs: ["Michael Faraday’s experiments with electromagnetism laid the foundation for modern power."], date: "1831-08-29" },
+    { title: "Photography Emerges", paragraphs: ["The daguerreotype introduced a new way to capture and preserve moments in time."], date: "1839-01-07" },
+    { title: "California Gold Rush", paragraphs: ["Mass migration westward began after gold was found at Sutter’s Mill."], date: "1848-01-24" },
+    { title: "Publication of Darwin’s 'Origin of Species'", paragraphs: ["Introduced the theory of evolution through natural selection."], date: "1859-11-24" },
+    { title: "Invention of the Telephone", paragraphs: ["Alexander Graham Bell patented the telephone, changing communication forever."], date: "1876-03-10" },
+    { title: "Light Bulb Patented", paragraphs: ["Thomas Edison’s practical electric light bulb began illuminating homes and streets."], date: "1879-11-04" },
+    { title: "First Powered Flight", paragraphs: ["The Wright brothers successfully flew at Kitty Hawk, marking the dawn of aviation."], date: "1903-12-17" },
+    { title: "First Moon Landing", paragraphs: ["Apollo 11 landed on the Moon and Neil Armstrong took mankind’s first step."], date: "1969-07-20" }
+  ]}
+/>
+
 </div>
 
 <style>
@@ -140,19 +141,6 @@
 	.description {
 		margin-top: 1rem;
 		margin-bottom: 3rem;
-	}
-
-	h3 {
-		font-size: 4rem;
-	}
-
-	h4,
-	h5 {
-		font-size: 2rem;
-	}
-
-	.subheading {
-		padding: 20px;
 	}
 
 	/*Tablet*/
