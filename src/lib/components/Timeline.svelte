@@ -42,7 +42,6 @@
 <style>
 	.timeline {
 		margin: 0 auto;
-		max-width: 100%;
 		padding: 1rem;
 		display: grid;
 		grid-template-columns: 1fr 4px 1fr;
