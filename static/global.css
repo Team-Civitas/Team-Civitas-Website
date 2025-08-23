@@ -86,6 +86,7 @@ h5 {
 }
 
 .container-wide {
+    z-index: 1;
     max-width: 90%;
 }
 
@@ -141,21 +142,29 @@ p {
     transform-origin: left;
 }
 
+.hover-enabled:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s cubic-bezier(.4, 2, .6, 1);
+    box-shadow: 0 0 6px 8px #00000027;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--background-secondary-color);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: #fff;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--highlight-color);
+
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,5 @@
 <script>
-	import { logotype } from '$lib/IconManager';
+	import { logotype, screen_icon } from '$lib/IconManager';
 
 	let { children } = $props();
 
@@ -30,12 +30,12 @@
 		<div class="links">
 			<NavLink name="Hem" href="/" />
 			<NavLink name="Om oss" href="#om_oss" />
-			<NavMegaMenu name="Projekt" hrefs={['/modpacks', '/spelkartor', '/logotyper', '/servrar']} />
+			<NavMegaMenu name="Projekt" hrefs={['/modpacks', '/spelkartor']} />
 			<div class="sociala-medier-navlink">
-				<NavLink name="Sociala Medier" href="https://linktr.ee/teamcivitas" />
+				<NavLink name="Sociala Medier" href="/social-media" />
 			</div>
-			<a href="https://linktr.ee/teamcivitas" class="sociala-medier-manual-link"
-				><img src="/src/lib/assets/Images/screen.webp" alt=""/></a
+			<a href="/social-media" class="sociala-medier-manual-link"
+				><img src={screen_icon} alt=""/></a
 			>
 		</div>
 	</div>

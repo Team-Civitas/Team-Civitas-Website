@@ -9,7 +9,7 @@
     },
     "versions": {
       "minecraft": "1.19.2",
-      "create": "0.5.1+",
+      "create_old": "0.5.1+",
       "neoforge": null
     }
   },

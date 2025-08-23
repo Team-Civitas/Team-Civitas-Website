@@ -26,7 +26,7 @@
 		<a class="animate" href="#history" use:inView
 			><TitledCard title="Historia" src={history} useHover={true} /></a
 		>
-		<a class="animate" href="#placeholder" use:inView
+		<a class="animate" href="/social-media" use:inView
 			><TitledCard title="Sociala Medier" src={socials} useHover={true} /></a
 		>
 	</div>
@@ -95,17 +95,19 @@
 
 <div class="container">
 	<h6 class="heading heading-left" id="history">HUR BÖRJADE ALLT?</h6>
-	{#if showDescription}
-		<p class="description" in:fly={{ y: 50, duration: 500 }}>
-			<strong>Team Civitas</strong> grundades av DanteMC (DanteMinecraft) den 10 oktober år 2020 och
-			har sedan dess vuxit till en större gemenskap med personer från hela Sverige. Vår resa började
-			med att vi spelade på en Minecraft-server vid namnet "Civitascraft" och har sedan dess utvecklats
-			till att omfatta en mängd olika spel och projekt. Idag har vi en stark närvaro inom Minecraft,
-			där vi främst spelar olika modpacks och skapar egna äventyr. Vårt team är inte bara en samling
-			spelare, utan en kreativ gemenskap där vi delar idéer, bygger tillsammans och skapar minnen som
-			varar livet ut.
-		</p>
-	{/if}
+	<div use:inView onenterViewport={handleInView}>
+		{#if showDescription}
+			<p class="description" in:fly={{ y: 50, duration: 500 }}>
+				<strong>Team Civitas</strong> grundades av DanteMC (DanteMinecraft) den 10 oktober år 2020 och
+				har sedan dess vuxit till en större gemenskap med personer från hela Sverige. Vår resa började
+				med att vi spelade på en Minecraft-server vid namnet "Civitascraft" och har sedan dess utvecklats
+				till att omfatta en mängd olika spel och projekt. Idag har vi en stark närvaro inom Minecraft,
+				där vi främst spelar olika modpacks och skapar egna äventyr. Vårt team är inte bara en samling
+				spelare, utan en kreativ gemenskap där vi delar idéer, bygger tillsammans och skapar minnen som
+				varar livet ut.
+			</p>
+		{/if}
+	</div>
 </div>
 
 <div class="container">
