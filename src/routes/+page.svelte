@@ -40,7 +40,7 @@
 	<h1 class="heading heading-center" style="font-size: 3rem;">UTFORSKA</h1>
 
 	<div class="landing-page-cards">
-		<a class="animate" href="#placeholder" use:inView
+		<a class="animate" href="/aktuella-projekt" use:inView
 			><TitledCard title="Aktuella Projekt" src={active_project} useHover={true} /></a
 		>
 		<a class="animate" href="#history" use:inView

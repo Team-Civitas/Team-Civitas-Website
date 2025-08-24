@@ -29,8 +29,8 @@
 
 		<div class="links">
 			<NavLink name="Hem" href="/" />
-			<NavLink name="Om oss" href="#om_oss" />
-			<NavMegaMenu name="Projekt" hrefs={['/modpacks', '/spelkartor']} />
+			<NavLink name="Om oss" href="/#om_oss" />
+			<NavMegaMenu name="Projekt" hrefs={['/aktuella-projekt', '/modpacks', '/spelkartor']} />
 			<div class="sociala-medier-navlink">
 				<NavLink name="Sociala Medier" href="/social-media" />
 			</div>

@@ -50,6 +50,7 @@
 
 	.content li {
 		margin: 0.5rem 0;
+		text-wrap: nowrap;
 	}
 
 	a {
