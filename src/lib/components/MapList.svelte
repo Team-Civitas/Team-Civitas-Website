@@ -19,6 +19,7 @@
 	.map-list img {
 		width: 300px;
 		height: auto;
+		margin-right: 1rem;
 	}
 
 	.map-list {

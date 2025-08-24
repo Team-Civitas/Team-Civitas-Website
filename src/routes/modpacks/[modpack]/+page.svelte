@@ -107,6 +107,8 @@
 	#modpack-image {
 		width: 300px;
 		height: auto;
+		
+		margin-right: 1rem;
 	}
 
 	li {
