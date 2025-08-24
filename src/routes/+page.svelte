@@ -161,7 +161,7 @@
 			{
 				title: 'DEN FÖRSTA DISCORDSERVERN',
 				paragraphs: [
-					'I samband med att modpacketCivitas: Create precis släppts skapades den första Discordservern för Team Civitas.'
+					'I samband med att modpacket Civitas: Create precis släppts skapades den första Discordservern för Team Civitas.'
 				],
 				date: '2023-01-23',
 				image: civitas_crystal
