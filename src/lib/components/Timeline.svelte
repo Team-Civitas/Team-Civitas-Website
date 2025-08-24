@@ -1,58 +1,83 @@
 <script lang="ts">
-	interface Iitem {
+	interface TimelineItem {
 		title: string;
-		body: string;
+		paragraphs: string;
+		date: string;
 	}
-
-	const { items }: { items: Iitem[] } = $props();
+	const { items }: { items: TimelineItem[] } = $props();
 </script>
 
 <div class="timeline">
 	{#each items as item, i}
-		<div class="timeline-card {i % 2 === 0 ? 'left' : 'right'}">
-			<h2>{item.title}</h2>
-			<p>{item.body}</p>
-		</div>
+		{#if i % 2 == 0}
+			<div class="component">
+				<div class="date right">{item.date}</div>
+			</div>
+			<div class="centerLine">
+				<div class="linePoint"></div>
+			</div>
+			<div class="component box">
+				<h5 class="title heading">{item.title}</h5>
+				{#each item.paragraphs as paragraph}
+					<p>{paragraph}</p>
+				{/each}
+			</div>
+		{:else}
+			<div class="component box">
+				<h5 class="title heading">{item.title}</h5>
+				{#each item.paragraphs as paragraph}
+					<p>{paragraph}</p>
+				{/each}
+			</div>
+			<div class="centerLine" class:dissaper={i == items.length-1}>
+				<div class="linePoint"></div>
+			</div>
+			<div class="component">
+				<div class="date">{item.date}</div>
+			</div>
+		{/if}
 	{/each}
 </div>
 
 <style>
 	.timeline {
-		position: relative;
+		margin: 0 auto;
+		padding: 1rem;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
+		grid-template-columns: 1fr 4px 1fr;
 	}
 
-	.timeline::before {
+	.component {
+		margin: 0 1rem 1rem 1rem;
+	}
+
+	.right {
+		text-align: right;
+	}
+
+	.centerLine {
+		position: relative;
+		background: var(--background-secondary-color);
+	}
+
+	.dissaper {
+		background: var(--background-color);
+	}
+
+	.linePoint {
 		position: absolute;
-		content: '';
-		background-color: var(--background-secondary-color);
-		width: 8px;
 		top: 0;
-		bottom: 0;
 		left: 50%;
 		transform: translateX(-50%);
+		width: 16px;
+		height: 16px;
+		background: var(--background-secondary-color);
+		border-radius: 50%;
 	}
 
-	.timeline-card {
+	.box {
+		border-radius: var(--border-radius);
 		background-color: var(--background-secondary-color);
 		padding: 1rem;
-		margin: 1rem;
-		border-radius: var(--border-radius);
-		max-width: 90%;
-		overflow-wrap: anywhere;
-	}
-
-	.timeline-card.left {
-		grid-column: 1;
-		justify-self: end;
-		margin-top: 200px;
-	}
-
-	.timeline-card.right {
-		grid-column: 2;
-		justify-self: start;
-		margin-bottom: 200px;
 	}
 </style>

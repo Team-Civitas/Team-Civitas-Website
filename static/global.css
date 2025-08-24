@@ -62,6 +62,19 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h3 {
+    font-size: 4rem;
+}
+
+h4,
+h5 {
+    font-size: 2rem;
+}
+
+.subheading {
+    padding: 20px;
+}
+
 .short-page-wrapper {
     height: 100vh;
 }
