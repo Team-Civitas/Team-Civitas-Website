@@ -1,7 +1,27 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import TitledCard from '$lib/components/TitledCard.svelte';
-	import { active_project, logotype, history, socials, bruce } from '$lib/IconManager';
+
+	import {
+		active_project,
+		logotype,
+		history,
+		socials,
+		bruce,
+		civitas_crystal,
+		civitas_legacy_crystal,
+		civitas_create,
+		civitas_arcanum,
+		civitas_recreated,
+		civitas_sleek,
+		civitas_overdrive,
+		civitas_spellbound,
+
+		tba_icon
+
+
+	} from '$lib/IconManager';
+
 	import { inView } from '$lib/inView.js';
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
@@ -50,9 +70,9 @@
 </div>
 
 <div class="container">
-	<h3 class="heading heading-center">TEAMET BAKOM CIVITAS</h3>
+	<h2 class="heading heading-center">TEAMET BAKOM CIVITAS</h2>
 	<div>
-		<h4 class="subheading subheading-center">GRUNDARE</h4>
+		<h3 class="subheading subheading-center">GRUNDARE</h3>
 		<div class="animate" use:inView>
 			<TitledCard
 				src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
@@ -63,7 +83,7 @@
 		</div>
 	</div>
 	<div>
-		<h5 class="subheading subheading-center">CIVITAS CORE</h5>
+		<h3 class="subheading subheading-center">CIVITAS CORE</h3>
 		<div class="landing-page-cards">
 			<div class="animate" use:inView>
 				<TitledCard
@@ -94,7 +114,7 @@
 </div>
 
 <div class="container">
-	<h6 class="heading heading-left" id="history">HUR BÖRJADE ALLT?</h6>
+	<h2 class="heading heading-left" id="history">HUR BÖRJADE ALLT?</h2>
 	<div use:inView onenterViewport={handleInView}>
 		{#if showDescription}
 			<p class="description" in:fly={{ y: 50, duration: 500 }}>
@@ -111,21 +131,115 @@
 </div>
 
 <div class="container">
-<Timeline
-  items={[
-    { title: "Invention of the Telegraph", paragraphs: ["Revolutionized long-distance communication, sending messages across continents in minutes."], date: "1837-05-24" },
-    { title: "First Steam Locomotive", paragraphs: ["The 'Rocket' by George Stephenson transformed transportation and trade."], date: "1829-09-15" },
-    { title: "Discovery of Electricity", paragraphs: ["Michael Faraday’s experiments with electromagnetism laid the foundation for modern power."], date: "1831-08-29" },
-    { title: "Photography Emerges", paragraphs: ["The daguerreotype introduced a new way to capture and preserve moments in time."], date: "1839-01-07" },
-    { title: "California Gold Rush", paragraphs: ["Mass migration westward began after gold was found at Sutter’s Mill."], date: "1848-01-24" },
-    { title: "Publication of Darwin’s 'Origin of Species'", paragraphs: ["Introduced the theory of evolution through natural selection."], date: "1859-11-24" },
-    { title: "Invention of the Telephone", paragraphs: ["Alexander Graham Bell patented the telephone, changing communication forever."], date: "1876-03-10" },
-    { title: "Light Bulb Patented", paragraphs: ["Thomas Edison’s practical electric light bulb began illuminating homes and streets."], date: "1879-11-04" },
-    { title: "First Powered Flight", paragraphs: ["The Wright brothers successfully flew at Kitty Hawk, marking the dawn of aviation."], date: "1903-12-17" },
-    { title: "First Moon Landing", paragraphs: ["Apollo 11 landed on the Moon and Neil Armstrong took mankind’s first step."], date: "1969-07-20" }
-  ]}
-/>
-
+	<h2 class="heading heading-center" id="history">TIDSLINJE GENOM HISTORIEN</h2>
+	<Timeline
+		items={[
+			{
+				title: 'TEAM CIVITAS SKAPADES',
+				paragraphs: [
+					'Team Civitas grundades den 10 oktober år 2020 i form av en Minecraftserver med namnet Civitascraft.'
+				],
+				date: '2020-10-10',
+				image: civitas_legacy_crystal
+			},
+			{
+				title: 'CIVITASCRAFT',
+				paragraphs: [
+					'Vanillaservrar hostades mellan år 2020 och 2022 med säsongsupplägg likt Hermitcraft.'
+				],
+				date: '2020 till 2022',
+				image: civitas_crystal
+			},
+			{
+				title: 'CIVITAS: CREATE',
+				paragraphs: [
+					'I slutet av januari 2023 startade den första modpackservern för Team Civitas i modern tid efter att Pre-Civitas modpacket Vaults & Space avslutades.'
+				],
+				date: '2023-01-19',
+				image: civitas_create
+			},
+			{
+				title: 'DEN FÖRSTA DISCORDSERVERN',
+				paragraphs: [
+					'I samband med att modpacketCivitas: Create precis släppts skapades den första Discordservern för Team Civitas.'
+				],
+				date: '2023-01-23',
+				image: civitas_crystal
+			},
+			{
+				title: "THE CIVITAS STORIES",
+				paragraphs: ['I slutet av maj 2023 publicerades det första modpacket i serien "The Civitas Stories". Modpacket hette "Civitas: Arcanum" och det var teamets andra i modern tid.'],
+				date: '2023-05-29',
+				image: civitas_arcanum
+			},
+			{
+				title: 'DET MEST AKTIVA MODPACKET',
+				paragraphs: [
+					'Den 14 december 2023 släpptes modpacket "Civitas: Re-Created" vilket är det populäraste i Team Civitas historia.'
+				],
+				date: '2023-12-14',
+				image: civitas_recreated
+			},
+			{
+				title: 'NY LOGOTYP',
+				paragraphs: [
+					'Efter 4 år av en och samma logotyp var det dags att fräscha upp Team Civitas. Den nya logotypen presenterades i april 2024 och började användas strax efter.'
+				],
+				date: '2024-04-06',
+				image: civitas_sleek
+			},
+			{
+				title: 'DEN ANDRA DISCORDSERVERN',
+				paragraphs: [
+					'Då modpacket Civitas: Re-Created mötte hinder i samarbetet skapades en ny Discordserver med tydligare regler och struktur. Denna server används än idag.'
+				],
+				date: '2024-07-03',
+				image: civitas_crystal
+			},
+			{
+				title: 'EN OFFICIELL HEMSIDA',
+				paragraphs: ['Den 13 april 2025 lanserades den officiella hemsidan för Team Civitas. På hemsidan finns samlingar screenshots och minnen från alla tidigare modpacks.'],
+				date: '2025-04-13',
+				image: civitas_sleek
+			},
+			{
+				title: 'EN BÄTTRE HEMSIDA',
+				paragraphs: ['Ca 1 månad efter att hemsidan lanserades släpptes en stor uppdaterad version. Den nya sidan inkluderade en startsida, ett navigeringsfält, och möjlighet att ladda ner alla logotyper i Civitashistorien.'],
+				date: '2025-05-15',
+				image: civitas_sleek
+			},
+			{
+				title: 'SERVERDATOR & CIVITAS: OVERDRIVE',
+				paragraphs: ['I samband med att modpacket Civitas: Overdrive utvecklades, införskaffades en dedikerad serverdator för att hantera de ökade kraven.'],
+				date: '2025-05-18',
+				image: civitas_overdrive
+			},
+			{
+				title: 'PROJECT – BEYOND CREATE',
+				paragraphs: ['Den 24 augusti 2025 släpptes trailern inför vad som skulle bli Team Civitas största förändring hittills.'],
+				date: '2025-08-24',
+				image: active_project
+			},
+			{
+				title: 'EN NY ERA',
+				paragraphs: ['Knappt en vecka efter att trailern inför "Projekt Beyond Create" släpptes, publicerades information om flera förändringar. Nya modpacks, en ny hemsida, en korrigerad logotyp, och mycket mer presenterades i den officiella Discordservern.'],
+				date: '2025-08-29',
+				image: logotype
+			},
+			{
+				title: 'CIVITAS: SPELLBOUND',
+				paragraphs: ['Den 5 september släpptes det första modpacket i serien "Civitas Originals". Detta är en serie som kommer att spelas parallellt med "The Civitas Stories" i kortare perioder än huvudmodpacken.'],
+				date: '2025-09-05',
+				image: civitas_spellbound
+			},
+			{
+				title: 'FRAMTID',
+				paragraphs: ['Team Civitas byggs vidare successivt, och nya idéer och projekt utforskas ständigt. Håll utkik, för plötsligt kan något nytt dyka upp här!'],
+				date: '???',
+				image: tba_icon
+			}
+		]}
+	/>
 </div>
 
 <style>

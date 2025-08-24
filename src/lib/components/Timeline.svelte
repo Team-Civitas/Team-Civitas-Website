@@ -3,6 +3,7 @@
 		title: string;
 		paragraphs: string;
 		date: string;
+		image: string;
 	}
 	const { items }: { items: TimelineItem[] } = $props();
 </script>
@@ -16,20 +17,26 @@
 			<div class="centerLine">
 				<div class="linePoint"></div>
 			</div>
-			<div class="component box">
-				<h5 class="title heading">{item.title}</h5>
-				{#each item.paragraphs as paragraph}
-					<p>{paragraph}</p>
-				{/each}
+			<div class="component component-card box" style="margin-right: -200px">
+				<img src={item.image} alt="" />
+				<div>
+					<h5 class="title heading">{item.title}</h5>
+					{#each item.paragraphs as paragraph}
+						<p>{paragraph}</p>
+					{/each}
+				</div>
 			</div>
 		{:else}
-			<div class="component box">
-				<h5 class="title heading">{item.title}</h5>
-				{#each item.paragraphs as paragraph}
-					<p>{paragraph}</p>
-				{/each}
+			<div class="component component-card box" style="margin-left: -200px">
+				<img src={item.image} alt="" />
+				<div>
+					<h5 class="title heading">{item.title}</h5>
+					{#each item.paragraphs as paragraph}
+						<p>{paragraph}</p>
+					{/each}
+				</div>
 			</div>
-			<div class="centerLine" class:dissaper={i == items.length-1}>
+			<div class="centerLine" class:dissaper={i == items.length - 1}>
 				<div class="linePoint"></div>
 			</div>
 			<div class="component">
@@ -49,6 +56,17 @@
 
 	.component {
 		margin: 0 1rem 1rem 1rem;
+	}
+
+	.component-card {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.component img {
+		width: 30%;
+		height: auto;
+		margin-right: 1rem;
 	}
 
 	.right {
