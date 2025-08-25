@@ -62,6 +62,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Search Styling */
+:global(.gcse-search) {
+    color: #050708 !important;
+}
+
 h3 {
     font-size: 4rem;
 }

@@ -8,8 +8,8 @@
 	import NavLink from '$lib/components/NavLink.svelte';
 	import NavMegaMenu from '$lib/components/NavMegaMenu.svelte';
 	import { onNavigate } from '$app/navigation';
-	import { fly } from "svelte/transition";
-
+	import { fly } from 'svelte/transition';
+	import Search from '$lib/components/search.svelte';
 </script>
 
 <svelte:head>
@@ -34,8 +34,7 @@
 			<div class="sociala-medier-navlink">
 				<NavLink name="Sociala Medier" href="/social-media" />
 			</div>
-			<a href="/social-media" class="sociala-medier-manual-link"
-				><img src={screen_icon} alt=""/></a
+			<a href="/social-media" class="sociala-medier-manual-link"><img src={screen_icon} alt="" /></a
 			>
 		</div>
 	</div>
@@ -101,7 +100,7 @@
 		background-color: var(--background-secondary-color);
 	}
 
-	footer p{
+	footer p {
 		font-size: 1.25rem;
 	}
 
@@ -133,8 +132,6 @@
 			transform: translateX(-30px);
 		}
 	}
-
-
 
 	@media (min-width: 769px) {
 		.sociala-medier-navlink {
