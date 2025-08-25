@@ -14,6 +14,7 @@
 		.toLowerCase();
 
 	const modpack = getModpack(name);
+	console.log(modpack)
 
 	const bannerImg = modpack.banner;
 	const modpackImg = modpack.image;
@@ -90,6 +91,9 @@
 			</div>
 		</div>
 	</Box>
+	{#each modpack.portfolio as src}
+		<img {src} alt=""/>
+	{/each}
 </div>
 
 <style>
