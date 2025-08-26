@@ -7,6 +7,7 @@ export function getModpacks() {
         banner: string
         group: string
         sortTime: number
+        portfolio: string[]
     }
 
     type GroupedModpacks = Record<string, Modpack[]>
@@ -35,7 +36,7 @@ export function getModpacks() {
         const filename = parts[parts.length - 1]
 
         if (!byFolder[folder]) {
-            byFolder[folder] = { name: parts[2], path: folder, group }
+            byFolder[folder] = { name: parts[2], path: folder, group, portfolio: [] }
         }
 
         if (filename === "data.json") {
@@ -45,7 +46,11 @@ export function getModpacks() {
         } else if (filename.endsWith("_banner.png")) {
             byFolder[folder].banner = (mod as any).default
         } else if (filename.endsWith(".png")) {
-            byFolder[folder].image = (mod as any).default
+            if (parts.includes("Portfolio")) {
+                byFolder[folder].portfolio!.push((mod as any).default)
+            } else {
+                byFolder[folder].image = (mod as any).default
+            }
         }
     }
 
