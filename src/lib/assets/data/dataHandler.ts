@@ -45,7 +45,7 @@ export function getModpacks() {
             byFolder[folder].sortTime = parseTimeRange(data.modpack?.time ?? null)
         } else if (filename.endsWith("_banner.png")) {
             byFolder[folder].banner = (mod as any).default
-        } else if (filename.endsWith(".png")) {
+        } else if (filename.endsWith(".png") || filename.endsWith(".jpg") || filename.endsWith(".webp")) {
             if (parts.includes("Portfolio")) {
                 byFolder[folder].portfolio!.push((mod as any).default)
             } else {
