@@ -39,6 +39,7 @@
 
 	// Image viewer
 	let activeImage = null;
+	let visibleCount = 6;
 
 	function openImage(src) {
 		activeImage = src;
@@ -46,6 +47,10 @@
 
 	function closeImage() {
 		activeImage = null;
+	}
+
+	function showMore() {
+		visibleCount += 45;
 	}
 </script>
 
@@ -111,12 +116,18 @@
 		</div>
 	</Box>
 	<div class="portfolio">
-		{#each modpack.portfolio as src}
+		{#each modpack.portfolio.slice(0, visibleCount) as src}
 			<button class="portfolio-item" on:click={() => openImage(src)}>
 				<img {src} alt="Portfolio-bild" />
 			</button>
 		{/each}
 	</div>
+
+	{#if visibleCount < modpack.portfolio.length}
+		<div class="load-more">
+			<button on:click={showMore}>Ladda in fler bilder</button>
+		</div>
+	{/if}
 
 	{#if activeImage}
 		<div
@@ -127,12 +138,38 @@
 			on:click={closeImage}
 			on:keydown={(e) => (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') && closeImage()}
 		>
-			<img src={activeImage} alt="Full image" on:click|stopPropagation />
+			<img src={activeImage} alt="Portfoliobild" on:click|stopPropagation />
 		</div>
 	{/if}
 </div>
 
 <style>
+
+	.load-more {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.5rem;
+	}
+
+	.load-more button {
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: var(--border-radius);
+
+		background: var(--background-secondary-color);
+		color: white;
+
+		font-size: 1.25rem;
+		cursor: pointer;
+		
+		transition: background-color 0.15s ease;
+	}
+
+	.load-more button:hover {
+		background: var(--highlight-color);
+		transition: background-color 0.15s ease;
+	}
+
 	.modpack-header {
 		padding: 1rem;
 		display: flex;
