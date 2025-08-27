@@ -50,7 +50,7 @@
 	}
 
 	function showMore() {
-		visibleCount += 45;
+		visibleCount += 297;
 	}
 </script>
 
