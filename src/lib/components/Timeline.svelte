@@ -64,8 +64,8 @@
 	}
 
 	.component img {
-		width: 30%;
-		height: auto;
+		height: 300px;
+		width: auto;
 		margin-right: 1rem;
 	}
 
@@ -97,5 +97,17 @@
 		border-radius: var(--border-radius);
 		background-color: var(--background-secondary-color);
 		padding: 1rem;
+	}
+
+	/*Tablet*/
+	@media (max-width: 768px) {
+
+	}
+
+	/*Phone*/
+	@media (max-width: 480px) {
+		.timeline {
+			display: none;
+		}
 	}
 </style>
