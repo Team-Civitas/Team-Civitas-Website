@@ -225,13 +225,13 @@
 				paragraphs: ['Knappt en vecka efter att trailern inför "Projekt Beyond Create" släpptes, publicerades information om flera förändringar. Nya modpacks, en ny hemsida, en korrigerad logotyp, och mycket mer presenterades i den officiella Discordservern.'],
 				date: '2025-08-29',
 				image: logotype
-			},
+			}/*,
 			{
 				title: 'CIVITAS: SPELLBOUND',
 				paragraphs: ['Den 5 september släpptes det första modpacket i serien "Civitas Originals". Detta är en serie som kommer att spelas parallellt med "The Civitas Stories" i kortare perioder än huvudmodpacken.'],
 				date: '2025-09-05',
 				image: civitas_spellbound
-			},
+			}*/,
 			{
 				title: 'FRAMTID',
 				paragraphs: ['Team Civitas byggs vidare successivt, och nya idéer och projekt utforskas ständigt. Håll utkik, för plötsligt kan något nytt dyka upp här!'],
