@@ -144,32 +144,6 @@
 </div>
 
 <style>
-
-	.load-more {
-		display: flex;
-		justify-content: center;
-		margin-top: 1.5rem;
-	}
-
-	.load-more button {
-		padding: 1rem 2rem;
-		border: none;
-		border-radius: var(--border-radius);
-
-		background: var(--background-secondary-color);
-		color: white;
-
-		font-size: 1.25rem;
-		cursor: pointer;
-		
-		transition: background-color 0.15s ease;
-	}
-
-	.load-more button:hover {
-		background: var(--highlight-color);
-		transition: background-color 0.15s ease;
-	}
-
 	.modpack-header {
 		padding: 1rem;
 		display: flex;
@@ -254,5 +228,49 @@
 		width: 100%;
 		aspect-ratio: 16 / 9;
 		border-radius: var(--border-radius);
+	}
+
+	.load-more {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.5rem;
+	}
+
+	.load-more button {
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: var(--border-radius);
+
+		background: var(--background-secondary-color);
+		color: white;
+
+		font-size: 1.25rem;
+		cursor: pointer;
+
+		transition: background-color 0.15s ease;
+	}
+
+	.load-more button:hover {
+		background: var(--highlight-color);
+		transition: background-color 0.15s ease;
+	}
+
+	@media (max-width: 480px) {
+	.modpack-header {
+		flex-direction: column;
+		margin: 1rem 0;
+	}
+
+	.heading {
+		margin: 1rem 0;
+		font-size: 1.5rem;
+	}
+	
+	.portfolio {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
 	}
 </style>
