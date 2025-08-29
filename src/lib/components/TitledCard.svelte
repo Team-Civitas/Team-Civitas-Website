@@ -92,13 +92,18 @@
     }
 
 	@media (max-width: 768px) {
-		.titled-card, .titled-card img {
-			width: 90%;
+		.titled-card {
+			width: 500px;
 			height: auto;
+		}
+		
+		.char_img {
+		width: auto !important;
+		height: 500px !important;
 		}
 
 		.titled-container h1 {
-			font-size: 1.5rem;
+			font-size: 2rem;
 		}
 	}
 

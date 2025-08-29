@@ -101,6 +101,9 @@
 
 	/*Tablet*/
 	@media (max-width: 768px) {
+		.timeline {
+			display: none;
+		}
 
 	}
 
