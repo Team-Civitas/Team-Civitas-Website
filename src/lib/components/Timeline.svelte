@@ -27,7 +27,7 @@
 				</div>
 			</div>
 		{:else}
-			<div class="component component-card box" style="margin-left: -200px">
+			<div class="component component-card box left-component" style="margin-left: -200px">
 				<img src={item.image} alt="" />
 				<div>
 					<h5 class="title heading">{item.title}</h5>
@@ -101,13 +101,34 @@
 
 	/*Tablet*/
 	@media (max-width: 768px) {
+		/*.component img {
+			height: 60%;
+			width: 60%;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 1rem;
+		}
+
+		.component-card {
+			flex-direction: column;
+			width: 250px;
+		}
+
+		.component-card[style] {
+			margin: 0 !important;
+		}
+
+		.left-component {
+		}
+
+		.component-card:not(.left-component) {
+		}*/
+		
 		.timeline {
 			display: none;
 		}
-
 	}
 
-	/*Phone*/
 	@media (max-width: 480px) {
 		.timeline {
 			display: none;
