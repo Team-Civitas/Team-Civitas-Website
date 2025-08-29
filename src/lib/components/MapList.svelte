@@ -4,16 +4,16 @@
 </script>
 
 <div class="map-list {useHover ? 'hover-enabled' : ''}">
-		<a href="{map_link}" target="_blank">
-			<div class="map-list-content">
-				<img loading="lazy" src={map_img} alt="Map logotype" />
-				<div class="map-info">
-					<h1 class="heading">{map_heading}</h1>
-					<p>{map_description}</p>
-				</div>
+	<a href={map_link} target="_blank">
+		<div class="map-list-content">
+			<img loading="lazy" src={map_img} alt="Map logotype" />
+			<div class="map-info">
+				<h1 class="heading">{map_heading}</h1>
+				<p>{map_description}</p>
 			</div>
-		</a>
-	</div>
+		</div>
+	</a>
+</div>
 
 <style>
 	.map-list img {
@@ -48,5 +48,18 @@
 	}
 
 	@media (max-width: 480px) {
+
+	.map-list {
+		margin: 1rem 0;
+		padding: 1rem;
+	}
+
+		.map-list-content {
+			flex-direction: column;
+		}
+
+		.map-list img {
+			width: 200px;
+		}
 	}
 </style>

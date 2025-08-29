@@ -62,6 +62,8 @@
 
 		.header-heading {
 			font-size: 2.5rem;
+			text-wrap: wrap;
+			text-align: center;
 			height: 330px;
 		}
 	}
