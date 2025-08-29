@@ -111,5 +111,8 @@
 
 	/*Phone*/
 	@media (max-width: 480px) {
+	.header-socials {
+		flex-direction: column;
+	}
 	}
 </style>
