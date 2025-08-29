@@ -174,14 +174,13 @@ p {
 
 @media (max-width: 768px) {
     .container {
-        max-width: 80%;
+        max-width: 90%;
         padding-top: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        max-width: 90%;
         padding-top: 10px;
 
     }

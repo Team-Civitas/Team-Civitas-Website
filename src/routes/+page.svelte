@@ -76,7 +76,7 @@
 		<div class="animate" use:inView>
 			<TitledCard
 				src="https://starlightskins.lunareclipse.studio/render/ultimate/DanteMinecraft/full"
-				title="DanteMC (DanteMinecraft)"
+				title="DanteMC"
 				char_img={true}
 				useHover={true}
 			/>

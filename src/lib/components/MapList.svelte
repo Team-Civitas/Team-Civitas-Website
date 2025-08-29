@@ -40,4 +40,13 @@
 	.map-list a {
 		text-decoration: none;
 	}
+
+	@media (max-width: 768px) {
+		p {
+			font-size: 1.25rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+	}
 </style>
