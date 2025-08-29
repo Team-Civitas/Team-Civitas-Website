@@ -271,5 +271,6 @@
 		.landing-page-cards {
 			gap: 1em;
 		}
+
 	}
 </style>

@@ -102,4 +102,16 @@
 		}
 	}
 
+	@media (max-width: 480px) {
+		.titled-card {
+			width: 275px;
+			height: auto;
+		}
+
+		.char_img {
+		width: auto !important;
+		height: 275px !important;
+		}
+	}
+
 </style>
