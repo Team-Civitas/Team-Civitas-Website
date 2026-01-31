@@ -6,7 +6,6 @@
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import NavLink from '$lib/components/NavLink.svelte';
-	import NavMegaMenu from '$lib/components/NavMegaMenu.svelte';
 	import { onNavigate } from '$app/navigation';
 	import { fly } from "svelte/transition";
 
@@ -30,7 +29,8 @@
 		<div class="links">
 			<NavLink name="Hem" href="/" />
 			<NavLink name="Om oss" href="/#om_oss" />
-			<NavMegaMenu name="Projekt" hrefs={['/aktuella-projekt', '/modpacks', '/spelkartor']} />
+			<NavLink name="Wiki" href="https://wiki.teamcivitas.net" />
+			<NavLink name="Awards" href="https://awards.teamcivitas.net" />
 			<div class="sociala-medier-navlink">
 				<NavLink name="Sociala Medier" href="/social-media" />
 			</div>
