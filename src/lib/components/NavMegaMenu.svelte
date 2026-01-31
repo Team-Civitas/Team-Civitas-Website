@@ -1,0 +1,69 @@
+<script>
+	import { toDecode } from '$lib/stringFuncs';
+	import HtmlDropdown from './HtmlDropdown.svelte';
+	import NavLink from './NavLink.svelte';
+
+	let { children, name, hrefs } = $props();
+</script>
+
+<div class="NavMegaMenu">
+	<HtmlDropdown {name}>
+		<ul class="content">
+			{#each hrefs as href}
+				<li><a {href}>{toDecode(href)}</a></li>
+			{/each}
+		</ul>
+	</HtmlDropdown>
+</div>
+
+<style>
+	.NavMegaMenu :global(.html-dropdown > button) {
+		background: none;
+		border: none;
+		padding: 2px;
+		margin: 0 10px;
+		color: inherit;
+		font: inherit;
+		transition: color 0.2s ease;
+	}
+
+	.NavMegaMenu :global(.html-dropdown > button:hover) {
+		color: var(--highlight-color);
+		cursor: pointer;
+	}
+
+	.NavMegaMenu :global(.dropdown-content) {
+		padding: 1rem;
+		margin-top: 0.5rem;
+		border-radius: var(--border-radius);
+		transition: color 0.2s ease;
+
+		background-color: var(--background-color);
+		border-radius: var(--border-radius);
+
+		box-shadow: 0 8px 10px rgba(0, 0, 0, 0.6);
+	}
+
+	.content {
+		list-style: none;
+	}
+
+	.content li {
+		margin: 0.5rem 0;
+		text-wrap: nowrap;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		padding: 2px;
+		margin: 0 10px;
+
+		transition: color 0.5s ease;
+	}
+
+	a:hover {
+		color: var(--highlight-color);
+	}
+</style>

@@ -1,0 +1,51 @@
+{
+  "modpack": {
+    "id": "synergy",
+    "name": "Civitas: Synergy",
+    "description": "Civitas: Synergy är en testbänk inför ett kommande, mer seriöst, Create-modpack med Create-version 6.0.0",
+    "time": {
+      "start": "2025-03",
+      "end": "2025-04"
+    },
+    "versions": {
+      "minecraft": "1.21.1",
+      "create": "6.0.0+",
+      "neoforge": null
+    }
+  },
+  "downloads": {
+    "modpacks": [
+      {
+        "url": "civitas_synergy_1.2.0.mrpack",
+        "version": "1.2.0"
+      }
+    ],
+    "worlds": []
+  },
+  "players": [
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": true
+    },
+    {
+      "username": "Lulle2345",
+      "creator": true
+    },
+    {
+      "username": "JoarBjorn",
+      "creator": false
+    },
+    {
+      "username": "MelvinMinecraft1",
+      "creator": false
+    },
+    {
+      "username": "Minesotis",
+      "creator": false
+    }
+  ]
+}

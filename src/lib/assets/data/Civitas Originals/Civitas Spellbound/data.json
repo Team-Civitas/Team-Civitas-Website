@@ -1,0 +1,62 @@
+{
+  "modpack": {
+    "id": "spellbound",
+    "name": "Civitas: Spellbound",
+    "description": "Efter att drakarna flytt från sina hem så har portalerna till End och Nether stängts för gott. Civitas: Spellbound är det första modpacket som inte längre har tillgång till dessa dimensioner, och istället fokuserar på att utforska nya magiska världar och varelser. Likt Civitas: Arcanum och Civitas: Endurance så inkluderar Civitas: Spellbound inte Create-modden.",
+    "time": {
+      "start": null,
+      "end": null
+    },
+    "versions": {
+      "minecraft": "1.20.1",
+      "forge": null
+    }
+  },
+  "downloads": {
+    "modpacks": [
+      {
+        "url": null,
+        "version": null
+      }
+    ],
+    "worlds": []
+  },
+  "players": [
+    {
+      "username": "DanteMinecraft",
+      "creator": true
+    },
+    {
+      "username": "Ellen1999",
+      "creator": false
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": false
+    },
+    {
+      "username": "Elf_Oliver",
+      "creator": false
+    },
+    {
+      "username": "Isac04_",
+      "creator": false
+    },
+    {
+      "username": "My_Melody_Lover",
+      "creator": false
+    },
+    {
+      "username": "NoobElis",
+      "creator": false
+    },
+    {
+      "username": "TwitchErik71",
+      "creator": false
+    },
+    {
+      "username": "Zcloak",
+      "creator": false
+    }
+  ]
+}
