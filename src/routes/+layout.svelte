@@ -29,8 +29,8 @@
 		<div class="links">
 			<NavLink name="Hem" href="/" />
 			<NavLink name="Om oss" href="/#om_oss" />
-			<NavLink name="Wiki" href="https://wiki.teamcivitas.net" />
 			<NavLink name="Awards" href="https://awards.teamcivitas.net" />
+			<NavLink name="Wiki" href="https://wiki.teamcivitas.net" />
 			<div class="sociala-medier-navlink">
 				<NavLink name="Sociala Medier" href="/social-media" />
 			</div>
@@ -44,7 +44,7 @@
 {@render children?.()}
 
 <footer>
-	<p>© 2025 Team Civitas</p>
+	<p>© 2020-2026 Team Civitas</p>
 </footer>
 
 <style>
@@ -137,6 +137,14 @@
 
 
 	@media (min-width: 769px) {
+		
+	.links {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		
+	}
+
 		.sociala-medier-navlink {
 			display: flex;
 		}
