@@ -1,0 +1,12 @@
+allowBuilds:
+  '3': true
+  '"': true
+  '[': true
+  ']': true
+  e: true
+  esbuild: true
+  i: true
+  l: true
+  q: true
+  s: true
+  t: true
