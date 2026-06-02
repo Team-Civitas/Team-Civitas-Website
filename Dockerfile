@@ -10,7 +10,7 @@ COPY . .
 RUN pnpm run build && \
     pnpm prune --prod
 
-FROM gcr.io/distroless/nodejs22-debian13
+FROM gcr.io/distroless/nodejs22-debian12
 WORKDIR /app
 
 COPY --from=builder /app/build ./build
@@ -18,4 +18,4 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 
 EXPOSE 3000
-ENTRYPOINT ["/nodejs/bin/node", "build/index.js"]
+CMD ["build/index.js"]

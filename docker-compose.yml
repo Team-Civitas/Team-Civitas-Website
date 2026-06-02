@@ -9,7 +9,7 @@ services:
       - NODE_ENV=production
     restart: always
     healthcheck:
-      test: ['CMD', 'wget', '--spider', '-q', 'http://localhost:3000']
+      test: ['CMD', 'node', '-e', "require('http').get('http://localhost:3000', r => process.exit(r.statusCode !== 200 ? 1 : 0)).on('error', () => process.exit(1))"]
       interval: 30s
       timeout: 10s
       retries: 3

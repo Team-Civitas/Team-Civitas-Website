@@ -1,6 +1,6 @@
 .dockerignore
 node_modules
-pnpm-workspace.yaml
+
 .corepack
 pnpm-debug.log
 
